@@ -59,7 +59,17 @@ export default {
 .bg-project-primary {
     background: rgb(196,164,132);
     background: linear-gradient(180deg, rgba(196,164,132,1) 0%, rgba(140,108,76,1) 100%);
-    display: none;
+    /* overflow: hidden; Hide any overflow content */
+    position: relative; /* Position context for absolutely positioned children */
+}
+
+.bg-project-primary img {
+    position: absolute; /* Position the image relative to its container */
+    bottom: 0; /* Position at the bottom */
+    left: calc(-100vw/3/2); /* Position at the left */
+    width: auto; /* Take full width of its container */
+    height: 90%; /* Maintain aspect ratio */
+    max-height: 100%; /* Limit maximum height to prevent overflow */
 }
 
 @media only screen and (min-width: 1200px) {

@@ -40,9 +40,9 @@
     }
     
     .hero-image {
-        position: relative;
+        /* position: relative;
         translate: calc(-100vw/3/2) calc(100vh - 100%);
-        height: 90%;
+        height: 90%; */
     }
     
     .hero-text {
