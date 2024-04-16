@@ -1,0 +1,115 @@
+<template>
+    <div class="card">
+        <div class="aspect-ratio-container">
+            <div class="image-container">
+                <img src="VOID.png" alt="Card Image" class="card-image">
+                <div class="image-overlay">
+                    <div>
+                        <h2 class="title">Void Engine</h2>
+                        <p class="subtitle">Game engine written in C++ with OpenGL, FMOD, Physics, ands ENTT</p>
+                    </div>
+                    <div class="category-container">
+                        <span class="category">Category 1</span>
+                        <span class="category">Category 2</span>
+                        <span class="category">Category 3</span>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+}
+</script>
+
+<style scoped>
+.card {
+    width: 100%; /* Adjust width as needed */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.aspect-ratio-container {
+    width: 100%;
+    padding-top: 100%; /* Maintain 1:1 aspect ratio */
+    position: relative;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.card:hover .image-overlay {
+    opacity: 1;
+}
+
+.title {
+    color: #fff;
+    font-size: 44px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #fff;
+    font-size: 32px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+.category-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.category {
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(0deg);
+}
+</style>

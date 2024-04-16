@@ -22,18 +22,12 @@ export default { }
 
 <style scoped>
 .con {
-    margin: 96px 15%;
+    padding: 96px 15%;
 }
 
 .title {
     text-align: center;
     margin: 48px 0px;
-}
-
-.title h1 {
-    font-size: 64px;
-    font-family: 'Montserrat';
-    font-weight: 700;
 }
 
 .content {

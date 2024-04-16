@@ -1,16 +1,19 @@
 <template>
     <hero></hero>
     <about-me></about-me>
+    <latest-works></latest-works>
 </template>
 
 <script>
 import Hero from './Hero.vue';
 import AboutMe from './AboutMe.vue';
+import LatestWorks from './LatestWorks.vue';
 
 export default {
     components: {
         Hero,
-        AboutMe
+        AboutMe,
+        LatestWorks
     }
 }
 </script>
@@ -24,20 +27,26 @@ export default {
     color: #C4A484;
 }
 
+.title h1 {
+    font-size: 64px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
 ::-webkit-scrollbar {
-    width: 12px; /* width of the scrollbar */
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* color of the track */
+    background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888; /* color of the thumb */
-    border-radius: 6px; /* roundness of the thumb */
+    background: #888;
+    border-radius: 6px; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* color of the thumb on hover */
+    background: #555; 
 }
 </style>
