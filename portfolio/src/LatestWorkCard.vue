@@ -2,16 +2,14 @@
     <div class="card">
         <div class="aspect-ratio-container">
             <div class="image-container">
-                <img src="VOID.png" alt="Card Image" class="card-image">
+                <img :src=work.imageUrl alt="Card Image" class="card-image">
                 <div class="image-overlay">
                     <div>
-                        <h2 class="title">Void Engine</h2>
-                        <p class="subtitle">Game engine written in C++ with OpenGL, FMOD, Physics, ands ENTT</p>
+                        <h2 class="title">{{ work.title }}</h2>
+                        <p class="subtitle"> {{ work.subTitle }} </p>
                     </div>
                     <div class="category-container">
-                        <span class="category">Category 1</span>
-                        <span class="category">Category 2</span>
-                        <span class="category">Category 3</span>
+                        <span v-for="category in work.categories" class="category">{{ category.value }}</span>
                     </div>
                     <div class="arrow"></div>
                 </div>
@@ -22,6 +20,7 @@
 
 <script>
 export default {
+    props: ['work']
 }
 </script>
 

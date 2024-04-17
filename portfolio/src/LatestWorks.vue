@@ -5,7 +5,7 @@
                 <h1>What I've been <span class="secondary-text-color">working on lately</span></h1>
             </div>
             <div class="cards">
-                <latest-work-card></latest-work-card>
+                <latest-work-card :work=work1></latest-work-card>
             </div>
         </div>
     </div>
@@ -17,6 +17,20 @@ import LatestWorkCard from './LatestWorkCard.vue'
 export default { 
     components: {
         LatestWorkCard
+    },
+    data(){
+        return {
+            work1: {
+                imageUrl: "VOID.png",
+                title: "Void Engine",
+                subTitle: "Something",
+                categories: [
+                    {value: "S1"}, 
+                    {value: "S1"}, 
+                    {value: "S1"}
+                ]
+            }
+        }
     }
 }
 </script>
