@@ -26,6 +26,7 @@ export default {
 
 <style scoped>
 .card {
+    margin: 0 12px;
     width: 100%; /* Adjust width as needed */
     position: relative;
     overflow: hidden;
@@ -34,7 +35,7 @@ export default {
 
 .aspect-ratio-container {
     width: 100%;
-    padding-top: 100%; /* Maintain 1:1 aspect ratio */
+    padding-top: 150%; /* Maintain 1:1 aspect ratio */
     position: relative;
 }
 
@@ -110,5 +111,9 @@ export default {
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;
     transform: rotate(0deg);
+}
+
+@media only screen and (min-width: 1200px) {
+    
 }
 </style>

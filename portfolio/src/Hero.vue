@@ -47,6 +47,7 @@ export default {
 
 .hero {
     background-color: #F6F6F6;
+    overflow: hidden;
 }
 
 .hero-text-container {
