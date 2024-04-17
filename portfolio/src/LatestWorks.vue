@@ -29,6 +29,26 @@ export default {
                     {value: "S1"}, 
                     {value: "S1"}
                 ]
+            },
+            work2: {
+                imageUrl: "VOID.png",
+                title: "Void Engine",
+                subTitle: "Something",
+                categories: [
+                    {value: "S1"}, 
+                    {value: "S1"}, 
+                    {value: "S1"}
+                ]
+            },
+            work2: {
+                imageUrl: "VOID.png",
+                title: "Void Engine",
+                subTitle: "Something",
+                categories: [
+                    {value: "S1"}, 
+                    {value: "S1"}, 
+                    {value: "S1"}
+                ]
             }
         }
     }
