@@ -2,7 +2,7 @@
     <div class="card">
         <div class="aspect-ratio-container">
             <div class="image-container">
-                <img :src=work.imageUrl alt="Card Image" class="card-image">
+                <img :src="imageURL" alt="Card Image" class="card-image">
                 <div class="image-overlay">
                     <div>
                         <h2 class="title">{{ work.title }}</h2>
@@ -20,13 +20,32 @@
 
 <script>
 export default {
-    props: ['work']
+    props: ['work'],
+    computed: {
+        imageURL() {
+            if(window.innerWidth > 1200)
+                return this.work.imageUrl.big
+            return this.work.imageUrl.small
+        }
+    },
+    mounted() {
+        window.addEventListener('resize', this.handleResize);
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.handleResize);
+    },
+    methods: {
+        handleResize() {
+            // Update image source when window is resized
+            this.$forceUpdate();
+        }
+    }
 }
 </script>
 
 <style scoped>
 .card {
-    margin: 0 12px;
+    margin: 0 16px;
     width: 100%; /* Adjust width as needed */
     position: relative;
     overflow: hidden;
@@ -35,7 +54,7 @@ export default {
 
 .aspect-ratio-container {
     width: 100%;
-    padding-top: 150%; /* Maintain 1:1 aspect ratio */
+    padding-top: 100%; /* Maintain 1:1.75 aspect ratio */
     position: relative;
 }
 
@@ -91,6 +110,7 @@ export default {
 .category-container {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .category {
@@ -98,8 +118,9 @@ export default {
     color: #000;
     border-radius: 20px;
     padding: 5px 10px;
-    margin-right: 10px;
-    font-size: 20px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    font-size: 22px;
 }
 
 .arrow {
@@ -114,6 +135,45 @@ export default {
 }
 
 @media only screen and (min-width: 1200px) {
-    
+    .title {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .category {
+        font-size: 12px;
+    }
+
+    .aspect-ratio-container {
+        width: 100%;
+        padding-top: 175%; /* Maintain 1:1.75 aspect ratio */
+        position: relative;
+    }
+
+    .card {
+        border-radius: 30px;        
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .category {
+        font-size: 12px;
+    }
+
+    .card {
+        margin: 0 32px;
+        border-radius: 30px;    
+    }
 }
 </style>

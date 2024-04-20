@@ -1,14 +1,16 @@
 <template>
     <div class="section">
+        <!-- Background with angled rectangle effect -->
+        <div class="section-background"></div>
+        
         <div class="con">
             <div class="col-s-12 title">
                 <h1>What I've been <span class="secondary-text-color">working on lately</span></h1>
             </div>
-            <!-- <div class="background-overlay"></div> -->
             <div class="cards">
-                <latest-work-card :work=work2></latest-work-card>
-                <latest-work-card :work=work2></latest-work-card>
-                <latest-work-card :work=work3></latest-work-card>
+                <latest-work-card :work="work1"></latest-work-card>
+                <latest-work-card :work="work2"></latest-work-card>
+                <latest-work-card :work="work1"></latest-work-card>
             </div>
         </div>
     </div>
@@ -21,36 +23,32 @@ export default {
     components: {
         LatestWorkCard
     },
-    data(){
+    data() {
         return {
             work1: {
-                imageUrl: "VOID.png",
+                imageUrl: {
+                    small: "VOID_small.png", 
+                    big: "VOID_big.png"
+                }, 
                 title: "Void Engine",
                 subTitle: "Something",
                 categories: [
-                    {value: "S1"}, 
-                    {value: "S1"}, 
-                    {value: "S1"}
+                    { value: "S1" }, 
+                    { value: "S1" }, 
+                    { value: "S1" }
                 ]
             },
             work2: {
-                imageUrl: "VOID.png",
-                title: "Void Engine 2",
+                imageUrl: {
+                    small: "Article_small.png", 
+                    big: "Article_big.png"
+                }, 
+                title: "Structures and Optimization in rendering engines",
                 subTitle: "Something",
                 categories: [
-                    {value: "S1"}, 
-                    {value: "S1"}, 
-                    {value: "S1"}
-                ]
-            },
-            work3: {
-                imageUrl: "VOID.png",
-                title: "Void Engine 3",
-                subTitle: "Something",
-                categories: [
-                    {value: "S1"}, 
-                    {value: "S1"}, 
-                    {value: "S1"}
+                    { value: "Rendering" }, 
+                    { value: "Optimization" }, 
+                    { value: "Article" }
                 ]
             }
         }
@@ -60,7 +58,17 @@ export default {
 
 <style scoped>
 .section {
-    background-color: #F6F6F6;
+    position: relative; /* Required for z-index */
+}
+
+.section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-10deg, transparent 39.9%, #C4A484 40%, #C4A484 50%, transparent 50.1%);
+    z-index: -1;
 }
 
 .con {
@@ -77,20 +85,9 @@ export default {
     flex-direction: column;
 }
 
-.page-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(30deg, transparent 50%, rgba(0, 0, 0, 0.5) 50%);
-  z-index: 2;
-}
-
 @media only screen and (min-width: 1200px) {
     .cards {
         flex-direction: row;
     }
 }
-
 </style>
