@@ -80,14 +80,14 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust opacity as needed */
     opacity: 0;
     transition: opacity 0.2s ease;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 40px;
+    padding: 16px;
     box-sizing: border-box;
 }
 
@@ -127,10 +127,10 @@ export default {
 
 .arrow {
     position: absolute;
-    bottom: 40px;
-    right: 40px;
-    width: 20px;
-    height: 20px;
+    bottom: 16px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;
     transform: rotate(0deg);
