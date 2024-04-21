@@ -28,12 +28,6 @@ export default {
             return this.work.imageUrl.small
         }
     },
-    watch: {
-        isCentered(newValue, oldValue) {
-            this.isCentered = newValue;
-            console.log(newValue);
-        }
-    },
     data() {
         return {
             isCentered: false
