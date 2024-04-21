@@ -1,8 +1,6 @@
 <template>
     <div class="section">
-        <!-- Background with angled rectangle effect -->
-        <div class="section-background"></div>
-        
+        <div class="section-background"></div>        
         <div class="con">
             <div class="col-s-12 title">
                 <h1>What I've been <span class="secondary-text-color">working on lately</span></h1>
@@ -69,21 +67,18 @@ export default {
     width: 100%;
     height: 100%;
     background: linear-gradient(-10deg, transparent 39.9%, #C4A484 40%, #C4A484 50%, transparent 50.1%);
-    z-index: -1;
-}
-
-.con {
-    padding: 96px 15%;
+    z-index: 0;
 }
 
 .title {
     text-align: center;
-    margin: 48px 0px;
+    margin-bottom: 48px;
 }
 
 .cards {
     display: flex;
     flex-direction: column;
+    margin: 0 24px;
 }
 
 @media only screen and (min-width: 1200px) {

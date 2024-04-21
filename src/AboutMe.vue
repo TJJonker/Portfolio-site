@@ -21,10 +21,6 @@ export default { }
 </script>
 
 <style scoped>
-.con {
-    padding: 56px 40px;
-}
-
 .title {
     text-align: center;
     margin-bottom: 48px;
@@ -41,10 +37,10 @@ export default { }
     font-weight: 400;
 }
 
-.justified-text {
-    /* text-align: justify; */
-    /* text-justify: inter-word; */
-}
+/* .justified-text {
+    text-align: justify;
+     text-justify: inter-word;
+} */
 
 .images {
     display: flex;

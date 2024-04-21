@@ -1,6 +1,6 @@
 <template>
     <div class="icons-row mt-4">
-        <a href="#" class="icon-container wiggle" v-for="(icon, index) in icons" :key="index" :style="{ 'animation-delay': 1 + index * 0.2 + 's' }">
+        <a :href=icon.url class="icon-container wiggle" v-for="(icon, index) in icons" :key="index" :style="{ 'animation-delay': 1 + index * 0.2 + 's' }">
             <img class="icon" :src="icon.src" :alt="icon.alt">
         </a>
     </div>
@@ -12,9 +12,9 @@ export default {
     data() {
         return {
             icons: [
-                { src: 'Social IconsLinkedIn.svg', alt: 'LinkedIn' },
-                { src: 'Social IconsGithub.svg', alt: 'Github' },
-                { src: 'Social IconsGoogle.svg', alt: 'Google' }
+                { src: 'Social IconsLinkedIn.svg', alt: 'LinkedIn', url: "https://linkedin.com/in/tj-jonker"},
+                { src: 'Social IconsGithub.svg', alt: 'Github', url: "https://github.com/TJJonker" },
+                { src: 'Social IconsGoogle.svg', alt: 'Google', url: "mailto: tjj.jonker@gmail.com"}
             ]
         };
     }
@@ -71,7 +71,7 @@ export default {
 .arrow {
     position: relative;
     margin-top: 12px;
-    margin-left: 12px;
+    margin-left: 24px;
     max-width: 110px;
 }
 </style>

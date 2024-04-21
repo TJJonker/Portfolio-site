@@ -51,6 +51,7 @@ export default {
     overflow: hidden;
     border-radius: 10px;
     margin-bottom: 24px;
+    border-width: 0;
 }
 
 .aspect-ratio-container {

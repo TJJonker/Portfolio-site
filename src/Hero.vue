@@ -60,8 +60,7 @@ export default {
 .bg-project-primary {
     background: rgb(196,164,132);
     background: linear-gradient(180deg, rgba(196,164,132,1) 0%, rgba(140,108,76,1) 100%);
-    /* overflow: hidden; Hide any overflow content */
-    position: relative; /* Position context for absolutely positioned children */
+    position: relative;
     display: none;
 }
 

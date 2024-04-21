@@ -33,6 +33,10 @@ export default {
     font-weight: 700;
 }
 
+.con {
+    padding: 56px 40px;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 }
