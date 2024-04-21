@@ -97,14 +97,14 @@ export default {
 
 .title {
     color: #fff;
-    font-size: 44px;
+    font-size: 16px;
     font-family: 'Montserrat';
     font-weight: 700;
 }
 
 .subtitle {
     color: #fff;
-    font-size: 32px;
+    font-size: 8px;
     font-family: 'Montserrat';
     font-weight: 400;
 }
@@ -119,10 +119,10 @@ export default {
     background-color: #fff;
     color: #000;
     border-radius: 20px;
-    padding: 5px 10px;
+    padding: 4px 8px;
     margin-right: 4px;
     margin-bottom: 4px;
-    font-size: 22px;
+    font-size: 8px;
 }
 
 .arrow {
