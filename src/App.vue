@@ -1,7 +1,7 @@
 <template>
     <hero></hero>
     <about-me></about-me>
-    <!-- <latest-works></latest-works>  -->
+    <latest-works></latest-works> 
 </template>
 
 <script>

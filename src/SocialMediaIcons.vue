@@ -1,5 +1,5 @@
 <template>
-    <div class="icons-row mt-5">
+    <div class="icons-row mt-4">
         <a href="#" class="icon-container">
             <img class="icon" src="Social IconsLinkedIn.svg" alt="">
         </a>
@@ -22,6 +22,7 @@ export default {
 .icons-row {
     display: inline-grid;
     grid-template-columns: auto auto auto;
+    padding-left: 4px;
 }
 
 .icon-container {
@@ -31,7 +32,7 @@ export default {
 }
 
 .icon {
-    height: 48px;
+    height: 40px;
 }
 
 /* Scale up the icon on hover */

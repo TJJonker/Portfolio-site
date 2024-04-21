@@ -45,11 +45,12 @@ export default {
 
 <style scoped>
 .card {
-    margin: 0 16px;
+    margin: 0 0;
     width: 100%; /* Adjust width as needed */
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    margin-bottom: 24px;
 }
 
 .aspect-ratio-container {

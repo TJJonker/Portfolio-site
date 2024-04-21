@@ -57,7 +57,7 @@ export default { }
 .images img {
     max-height: 100px;
     max-width: 300px;
-    margin-bottom: 12px;
+    margin-top: 24px;
 }
 
 /* @media only screen and (min-width: 1200px) {
