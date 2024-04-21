@@ -13,7 +13,7 @@
                     <img src="Social IconsGithub_light.svg">
                     <img src="Social IconsGoogle_light.svg">
                 </div>
-                <img class="logo" src="Logo_Light.png">
+                <img class="logo" src="Logo_Light.svg">
             </div>
         </div>
     </div>
