@@ -35,7 +35,7 @@ export default {
 }
 
 .row {
-    height: 100vh;
+    height: calc(100vh - 60px);
 }
 
 .description {
