@@ -1,7 +1,7 @@
 <template>
     <hero></hero>
     <about-me></about-me>
-    <latest-works></latest-works>
+    <!-- <latest-works></latest-works>  -->
 </template>
 
 <script>
@@ -28,7 +28,7 @@ export default {
 }
 
 .title h1 {
-    font-size: 64px;
+    font-size: 32px;
     font-family: 'Montserrat';
     font-weight: 700;
 }

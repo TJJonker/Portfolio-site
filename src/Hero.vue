@@ -5,8 +5,7 @@
                 <div class="hero-text-container">
                     <div>
                         <h1 class="name primary-color">Tom Jonker</h1>
-                        <h3 class="description primary-text-color">Engine- and graphics</h3>
-                        <h3 class="description secondary-text-color">programmer</h3>
+                        <h3 class="description primary-text-color">Engine- and graphics <span class="secondary-text-color">programmer</span></h3>
                         <social-media-icons></social-media-icons>
                     </div>
                 </div>
@@ -30,7 +29,7 @@ export default {
 
 <style scoped>
 .name {
-    font-size: 140px;
+    font-size: 72px;
     font-family: 'Montserrat';
     font-weight: 800;
 }
@@ -40,7 +39,7 @@ export default {
 }
 
 .description {
-    font-size: 68px;
+    font-size: 36px;
     font-family: 'Montserrat';
     font-weight: 400;
 }
@@ -48,6 +47,7 @@ export default {
 .hero {
     background-color: #F6F6F6;
     overflow: hidden;
+    padding: 0 40px;
 }
 
 .hero-text-container {
@@ -77,6 +77,12 @@ export default {
 @media only screen and (min-width: 1200px) {
     .bg-project-primary {
         display: block;
+    }
+
+    .name {
+        font-size: 140px;
+        font-family: 'Montserrat';
+        font-weight: 800;
     }
 }
 </style>
