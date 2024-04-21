@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div ref="elementToCheck" :class="{ 'card-mobile-hover': checkCenter() }" class="card">
         <div class="aspect-ratio-container">
             <div class="image-container">
                 <img :src="imageURL" alt="Card Image" class="card-image">
@@ -38,6 +38,27 @@ export default {
         handleResize() {
             // Update image source when window is resized
             this.$forceUpdate();
+        },
+        checkCenter() {
+            console.log(this.$refs);
+            const element = this.$refs.elementToCheck;
+            console.log(element);
+            // const rect = element.getBoundingClientRect();
+            // const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            // // Calculate the center of the viewport
+            // const viewportCenter = viewportHeight / 2;
+
+            // // Calculate the position of the element relative to the viewport
+            // const elementCenter = rect.top + rect.height / 2;
+
+            // // Check if the element is in the center of the viewport
+            // if (Math.abs(viewportCenter - elementCenter) < viewportHeight / 4) {
+            //     console.log('Element is in the center of the viewport');
+            // } else {
+            //     console.log('Element is not in the center of the viewport');
+            // }
+            return false;
         }
     }
 }
@@ -92,6 +113,10 @@ export default {
 }
 
 .card:hover .image-overlay {
+    /* opacity: 1; */
+}
+
+.card-mobile-hover .image-overlay {
     opacity: 1;
 }
 
