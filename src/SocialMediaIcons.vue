@@ -1,9 +1,10 @@
 <template>
     <div class="icons-row mt-4">
-        <a href="#" class="icon-container wiggle" v-for="(icon, index) in icons" :key="index" :style="{ 'animation-delay': index * 0.2 + 's' }">
+        <a href="#" class="icon-container wiggle" v-for="(icon, index) in icons" :key="index" :style="{ 'animation-delay': 1 + index * 0.2 + 's' }">
             <img class="icon" :src="icon.src" :alt="icon.alt">
         </a>
     </div>
+    <img class="arrow" src="ArrowGetInTouch.png" alt="">
 </template>
 
 <script>
@@ -65,5 +66,12 @@ export default {
 
 .icon-container.wiggle {
     animation: wiggle 0.5s; /* Adjust duration as needed */
+}
+
+.arrow {
+    position: relative;
+    margin-top: 12px;
+    margin-left: 12px;
+    max-width: 110px;
 }
 </style>
