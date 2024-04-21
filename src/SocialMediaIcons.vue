@@ -1,21 +1,23 @@
 <template>
     <div class="icons-row mt-4">
-        <a href="#" class="icon-container">
-            <img class="icon" src="Social IconsLinkedIn.svg" alt="">
-        </a>
-        <a href="#" class="icon-container">
-            <img class="icon" src="Social IconsGithub.svg" alt="">
-        </a>
-        <a href="#" class="icon-container">
-            <img class="icon" src="Social IconsGoogle.svg" alt="">
+        <a href="#" class="icon-container wiggle" v-for="(icon, index) in icons" :key="index" :style="{ 'animation-delay': index * 0.2 + 's' }">
+            <img class="icon" :src="icon.src" :alt="icon.alt">
         </a>
     </div>
 </template>
 
 <script>
 export default {
-
-}
+    data() {
+        return {
+            icons: [
+                { src: 'Social IconsLinkedIn.svg', alt: 'LinkedIn' },
+                { src: 'Social IconsGithub.svg', alt: 'Github' },
+                { src: 'Social IconsGoogle.svg', alt: 'Google' }
+            ]
+        };
+    }
+};
 </script>
 
 <style scoped>
@@ -26,7 +28,7 @@ export default {
 }
 
 .icon-container {
-    display: inline-block;
+    display: inline-block; 
     margin-right: 48px;
     transition: transform 0.1s ease-in-out; /* Add transition for smooth animation */
 }
@@ -38,5 +40,30 @@ export default {
 /* Scale up the icon on hover */
 .icon-container:hover {
     transform: scale(1.3); /* Adjust scale factor as needed */
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    40% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(-5deg);
+    }
+    80% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg); /* Rotate back to 0 degrees */
+    }
+}
+
+.icon-container.wiggle {
+    animation: wiggle 0.5s; /* Adjust duration as needed */
 }
 </style>

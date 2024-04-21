@@ -22,12 +22,12 @@ export default { }
 
 <style scoped>
 .con {
-    padding: 0px 40px;
+    padding: 56px 40px;
 }
 
 .title {
     text-align: center;
-    margin: 48px 0px;
+    margin-bottom: 48px;
 }
 
 .content {
@@ -57,7 +57,7 @@ export default { }
 .images img {
     max-height: 100px;
     max-width: 300px;
-    margin-top: 24px;
+    margin-top: 32px;
 }
 
 /* @media only screen and (min-width: 1200px) {

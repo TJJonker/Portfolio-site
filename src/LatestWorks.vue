@@ -59,6 +59,7 @@ export default {
 <style scoped>
 .section {
     position: relative; /* Required for z-index */
+    background-color: #F6F6F6;
 }
 
 .section-background {
