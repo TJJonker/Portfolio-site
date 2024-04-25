@@ -1,5 +1,6 @@
 <template>
-    <div ref="elementToCheck" :class="{'card-mobile-hover': this.isCentered}" class="card">
+    <!-- <div ref="elementToCheck" :class="{'card-mobile-hover': this.isCentered}" class="card"> -->
+    <div ref="elementToCheck" class="card">
         <div class="aspect-ratio-container">
             <div class="image-container">
                 <img :src="imageURL" alt="Card Image" class="card-image">
@@ -23,8 +24,8 @@ export default {
     props: ['work'],
     computed: {
         imageURL() {
-            if(window.innerWidth > 1200)
-                return this.work.imageUrl.big
+            if(window.innerWidth > 1200) 
+                return this.work.imageUrl.big 
             return this.work.imageUrl.small
         }
     },
@@ -35,12 +36,12 @@ export default {
     },
     mounted() {
         window.addEventListener('resize', this.handleResize);
-        window.addEventListener('scroll', this.checkCenter);
-        this.checkCenter();
+        //window.addEventListener('scroll', this.checkCenter);
+        //this.checkCenter();
     },
     destroyed() {
         window.removeEventListener('resize', this.handleResize);
-        window.removeEventListener('scroll', this.checkCenter);
+        //window.removeEventListener('scroll', this.checkCenter);
     },
     methods: {
         handleResize() {
