@@ -110,6 +110,7 @@ export default {
   background-color: #142429;
   color: white;
   margin-top: 12px;
+  box-shadow: -3px 3px rgb(0, 0, 0, .15);
 }
 
 .cards {
