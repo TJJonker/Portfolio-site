@@ -107,10 +107,12 @@ export default {
 }
 
 .button {
-  background-color: #142429;
+  background-color: #C4A484;
   color: white;
   margin-top: 12px;
-  box-shadow: -3px 3px rgb(0, 0, 0, .15);
+  box-shadow: -2px 2px rgb(0, 0, 0, .15);
+  font-family: 'Montserrat';
+  font-weight: 500;
 }
 
 .cards {
