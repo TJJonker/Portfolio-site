@@ -1,20 +1,24 @@
 <template>
-<div v-html="markdownToHtml"></div>
+<div v-html="markedContent"></div>
 </template>
 
 <script>
 import {marked} from 'marked';
 
 export default {
-    data() {
-        return {
-            markdown: "",
-        };
+    data() { return {
+        markedContent: ""
+    }
     },
-    computed: {
-        markdownToHtml() {
-            return marked(this.markdown);
+    methods: {
+        async GetContent() {
+            let res = await fetch('sampleProject.md');
+            let data = await res.text();
+            this.markedContent = marked(data);
         }
+    },
+    mounted() {
+        this.GetContent();
     }
 }
 </script>

@@ -5,7 +5,7 @@ import ProjectPage from './ProjectPage';
 const router = createRouter({
     history: createWebHashHistory(),
     routes: [
-        {path: '/', component: ProjectPage}
+        { path: '/', component: ProjectPage }
     ]
 });
 
