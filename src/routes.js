@@ -1,13 +1,13 @@
-import {createRouter, createWebHashHistory } from 'vue-router'
+import {createRouter, createWebHistory } from 'vue-router'
 import Topbar from './Components/Topbar'
 import Home from './Pages/Home';
 import Project from './Pages/Project.vue'
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes: [
         { 
-            path: '/', 
+            path: '', 
             redirect: 'Home', 
             component: Topbar,
             children: [
