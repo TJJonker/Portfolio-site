@@ -9,12 +9,12 @@ const router = createRouter({
     routes: [
         {  
             path: '', 
-            redirect: 'Home', 
+            redirect: '/Home', 
             component: Topbar,
             children: [
-                { path: 'Home', component: Home },
-                { path: 'projects', component: ProjectsOverview },
-                { path: 'projects/:index', component: Project, props: true }
+                { path: '/Home', component: Home },
+                { path: '/projects', component: ProjectsOverview },
+                { path: '/projects/:index', component: Project, props: true }
             ]
         } 
     ]
