@@ -9,8 +9,8 @@
             <p>I've started writing articles and documenting my research and projects. Curious to find out what I've made? </p>
         </div>
         <div class="col-sm-12 col-xl-3 images">
-            <img src="Fanshawe.png" alt="">
-            <img src="HvA.png" alt="">
+            <img src="Images/Misc/Fanshawe.png" alt="">
+            <img src="Images/Misc/HvA.png" alt="">
         </div>
     </div>
 </div>

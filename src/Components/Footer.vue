@@ -9,11 +9,11 @@
                     <p>Resume</p>
                 </div>
                 <div class="social-media">
-                    <img src="Social IconsLinkedIn_light.svg">
-                    <img src="Social IconsGithub_light.svg">
-                    <img src="Social IconsGoogle_light.svg">
+                    <img src="Images/Icons/Light/LinkedIn.svg">
+                    <img src="Images/Icons/Light/Github.svg">
+                    <img src="Images/Icons/Light/Google.svg">
                 </div>
-                <img class="logo" src="Logo_Light.svg">
+                <img class="logo" src="Images/Logo/Logo_Light.svg">
             </div>
         </div>
     </div>

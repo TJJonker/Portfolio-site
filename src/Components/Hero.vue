@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="col-xl-4 bg-project-primary">
-                <img src="Hero-picture.png" alt="">
+                <img src="Images/Misc/Hero-picture.png" alt="">
             </div>
         </div>
     </div>

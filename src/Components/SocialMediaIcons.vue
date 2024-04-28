@@ -4,7 +4,7 @@
             <img class="icon" :src="icon.src" :alt="icon.alt">
         </a>
     </div>
-    <img class="arrow" src="ArrowGetInTouch.png" alt="">
+    <img class="arrow" src="Images/Misc/ArrowGetInTouch.png" alt="">
 </template>
 
 <script>
@@ -12,9 +12,9 @@ export default {
     data() {
         return {
             icons: [
-                { src: 'Social IconsLinkedIn.svg', alt: 'LinkedIn', url: "https://linkedin.com/in/tj-jonker"},
-                { src: 'Social IconsGithub.svg', alt: 'Github', url: "https://github.com/TJJonker" },
-                { src: 'Social IconsGoogle.svg', alt: 'Google', url: "mailto: tjj.jonker@gmail.com"}
+                { src: 'Images/Icons/Dark/LinkedIn.svg', alt: 'LinkedIn', url: "https://linkedin.com/in/tj-jonker"},
+                { src: 'Images/Icons/Dark/Github.svg', alt: 'Github', url: "https://github.com/TJJonker" },
+                { src: 'Images/Icons/Dark/Google.svg', alt: 'Google', url: "mailto: tjj.jonker@gmail.com"}
             ]
         };
     }

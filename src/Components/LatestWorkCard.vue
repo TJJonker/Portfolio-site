@@ -1,7 +1,7 @@
 <template>
     <div ref="elementToCheck" :class="{'card-mobile-hover': this.isCentered}" class="card">
         <div ref="elementToCheck">
-            <router-link :to="'Project'">
+            <router-link :to="'Projects/0'">
             <div class="aspect-ratio-container">
                 <div class="image-container">
                     <img :src="imageURL" alt="Card Image" class="card-image">
@@ -27,10 +27,9 @@ export default {
     props: ['project'],
     computed: {
         imageURL() {
-            console.log(this.project)
             if(window.innerWidth > 1200) 
-                return 'Projects/' + this.project.ImagesFolder + '/Big.png'
-            return 'Projects/' + this.project.ImagesFolder + '/Small.png'
+                return 'Projects/' + this.project.ContentFolder + '/Big.png'
+            return 'Projects/' + this.project.ContentFolder + '/Small.png'
         }
     },
     data() {
@@ -55,25 +54,25 @@ export default {
         checkCenter() {
             const element = this.$refs.elementToCheck;
             try {
-            const rect = element.getBoundingClientRect();
-            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+                const rect = element.getBoundingClientRect();
+                const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-            // Calculate the center of the viewport
-            const viewportCenter = viewportHeight / 2;
+                // Calculate the center of the viewport
+                const viewportCenter = viewportHeight / 2;
 
-            // Calculate the position of the element relative to the viewport
-            const elementCenter = rect.top + rect.height / 2;
+                // Calculate the position of the element relative to the viewport
+                const elementCenter = rect.top + rect.height / 2;
 
-            // Check if the element is in the center of the viewport
-            if (Math.abs(viewportCenter - elementCenter) < viewportHeight / 9) {
-                this.isCentered = true;
-            } else {
-                this.isCentered = false;
+                // Check if the element is in the center of the viewport
+                if (Math.abs(viewportCenter - elementCenter) < viewportHeight / 9) {
+                    this.isCentered = true;
+                } else {
+                    this.isCentered = false;
+                }
             }
-        }
-        catch {
+            catch {
 
-        }
+            }
         }
     }
 }

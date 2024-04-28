@@ -1,31 +1,43 @@
 <template>
-<div class="con">
-    <router-link style="text-decoration: none;" :to="'Home'">
+<div v-if="project != null" class="con">
+    <router-link style="text-decoration: none;" :to="'/Home'">
         <p class="link-text">< Projects</p>
     </router-link>
 
-    <img class="banner" src="VOID_Banner.png" />
+    <img class="banner" :src="BannerUrl" />
     
     <div class="category-container">
-        <p v-for="category in categories" class="category">{{ category }}</p>
+        <p v-for="category in project.Categories" class="category">{{ category }}</p>
     </div>
     
-    <project-markdown></project-markdown>
+    <project-markdown :file-path="MarkdownUrl"></project-markdown>
 </div>
 </template>
 
 <script>
 import ProjectMarkdown from '@/Components/ProjectMarkdown.vue';
+import {inject} from 'vue';
 
 export default {
+    props: ['index'],
     components: {
         ProjectMarkdown
     },
     data() {
         return {
-            categories: [
-                "Engine", "Rendering", "ECS", "Physics"
-            ]
+            project: null
+        }
+    }, 
+    async created() {
+        const projects = inject('$projects');
+        this.project = await projects.GetProject(this.index);
+    },
+    computed: {
+        BannerUrl() {
+            return "/Projects/" + this.project.ContentFolder + "/Banner.png";
+        },
+        MarkdownUrl() {
+            return "/Projects/" + this.project.ContentFolder + "/Content.md";
         }
     }
 }
