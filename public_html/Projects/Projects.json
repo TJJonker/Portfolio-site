@@ -1,0 +1,12 @@
+{
+    "Projects": [
+        {
+            "Categories": ["Article", "Engine", "Architecture", "Optimization"],
+            "ImagesFolder": "RenderingArchitectureArticle",
+            "Preview": {
+                "Title": "Structure and Optimization in Engines",
+                "Subtitle": "A look at commonly used optimization techniques and structural patterns used in Rendering Engines."
+            }
+        }
+    ]
+}

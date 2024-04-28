@@ -7,9 +7,9 @@
       </div>
       <div class="cards">
         <latest-work-card
-          v-for="(work, index) in works"
+          v-for="(project, index) in projects"
           :key="index"
-          :work="work"
+          :project="project"
         ></latest-work-card>
       </div>
       <div class="button-flex">
@@ -21,6 +21,7 @@
 
 <script>
 import LatestWorkCard from './LatestWorkCard.vue';
+import {inject} from 'vue';
 
 export default {
   components: {
@@ -28,49 +29,16 @@ export default {
   },
   data() {
     return {
-      works: [
-        {
-          imageUrl: {
-            small: "VOID_small.png",
-            big: "VOID_big.png",
-          },
-          title: "Void Engine",
-          subTitle: "Something",
-          categories: [
-            { value: "S1" },
-            { value: "S1" },
-            { value: "S1" },
-          ],
-        },
-        {
-          imageUrl: {
-            small: "Article_small.png",
-            big: "Article_big.png",
-          },
-          title: "Structures and Optimization in rendering engines",
-          subTitle: "Something",
-          categories: [
-            { value: "Rendering" },
-            { value: "Optimization" },
-            { value: "Article" },
-          ],
-        },
-        {
-          imageUrl: {
-            small: "VOID_small.png",
-            big: "VOID_big.png",
-          },
-          title: "Void Engine",
-          subTitle: "Something",
-          categories: [
-            { value: "S1" },
-            { value: "S1" },
-            { value: "S1" },
-          ], 
-        }
-      ],
+      projects: []
     };
-  }    
+  },
+  async created() {
+    const projects = inject('$projects');
+    for (let i = 0; i < 3; i++) {
+      const res = await projects.GetProject(0);
+      this.projects.push(res);
+    }
+  }
 };
 </script>
 

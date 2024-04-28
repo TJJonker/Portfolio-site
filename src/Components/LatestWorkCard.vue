@@ -1,17 +1,17 @@
 <template>
-    <!-- <div ref="elementToCheck" :class="{'card-mobile-hover': this.isCentered}" class="card"> -->
-        <div ref="elementToCheck" class="card">
+    <div ref="elementToCheck" :class="{'card-mobile-hover': this.isCentered}" class="card">
+        <div ref="elementToCheck">
             <router-link :to="'Project'">
             <div class="aspect-ratio-container">
                 <div class="image-container">
                     <img :src="imageURL" alt="Card Image" class="card-image">
                     <div class="image-overlay">
                         <div>
-                            <h2 class="title">{{ work.title }}</h2>
-                            <p class="subtitle"> {{ work.subTitle }} </p>
+                            <h2 class="title">{{ project.Preview.Title }}</h2>
+                            <p class="subtitle"> {{ project.Preview.Subtitle }} </p>
                         </div>
                         <div class="category-container">
-                            <span v-for="category in work.categories" class="category">{{ category.value }}</span>
+                            <span v-for="category in project.Categories" class="category">{{ category }}</span>
                         </div>
                         <div class="arrow"></div>
                     </div>
@@ -19,16 +19,18 @@
             </div>
         </router-link>
         </div>
+    </div>
 </template>
 
 <script>
 export default {
-    props: ['work'],
+    props: ['project'],
     computed: {
         imageURL() {
+            console.log(this.project)
             if(window.innerWidth > 1200) 
-                return this.work.imageUrl.big 
-            return this.work.imageUrl.small
+                return 'Projects/' + this.project.ImagesFolder + '/Big.png'
+            return 'Projects/' + this.project.ImagesFolder + '/Small.png'
         }
     },
     data() {
@@ -38,12 +40,12 @@ export default {
     },
     mounted() {
         window.addEventListener('resize', this.handleResize);
-        //window.addEventListener('scroll', this.checkCenter);
-        //this.checkCenter();
+        window.addEventListener('scroll', this.checkCenter);
+        this.checkCenter();
     },
     destroyed() {
         window.removeEventListener('resize', this.handleResize);
-        //window.removeEventListener('scroll', this.checkCenter);
+        window.removeEventListener('scroll', this.checkCenter);
     },
     methods: {
         handleResize() {
@@ -52,6 +54,7 @@ export default {
         },
         checkCenter() {
             const element = this.$refs.elementToCheck;
+            try {
             const rect = element.getBoundingClientRect();
             const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
@@ -67,6 +70,10 @@ export default {
             } else {
                 this.isCentered = false;
             }
+        }
+        catch {
+
+        }
         }
     }
 }
@@ -152,7 +159,7 @@ export default {
     background-color: #fff;
     color: #000;
     border-radius: 20px;
-    padding: 4px 8px;
+    padding: 2px 4px;
     margin-right: 4px;
     margin-bottom: 4px;
     font-size: 8px;
