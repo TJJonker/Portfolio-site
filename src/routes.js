@@ -1,11 +1,24 @@
 import {createRouter, createWebHashHistory } from 'vue-router'
-import Home from './Home';
-import ProjectPage from './ProjectPage';
+import Topbar from './Components/Topbar'
+import Home from './Pages/Home';
+import Project from './Pages/Project.vue'
 
 const router = createRouter({
     history: createWebHashHistory(),
     routes: [
-        { path: '/', component: ProjectPage }
+        { 
+            path: '/', 
+            redirect: 'Home', 
+            component: Topbar,
+            children: [
+                { path: 'Home', component: Home },
+            ]
+        },
+        
+        
+        
+        
+        //{path: '/projects/:index?', component: ProjectMarkup}
     ]
 });
 

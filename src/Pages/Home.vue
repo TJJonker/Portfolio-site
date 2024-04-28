@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import Hero from './Hero.vue';
-import AboutMe from './AboutMe.vue';
-import LatestWorks from './LatestWorks.vue';
-import Footer from './Footer.vue';
+import Hero from '@/Components/Hero.vue';
+import AboutMe from '@/Components/AboutMe.vue';
+import LatestWorks from '@/Components/LatestWorks.vue';
+import Footer from '@/Components/Footer.vue';
 
 export default {
     components: {

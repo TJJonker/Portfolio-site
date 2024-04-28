@@ -18,12 +18,6 @@ export default {
     color: #C4A484;
 }
 
-.title h1 {
-    font-size: 32px;
-    font-family: 'Montserrat';
-    font-weight: 700;
-}
-
 .con {
     padding: 56px 40px;
 }
