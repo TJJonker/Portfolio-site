@@ -1,22 +1,24 @@
 <template>
     <!-- <div ref="elementToCheck" :class="{'card-mobile-hover': this.isCentered}" class="card"> -->
-    <div ref="elementToCheck" class="card">
-        <div class="aspect-ratio-container">
-            <div class="image-container">
-                <img :src="imageURL" alt="Card Image" class="card-image">
-                <div class="image-overlay">
-                    <div>
-                        <h2 class="title">{{ work.title }}</h2>
-                        <p class="subtitle"> {{ work.subTitle }} </p>
+        <div ref="elementToCheck" class="card">
+            <router-link :to="'Project'">
+            <div class="aspect-ratio-container">
+                <div class="image-container">
+                    <img :src="imageURL" alt="Card Image" class="card-image">
+                    <div class="image-overlay">
+                        <div>
+                            <h2 class="title">{{ work.title }}</h2>
+                            <p class="subtitle"> {{ work.subTitle }} </p>
+                        </div>
+                        <div class="category-container">
+                            <span v-for="category in work.categories" class="category">{{ category.value }}</span>
+                        </div>
+                        <div class="arrow"></div>
                     </div>
-                    <div class="category-container">
-                        <span v-for="category in work.categories" class="category">{{ category.value }}</span>
-                    </div>
-                    <div class="arrow"></div>
                 </div>
             </div>
+        </router-link>
         </div>
-    </div>
 </template>
 
 <script>

@@ -12,13 +12,9 @@ const router = createRouter({
             component: Topbar,
             children: [
                 { path: 'Home', component: Home },
+                { path: 'project', component: Project}
             ]
-        },
-        
-        
-        
-        
-        //{path: '/projects/:index?', component: ProjectMarkup}
+        }
     ]
 });
 
