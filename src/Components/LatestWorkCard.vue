@@ -1,23 +1,23 @@
 <template>
-    <div ref="elementToCheck" :class="{'card-mobile-hover': this.isCentered}" class="card">
-        <div ref="elementToCheck">
-            <router-link :to="'Projects/' + index">
-            <div class="aspect-ratio-container">
-                <div class="image-container">
-                    <img :src="imageURL" alt="Card Image" class="card-image">
-                    <div class="image-overlay">
-                        <div>
-                            <h2 class="title">{{ project.Preview.Title }}</h2>
-                            <p class="subtitle"> {{ project.Preview.Subtitle }} </p>
+    <div ref="elementToCheck" class="rectbox">
+        <div :class="{'card-mobile-hover': this.isCentered}" class="card">
+                <router-link :to="'Projects/' + index">
+                <div class="aspect-ratio-container">
+                    <div class="image-container">
+                        <img :src="imageURL" alt="Card Image" class="card-image">
+                        <div class="image-overlay">
+                            <div>
+                                <h2 class="title">{{ project.Preview.Title }}</h2>
+                                <p class="subtitle"> {{ project.Preview.Subtitle }} </p>
+                            </div>
+                            <div class="category-container">
+                                <span v-for="category in project.Categories" class="category">{{ category }}</span>
+                            </div>
+                            <div class="arrow"></div>
                         </div>
-                        <div class="category-container">
-                            <span v-for="category in project.Categories" class="category">{{ category }}</span>
-                        </div>
-                        <div class="arrow"></div>
                     </div>
                 </div>
-            </div>
-        </router-link>
+            </router-link>
         </div>
     </div>
 </template>
@@ -60,11 +60,8 @@ export default {
                 // Calculate the center of the viewport
                 const viewportCenter = viewportHeight / 2;
 
-                // Calculate the position of the element relative to the viewport
-                const elementCenter = rect.top + rect.height / 2;
-
                 // Check if the element is in the center of the viewport
-                if (Math.abs(viewportCenter - elementCenter) < viewportHeight / 9) {
+                if (rect.top < viewportCenter && rect.top + rect.height > viewportCenter) {
                     this.isCentered = true;
                 } else {
                     this.isCentered = false;
@@ -79,13 +76,17 @@ export default {
 </script>
 
 <style scoped>
+
+.rectbox {
+    padding: 12px 0 12px 0;
+}
+
 .card {
     margin: 0 0;
     width: 100%; /* Adjust width as needed */
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    margin-bottom: 24px;
     border-width: 0;
 }
 
