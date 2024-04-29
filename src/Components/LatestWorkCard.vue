@@ -1,7 +1,7 @@
 <template>
     <div ref="elementToCheck" :class="{'card-mobile-hover': this.isCentered}" class="card">
         <div ref="elementToCheck">
-            <router-link :to="'Projects/0'">
+            <router-link :to="'Projects/' + index">
             <div class="aspect-ratio-container">
                 <div class="image-container">
                     <img :src="imageURL" alt="Card Image" class="card-image">
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-    props: ['project'],
+    props: ['project', 'index'],
     computed: {
         imageURL() {
             if(window.innerWidth > 1200) 

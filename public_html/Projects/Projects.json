@@ -7,6 +7,22 @@
                 "Title": "Structure and Optimization in Engines",
                 "Subtitle": "A look at commonly used optimization techniques and structural patterns used in Rendering Engines."
             }
+        },
+        {
+            "Categories": ["Engine", "ECS", "Rendering", "Physics", "Audio"],
+            "ContentFolder": "Void",
+            "Preview": {
+                "Title": "Void - Game Engine",
+                "Subtitle": "A game engine built with OpenGL and C++, complete with a self-made physics solution and an FMOD integration, that was created for my exchange to Canada's Fanshawe College. "
+            }
+        },
+        {
+            "Categories": ["Networking", "Database", "Server/Client", "Validation"],
+            "ContentFolder": "ChatProgram",
+            "Preview": {
+                "Title": "Client/Server Chat Program",
+                "Subtitle": "A networking project that functions as a Hello World project for C++'s networking library, databases, and client/server programs."
+            }
         }
     ]
 }

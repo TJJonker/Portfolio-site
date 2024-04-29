@@ -9,6 +9,7 @@
         <latest-work-card
           v-for="(project, index) in projects"
           :key="index"
+          :index="index"
           :project="project"
         ></latest-work-card>
       </div>
@@ -35,7 +36,7 @@ export default {
   async created() {
     const projects = inject('$projects');
     for (let i = 0; i < 3; i++) {
-      const res = await projects.GetProject(0);
+      const res = await projects.GetProject(i);
       this.projects.push(res);
     }
   }
