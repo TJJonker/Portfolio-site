@@ -4,7 +4,8 @@
 
 <script>
 import {marked} from 'marked';
-import prism from 'prismjs';
+import Prism from 'prismjs';
+import "prismjs/themes/prism.css";
 
 export default {
     props: ['filePath'],
@@ -19,18 +20,16 @@ export default {
             this.markedContent = marked(data);
 
             this.$nextTick(() => {
-                prism.highlightAll();
+                window.Prism = window.Prism || {};
+                window.Prism.manual = true;
+                Prism.highlightAll();
             });
         }
     }, 
     mounted() {
         this.GetContent();
-
     },
-    destroyed() {
-
-    }
-}
+} 
 </script>
 
 <style>
@@ -46,7 +45,7 @@ export default {
 .markdown-content h2 {
     font-size: 28px;
     font-weight: 500;
-    margin: 24px 0px 12px 0px;
+    margin: 40px 0px 12px 0px;
 }
 
 .markdown-content h3 {
@@ -62,6 +61,15 @@ export default {
 .markdown-content p {
     font-size: 16px;
     font-weight: 500;
+}
+
+.markdown-content img {
+    width: 100%;
+}
+
+.markdown-content blockquote p {
+    font-size: 12px;
+    text-decoration: none;
 }
 
 </style>

@@ -23,8 +23,9 @@ Since our engine will be a static codebase, all functionality will be used, and 
 ### Entry point
 While maintaining the separation between the two codebases, we still need a way to communicate. A conventional approach is to treat the library as precisely that—a library. Accessing the library involves calling a function that executes the requested action. This way, our project retains control over its lifespan while the library follows its commands.
 
+![Entry point diagram](/Projects/RenderingArchitectureArticle/EntryPoint.png)
+> Figure 1: Entry point implementation.
 
-Figure 1: Entry point implementation.
 Another interesting approach, and the one used in the project because it’s primarily used in rendering engines, involves handing the project’s lifespan over to the engine. Often, lifetime exhibits a degree of uniformity across projects, resulting in boilerplate code. By incorporating this into the engine itself, rather than leaving it to the user, the setup process becomes more straightforward and less susceptible to errors. One way to implement this is shown in Figure 1, where the Application and EntryPoint classes are part of the engine and the SandboxApplication part of the user’s software. By defining the CreateApplication to return a pointer to the SandboxApplication, the engine will create an instance of the SandboxApplication class, employing that as a starting point.
 
 The Application class could also seamlessly serve as a nexus for various types of functionality, such as an event system, which could allow the user’s projects to listen to events without resorting to polling.
@@ -39,14 +40,13 @@ When using a single API, we can completely focus on the specific API we’re usi
 
 Examples of these classes are an index buffer, vertex buffer, vertex buffer layout, and vertex array class. All these classes result from combining multiple lines of modular API code, which we can shape to our liking. Wrapping these with a method and changing the properties based on the method’s argument will make them easier to understand and work with. Take the following code snippet as an example and compare it with the function we call instead. Calling the function improves the readability and reduces the likelihood of errors.
 
-``` cpp 
+``` javascript 
 	OpenGLIndexBuffer::OpenGLIndexBuffer(const uint32_t* vertices, const uint32_t size)
 	{
 		glGenBuffers(1, &m_ID);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ID);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, size * sizeof(uint32_t), vertices, GL_STATIC_DRAW);
 	}
-
 ```    
 
 #### Multiple APIs
@@ -56,12 +56,13 @@ To effectively support multiple APIs, we have to find a way to write code that a
 
 Creating something like that is called abstraction. Abstraction eliminates the need to have knowledge of the implementation in order to use a specific functionality. As mentioned in Thorben’s article, “Making coffee with a coffee machine is a good example of abstraction. You need to know how to use your coffee machine to make coffee. … You don’t need to know the ideal temperature of the water or the amount of ground coffee you need to use. Someone else worried about that and created a coffee machine that now acts as an abstraction and hides all these details. You interact with a simple interface that doesn’t require any knowledge about the internal implementation.” (Janssen, 2024)
 
+![Non abstraction](/Projects/RenderingArchitectureArticle/NonAbstraction.png)
+![Abstraction](/Projects/RenderingArchitectureArticle/Abstraction.png)
+> Figure 2: The upper diagram shows an implementation without abstraction. The lower diagram shows an example of an.
 
-
-Figure 2: The left shows an implementation without abstraction. The right shows an example of an implementation with abstraction.
 The idea is to create an abstract class that will serve as the simplified interface for the rest of the project and an implementation class that derives from this abstract class. As the code snippet below illustrates, the abstract class will contain a Create function backed by a factory pattern that determines which implementation class instance is returned. The project calls a function from the abstract class and doesn’t have to care about the implementation. This becomes especially useful when multiple implementation classes are inherited from the abstract class. The difference between abstracted code and non-abstracted code is shown in Figure 2, with an external library as an example.
 
-``` cpp
+``` javascript
 Foo* Foo::Create()
 {
 #ifdef Implementation1
@@ -89,14 +90,16 @@ Of course, the solution is to allow the import and usage of external models and 
 
 We could create a library structure in which each asset type has a corresponding library containing asset-specific data, which we can load into memory, store in the library, and retrieve on request. An example can be found in Figure 3. Here, we could also make use of a file manager to check whether a certain file exists, create files, read and write, and perform other potential functions.
 
+![Simple asset manager](/Projects/RenderingArchitectureArticle/SimpleAssetManager.png)
+> Figure 3: Simple asset manager system.
 
-Figure 3: Simple asset manager system.
 This is more than suitable for the current scope, so this is the approach taken in the codebase. We don’t have to care much about duplicate asset data in memory or not having a manageable centralized asset manager. However, the search for potential alternatives never hurts someone.
 
 If you follow the SoC really carefully, you could say the libraries are still doing multiple things. They import, process, and store the asset data. We could also argue that there are circumstances where two libraries use the same set of data but, due to not being able to communicate, will both load the data into memory themselves, resulting in duplicate data in memory. A solution to this problem is the addition of a centralized asset manager between the FileManager and the independent libraries, which will serve as the importer and memory manager, while the libraries will function as interpreters and access points for the rest of the project. This concept is illustrated in Figure 4.
 
+![Centralized asset manager](/Projects/RenderingArchitectureArticle/CentralizedAssetManager.png)
+> Figure 4: Asset libraries making use of a centralized asset manager.
 
-Figure 4: Asset libraries making use of a centralized asset manager.
 Ideally, we should only be able to communicate with the centralized asset manager through the individual libraries, both for safety and ease of use. We could make the centralized asset manager a singleton, but this defeats the idea of not being able to access it. Instead, we could look at dependency injection when the project starts up. Since that deviates too much from the current topic, I’ll add a link to an article that summarizes the concept of dependency injection pretty well at the end of this article.
 
 ### Rendering Pipeline
@@ -107,8 +110,9 @@ The most straightforward pipeline can be created as a rendering class. Here, we 
 #### Batching
 A common solution is batching. Batching is the act of combining mesh data into a single mesh and drawing that to the window. The advantage is the reduction in draw calls, improving the overall performance of our rendering pipeline. (Krzeminski, 2014)
 
+![Simple batching solution](/Projects/RenderingArchitectureArticle/SimpleBatching.png)
+> Figure 5: Simple batch structure.
 
-Figure 5: Simple batch structure.
 At the moment, we render our models immediately to the window. If we’re planning to use batching, we need to rethink this approach. Since batching requires us to sort our models based on their shader, we need to store the render requests in a list so we can access them when we’re planning to batch the models. Instead of creating a function called ‘Render,’ we can create a function called ‘Submit’ that submits the render request to the batcher, which will store all the requests in a list until the batch function is called. After batching, we request the batches from the batcher and create draw calls with these batches. This process is illustrated in Figure 5.
 
 Batching comes in multiple forms, but all have the same goal: reducing draw calls. A couple of examples are general batching, as displayed above; static batching, which keeps track of static objects and caches their properties to increase render performance; and instance batching, which collects all the same models and batches, turns them into an instanced batch and uses GPU instancing to render them with high performance. All of these use the same structure but a different implementation. We can also use batching to gather models that use blending effectively, sort them from back to front, and render them in a different render pass in order to achieve transparent and opaque renders.
@@ -122,8 +126,9 @@ For the current scope, this is great, but sending the same data to different sha
 
 Combining all these techniques, we are able to create a simple scene effectively backed by ith a solid code structure. Although it might not seem like much, we can easily expand upon this codebase and add new modules and rendering techniques.
 
-
+[Final render](/Projects/RenderingArchitectureArticle/FinalRender.png)
 Figure 6: Final render complete with simple lighting, model importing, and a skybox.
+
 ## Conclusion
 With this codebase, we can render imported assets to any Windows-operated window, complete with a simple lighting model and a solid base to expand upon easily. We can write our own shader logic to make custom visuals and play around with some of the rendering pipeline settings. We’ve also looked into some commonly used structural patterns, which we’ve used to improve the readability and quality of the codebase. We’ve also looked into some interesting improvements and alternatives for some of our implementations, which should give you a headstart with creating your own rendering engine or even a game engine.
 
