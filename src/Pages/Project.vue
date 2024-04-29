@@ -64,7 +64,7 @@ export default {
     padding: 4px 8px;
     margin-right: 4px;
     margin-top: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
     font-size: 8px;
 }
 </style>
