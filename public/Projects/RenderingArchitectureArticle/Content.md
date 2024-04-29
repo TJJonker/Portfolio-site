@@ -126,7 +126,7 @@ For the current scope, this is great, but sending the same data to different sha
 
 Combining all these techniques, we are able to create a simple scene effectively backed by ith a solid code structure. Although it might not seem like much, we can easily expand upon this codebase and add new modules and rendering techniques.
 
-[Final render](/Projects/RenderingArchitectureArticle/FinalRender.png)
+![Final render](/Projects/RenderingArchitectureArticle/FinalRender.png)
 Figure 6: Final render complete with simple lighting, model importing, and a skybox.
 
 ## Conclusion

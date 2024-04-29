@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory } from 'vue-router'
-import Topbar from './Components/Topbar'
+import Outline from './Components/Outline'
 import Home from './Pages/Home';
 import Project from './Pages/Project.vue'
 import ProjectsOverview from './Pages/ProjectsOverview.vue'
@@ -10,7 +10,7 @@ const router = createRouter({
         {  
             path: '', 
             redirect: '/Home', 
-            component: Topbar,
+            component: Outline,
             children: [
                 { path: '/Home', component: Home },
                 { path: '/projects', component: ProjectsOverview },

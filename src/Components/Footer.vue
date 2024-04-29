@@ -2,22 +2,32 @@
     <div class="footer">
         <div class="con">
             <div class="layout">
-                <div class="links">
-                    <p>Home</p>
-                    <p>Projects</p>
-                    <p>Articles</p>
-                    <p>Resume</p>
-                </div>
                 <div class="social-media">
-                    <img src="Images/Icons/Light/LinkedIn.svg">
-                    <img src="Images/Icons/Light/Github.svg">
-                    <img src="Images/Icons/Light/Google.svg">
+                    <a :href=icon.url class="icon-container wiggle" v-for="(icon, index) in icons" :key="index" :style="{ 'animation-delay': 1 + index * 0.2 + 's' }">
+                        <img class="icon" :src="icon.src" :alt="icon.alt">
+                    </a>
                 </div>
-                <img class="logo" src="Images/Logo/Logo_Light.svg">
+                <router-link class="logo" :to="'/Home'">
+                    <img class="logo" src="/Images/Logo/Logo_Light.svg">
+                </router-link>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        data() {
+            return {
+                icons: [
+                    { src: '/Images/Icons/Light/LinkedIn.svg', alt: 'LinkedIn', url: "https://linkedin.com/in/tj-jonker"},
+                    { src: '/Images/Icons/Light/Github.svg', alt: 'Github', url: "https://github.com/TJJonker" },
+                    { src: '/Images/Icons/Light/Google.svg', alt: 'Google', url: "mailto: tjj.jonker@gmail.com"}
+                ]
+            }
+        }
+    }
+</script>
 
 <style scoped>
 .footer {
@@ -50,7 +60,7 @@
 
 .logo {
     width: 48px;
-    margin: 12px auto;
+    margin: 4px auto;
 }
 
 .con {

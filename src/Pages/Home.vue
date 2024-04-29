@@ -2,7 +2,6 @@
     <hero></hero>
     <about-me></about-me>
     <latest-works></latest-works> 
-    <Footer></Footer>
 
 </template>
 
@@ -10,14 +9,12 @@
 import Hero from '@/Components/Hero.vue';
 import AboutMe from '@/Components/AboutMe.vue';
 import LatestWorks from '@/Components/LatestWorks.vue';
-import Footer from '@/Components/Footer.vue';
 
 export default {
     components: {
         Hero,
         AboutMe,
         LatestWorks,
-        Footer
     }
 }
 </script>
