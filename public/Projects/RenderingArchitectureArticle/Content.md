@@ -127,7 +127,7 @@ For the current scope, this is great, but sending the same data to different sha
 Combining all these techniques, we are able to create a simple scene effectively backed by ith a solid code structure. Although it might not seem like much, we can easily expand upon this codebase and add new modules and rendering techniques.
 
 ![Final render](/Projects/RenderingArchitectureArticle/FinalRender.png)
-Figure 6: Final render complete with simple lighting, model importing, and a skybox.
+> Figure 6: Final render complete with simple lighting, model importing, and a skybox.
 
 ## Conclusion
 With this codebase, we can render imported assets to any Windows-operated window, complete with a simple lighting model and a solid base to expand upon easily. We can write our own shader logic to make custom visuals and play around with some of the rendering pipeline settings. We’ve also looked into some commonly used structural patterns, which we’ve used to improve the readability and quality of the codebase. We’ve also looked into some interesting improvements and alternatives for some of our implementations, which should give you a headstart with creating your own rendering engine or even a game engine.
