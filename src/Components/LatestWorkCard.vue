@@ -125,14 +125,13 @@ export default {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Adjust opacity as needed */
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.3s ease;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 16px;
     box-sizing: border-box;
-    transition: opacity .5s;
 }
 
 .card:hover .image-overlay {
@@ -186,7 +185,7 @@ export default {
 }
 
 
-@media only screen and (min-width: 350px) {
+@media only screen and (min-width: 370px) {
     .title {
         font-size: 22px;
         margin-bottom: 12px;
@@ -198,6 +197,10 @@ export default {
 
     .category {
         font-size: 12px;
+    }
+
+    .image-overlay {
+        transition: opacity 0.5s ease;
     }
 }
 
