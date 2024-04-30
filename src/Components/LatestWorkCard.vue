@@ -205,6 +205,19 @@ export default {
 }
 
 @media only screen and (min-width: 750px) {
+    .title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .subtitle {
+        font-size: 10px;
+    }
+
+    .category {
+        font-size: 8px;
+    }
+
     .rectbox {
         padding: 0;
         width: 30%;
@@ -233,6 +246,21 @@ export default {
 
     .progress-bar.active {
         width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .title {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .category {
+        font-size: 12px;
     }
 }
 

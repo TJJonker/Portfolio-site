@@ -64,30 +64,29 @@ export default { }
     }
 }
 
-/* @media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
     .images {
         flex-direction: column;
+        justify-content: space-between;
         margin: 0;
     }
-
+        
     .text {
         padding-right: 100px;
-    }
-
-    .text {
-        font-size: 34px;
+        font-size: 24px;
         font-family: 'Montserrat';
         font-weight: 400;
     }
 
     .images img {
         max-height: 200px;
+        margin: 0;
+    }
+
+    .content {
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
 }
 
-@media only screen and (min-width: 3600px) {
-.con {
-    margin: 0 30%;
-}
-} */
 </style>
