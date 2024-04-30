@@ -54,7 +54,7 @@ export default {
         checkCenter() {
             if(window.innerWidth > 749)
                 return;
-            
+
             const element = this.$refs.elementToCheck;
             try {
                 const rect = element.getBoundingClientRect();
@@ -183,7 +183,7 @@ export default {
 @media only screen and (min-width: 750px) {
     .rectbox {
         padding: 0;
-        width: 150px;
+        width: 30%;
     }
 
     .aspect-ratio-container {
