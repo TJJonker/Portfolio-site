@@ -40,12 +40,12 @@ export default {
 .markdown-content h1 {
     font-size: 32px;
     font-weight: 700;
+    margin-bottom: 24px;
 }
 
 .markdown-content h2 {
     font-size: 28px;
     font-weight: 500;
-    margin: 40px 0px 12px 0px;
 }
 
 .markdown-content h3 {
@@ -60,7 +60,7 @@ export default {
 
 .markdown-content p {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .markdown-content img {
@@ -70,6 +70,10 @@ export default {
 .markdown-content blockquote p {
     font-size: 12px;
     text-decoration: none;
+}
+
+@media only screen and (min-width: 1500px) {
+
 }
 
 </style>

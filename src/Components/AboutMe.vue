@@ -67,15 +67,13 @@ export default { }
 @media only screen and (min-width: 1200px) {
     .images {
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         margin: 0;
     }
         
     .text {
         padding-right: 100px;
-        font-size: 24px;
-        font-family: 'Montserrat';
-        font-weight: 400;
+        font-size: 20px;
     }
 
     .images img {

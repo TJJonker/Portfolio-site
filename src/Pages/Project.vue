@@ -67,4 +67,10 @@ export default {
     margin-bottom: 24px;
     font-size: 8px;
 }
+
+@media only screen and (min-width: 1200px) {
+    .con {
+        padding: 56px 30%;
+    }
+}
 </style>
