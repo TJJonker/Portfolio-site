@@ -39,7 +39,7 @@ export default {
 }
 
 .description {
-    font-size: 36px;
+    font-size: 32px;
     font-family: 'Montserrat';
     font-weight: 400;
 }
@@ -74,7 +74,13 @@ export default {
 }
 
 @media only screen and (min-width: 750px) {
+    .name {
+        font-size: 90px;
+    }
 
+    .description {
+        font-size: 48px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {

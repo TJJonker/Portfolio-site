@@ -22,6 +22,12 @@ export default {
     padding: 56px 40px;
 }
 
+@media only screen and (min-width: 750px) {
+    .con {
+        padding: 56px 15%;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 }

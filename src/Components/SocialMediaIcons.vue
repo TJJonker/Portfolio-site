@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 .icons-row {
-    display: inline-grid;
+    display: flex;
     grid-template-columns: auto auto auto;
     padding-left: 4px;
 }

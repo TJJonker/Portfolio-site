@@ -32,7 +32,7 @@ export default {
 
 @media only screen and (min-width: 750px) {
     .content img {
-        width: 48px;
+        width: 32px;
     }
 }
 </style>

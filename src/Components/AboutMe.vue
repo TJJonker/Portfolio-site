@@ -1,14 +1,14 @@
 <template>    
 <div class="con">
-    <div class="col-s-12 title">
+    <div class="title">
         <h1>Behind the <span class="secondary-text-color">screens</span></h1>
     </div>
     <div class="content">
-        <div class="col-sm-12 col-xl-9 text justified-text">
+        <div class="text justified-text">
             <p>I'm Tom, a final-year Game Development student at the Amsterdam University of Applied Sciences. Since my exchange to Fanshawe College Canada, I have had a passion for engine and graphics programming, and I'm not planning on stopping anytime soon. I am currently invested in creating engaging visual effects, conducting research, and diving into optimization techniques. </p>  
             <p>I've started writing articles and documenting my research and projects. Curious to find out what I've made? </p>
         </div>
-        <div class="col-sm-12 col-xl-3 images">
+        <div class="images">
             <img src="Images/Misc/Fanshawe.png" alt="">
             <img src="Images/Misc/HvA.png" alt="">
         </div>
@@ -37,10 +37,10 @@ export default { }
     font-weight: 400;
 }
 
-/* .justified-text {
+.justified-text {
     text-align: justify;
      text-justify: inter-word;
-} */
+}
 
 .images {
     display: flex;
@@ -54,6 +54,14 @@ export default { }
     max-height: 100px;
     max-width: 300px;
     margin-top: 32px;
+}
+
+@media only screen and (min-width: 750px) {
+    .images {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
 }
 
 /* @media only screen and (min-width: 1200px) {
