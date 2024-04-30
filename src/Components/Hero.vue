@@ -5,7 +5,7 @@
                 <div class="hero-text-container">
                     <div>
                         <h1 class="name primary-color">Tom Jonker</h1>
-                        <h3 class="description primary-text-color">Engine- and graphics <span class="secondary-text-color">programmer</span></h3>
+                        <h3 class="description primary-text-color">Engine- and graphics <span class="secondary-text-color" style="display: block;">programmer</span></h3>
                         <social-media-icons></social-media-icons>
                     </div>
                 </div>
@@ -71,6 +71,10 @@ export default {
     width: auto; /* Take full width of its container */
     height: 90%; /* Maintain aspect ratio */
     max-height: 100%; /* Limit maximum height to prevent overflow */
+}
+
+@media only screen and (min-width: 750px) {
+
 }
 
 @media only screen and (min-width: 1200px) {
