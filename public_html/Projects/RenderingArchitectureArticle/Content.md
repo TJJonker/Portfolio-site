@@ -58,7 +58,7 @@ Creating something like that is called abstraction. Abstraction eliminates the n
 
 ![Non abstraction](/Projects/RenderingArchitectureArticle/NonAbstraction.png)
 ![Abstraction](/Projects/RenderingArchitectureArticle/Abstraction.png)
-> Figure 2: The upper diagram shows an implementation without abstraction. The lower diagram shows an example of an.
+> Figure 2: The upper diagram shows an implementation without abstraction. The lower diagram shows an example of an implementation with abstraction.
 
 The idea is to create an abstract class that will serve as the simplified interface for the rest of the project and an implementation class that derives from this abstract class. As the code snippet below illustrates, the abstract class will contain a Create function backed by a factory pattern that determines which implementation class instance is returned. The project calls a function from the abstract class and doesn’t have to care about the implementation. This becomes especially useful when multiple implementation classes are inherited from the abstract class. The difference between abstracted code and non-abstracted code is shown in Figure 2, with an external library as an example.
 

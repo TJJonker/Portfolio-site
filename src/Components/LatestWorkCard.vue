@@ -132,6 +132,7 @@ export default {
     justify-content: space-between;
     padding: 16px;
     box-sizing: border-box;
+    transition: opacity .5s;
 }
 
 .card:hover .image-overlay {
@@ -167,7 +168,7 @@ export default {
     background-color: #fff;
     color: #000;
     border-radius: 20px;
-    padding: 2px 4px;
+    padding: 2px 6px;
     margin-right: 4px;
     margin-bottom: 4px;
     font-size: 10px;
@@ -184,14 +185,21 @@ export default {
     transform: rotate(0deg);
 }
 
-.progress-bar {
-        width: 0%;
-        height: 6px;
-        border-radius: 90px;
-        transform: translateY(-32px);
-        background-color: #857D75; /* Change this to the desired color */
-        transition: width 5s linear; /* Smooth transition for width changes over 5 seconds */
+
+@media only screen and (min-width: 350px) {
+    .title {
+        font-size: 22px;
+        margin-bottom: 12px;
     }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .category {
+        font-size: 12px;
+    }
+}
 
 @media only screen and (min-width: 750px) {
     .rectbox {
@@ -213,6 +221,11 @@ export default {
 
     .progress-bar {
         width: 0%;
+        height: 32px;
+        border-radius: 90px;
+        transform: translateY(-58px);
+        background-color: #857D75; /* Change this to the desired color */
+        transition: width 5s linear; /* Smooth transition for width changes over 5 seconds */
     }
 
     .progress-bar.active {

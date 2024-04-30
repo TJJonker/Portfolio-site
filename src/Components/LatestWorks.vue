@@ -1,22 +1,24 @@
 <template>
   <div class="section">
     <div class="section-background"></div>
-    <div class="con">
-      <div class="title">
-        <h1>What I've been <span class="secondary-text-color">working on lately</span></h1>
-      </div>
-      <div class="cards">
-        <latest-work-card
-          v-for="(project, index) in projects"
-          :key="index"
-          :index="index"
-          :project="project"
-          :active="index == this.tabletActive"
-        ></latest-work-card>
-      </div>
-      <div class="button-flex">
-        <button class="btn button">See all my work</button>
-      </div>
+      <div class="con">
+        <div class="title">
+          <h1>What I've been <span class="secondary-text-color">working on lately</span></h1>
+        </div>
+        <div class="cards">
+          <latest-work-card
+            v-for="(project, index) in projects"
+            :key="index"
+            :index="index"
+            :project="project"
+            :active="index == this.tabletActive"
+          ></latest-work-card>
+        </div>
+        <div class="button-flex">
+          <router-link :to="'/Home'" class="btn button" style="z-index: 2;">
+            See all my work
+          </router-link>
+        </div>
     </div>
   </div>
 </template>
@@ -90,6 +92,7 @@ export default {
 .button-flex {
   display: flex;
   justify-content: end;
+  text-decoration: none;
 }
 
 .button {
@@ -99,6 +102,8 @@ export default {
   box-shadow: -2px 2px rgb(0, 0, 0, .15);
   font-family: 'Montserrat';
   font-weight: 500;
+  position: relative;
+  cursor: pointer;
 }
 
 .cards {
@@ -110,6 +115,11 @@ export default {
   .cards {
     flex-direction: row;
     justify-content: space-evenly;
+  }
+
+  .button {
+    padding: 12px 16px;
+    font-size: 18px;
   }
 }
 </style>
