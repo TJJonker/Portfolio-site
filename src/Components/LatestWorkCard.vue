@@ -94,6 +94,7 @@ export default {
     border-radius: 10px;
     border-width: 0;
     transition: transform 0.5s ease-in-out;
+    z-index: 2;
 }
 
 .aspect-ratio-container {
@@ -187,7 +188,7 @@ export default {
         width: 0%;
         height: 6px;
         border-radius: 90px;
-        margin-top: -32px;
+        transform: translateY(-32px);
         background-color: #857D75; /* Change this to the desired color */
         transition: width 5s linear; /* Smooth transition for width changes over 5 seconds */
     }

@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       projects: [],
-      tabletActive: 0
+      tabletActive: -1
     };
   },
   async created() {
@@ -47,10 +47,15 @@ export default {
       this.tabletActive++;
       if(this.tabletActive > 2)
         this.tabletActive -= 3;
+    },
+
+    StartInterval() {
+      this.IncrementCounter();
+      setInterval(this.IncrementCounter, 5000);
     }
   },
   mounted() {
-    setInterval(this.IncrementCounter, 5000);
+    setTimeout(this.StartInterval, 100);    
   }
 };
 </script>
