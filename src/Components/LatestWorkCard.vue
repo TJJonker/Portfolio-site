@@ -27,7 +27,7 @@ export default {
     props: ['project', 'index'],
     computed: {
         imageURL() {
-            if(window.innerWidth > 1200) 
+            if(window.innerWidth > 749) 
                 return 'Projects/' + this.project.ContentFolder + '/Big.png'
             return 'Projects/' + this.project.ContentFolder + '/Small.png'
         }
@@ -52,6 +52,9 @@ export default {
             this.$forceUpdate();
         },
         checkCenter() {
+            if(window.innerWidth > 749)
+                return;
+            
             const element = this.$refs.elementToCheck;
             try {
                 const rect = element.getBoundingClientRect();
@@ -177,7 +180,19 @@ export default {
     transform: rotate(0deg);
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 750px) {
+    .rectbox {
+        padding: 0;
+        width: 150px;
+    }
+
+    .aspect-ratio-container {
+        padding-top: 175%; /* Maintain 1:1.75 aspect ratio */
+    }
+}
+
+
+/* @media only screen and (min-width: 1200px) {
     .title {
         font-size: 22px;
     }
@@ -192,31 +207,14 @@ export default {
 
     .aspect-ratio-container {
         width: 100%;
-        padding-top: 175%; /* Maintain 1:1.75 aspect ratio */
+        padding-top: 175%; 
         position: relative;
     }
 
     .card {
         border-radius: 30px;        
     }
-}
+} */
 
-@media only screen and (min-width: 1500px) {
-    .title {
-        font-size: 32px;
-    }
 
-    .subtitle {
-        font-size: 24px;
-    }
-
-    .category {
-        font-size: 12px;
-    }
-
-    .card {
-        margin: 0 32px;
-        border-radius: 30px;    
-    }
-}
 </style>

@@ -2,7 +2,7 @@
   <div class="section">
     <div class="section-background"></div>
     <div class="con">
-      <div class="col-s-12 title">
+      <div class="title">
         <h1>What I've been <span class="secondary-text-color">working on lately</span></h1>
       </div>
       <div class="cards">
@@ -87,12 +87,12 @@ export default {
 .cards {
   display: flex;
   flex-direction: column;
-  margin: 0 24px;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 750px) {
   .cards {
     flex-direction: row;
+    justify-content: space-evenly;
   }
 }
 </style>
