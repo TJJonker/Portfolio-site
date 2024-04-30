@@ -1,7 +1,7 @@
 <template>
     <div ref="elementToCheck" class="rectbox">
-        <div :class="{'card-mobile-hover': this.isCentered}" class="card">
-                <router-link :to="'Projects/' + index">
+        <div :class="{'card-mobile-hover': this.isCentered, 'tablet-active':this.active}" class="card">
+            <router-link :to="'Projects/' + index">
                 <div class="aspect-ratio-container">
                     <div class="image-container">
                         <img :src="imageURL" alt="Card Image" class="card-image">
@@ -19,12 +19,14 @@
                 </div>
             </router-link>
         </div>
+        <div class="progress-bar" :class="{'active':this.active}">
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['project', 'index'],
+    props: ['project', 'index', 'active'],
     computed: {
         imageURL() {
             if(window.innerWidth > 749) 
@@ -91,6 +93,7 @@ export default {
     overflow: hidden;
     border-radius: 10px;
     border-width: 0;
+    transition: transform 0.5s ease-in-out;
 }
 
 .aspect-ratio-container {
@@ -180,6 +183,15 @@ export default {
     transform: rotate(0deg);
 }
 
+.progress-bar {
+        width: 0%;
+        height: 6px;
+        border-radius: 90px;
+        margin-top: -32px;
+        background-color: #857D75; /* Change this to the desired color */
+        transition: width 5s linear; /* Smooth transition for width changes over 5 seconds */
+    }
+
 @media only screen and (min-width: 750px) {
     .rectbox {
         padding: 0;
@@ -188,6 +200,22 @@ export default {
 
     .aspect-ratio-container {
         padding-top: 175%; /* Maintain 1:1.75 aspect ratio */
+    }
+
+    .tablet-active {
+        transform: translateY(-32px);
+    }
+
+    .tablet-active .image-overlay {
+        opacity: 1;
+    }
+
+    .progress-bar {
+        width: 0%;
+    }
+
+    .progress-bar.active {
+        width: 100%;
     }
 }
 

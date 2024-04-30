@@ -11,6 +11,7 @@
           :key="index"
           :index="index"
           :project="project"
+          :active="index == this.tabletActive"
         ></latest-work-card>
       </div>
       <div class="button-flex">
@@ -30,7 +31,8 @@ export default {
   },
   data() {
     return {
-      projects: []
+      projects: [],
+      tabletActive: 0
     };
   },
   async created() {
@@ -39,6 +41,16 @@ export default {
       const res = await projects.GetProject(i);
       this.projects.push(res);
     }
+  },
+  methods: {
+    IncrementCounter() {
+      this.tabletActive++;
+      if(this.tabletActive > 2)
+        this.tabletActive -= 3;
+    }
+  },
+  mounted() {
+    setInterval(this.IncrementCounter, 5000);
   }
 };
 </script>
