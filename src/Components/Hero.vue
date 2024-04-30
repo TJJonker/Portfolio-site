@@ -66,7 +66,7 @@ export default {
 
 .bg-project-primary img {
     position: absolute; /* Position the image relative to its container */
-    bottom: 0; /* Position at the bottom */
+    bottom: -12px; /* Position at the bottom */
     left: calc(-100vw/3/2); /* Position at the left */
     width: auto; /* Take full width of its container */
     height: 90%; /* Maintain aspect ratio */
