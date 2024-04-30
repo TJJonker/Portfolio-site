@@ -1,5 +1,5 @@
 <template>
-<div v-if="project != null" class="con">
+<div v-if="project != null" class="con bg-white">
     <router-link style="text-decoration: none;" :to="'/Home'">
         <p class="link-text">< Projects</p>
     </router-link>

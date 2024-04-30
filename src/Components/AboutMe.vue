@@ -1,5 +1,5 @@
 <template>    
-<div class="con">
+<div class="con bg-white">
     <div class="title">
         <h1>Behind the <span class="secondary-text-color">screens</span></h1>
     </div>
