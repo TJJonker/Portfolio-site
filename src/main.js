@@ -7,5 +7,5 @@ import $projects from './Data.js'
 const app = createApp(App);
 app.use(router);
 
-app.provide('$projects', $projects);
+app.provide('$projects', $projects)
 app.mount('#app');

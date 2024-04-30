@@ -1,13 +1,11 @@
 <template>
-    <div class="page">    
-        <div class="content">
-            <router-link :to="`/Home`">
-                <img class="image-button" src="/Images/Logo/Logo_Dark.svg" alt="Button Image">
-            </router-link>
-        </div>
-        <router-view></router-view>
-        <Footer></Footer>
+    <div class="content">
+        <router-link :to="`/Home`">
+            <img class="image-button" src="/Images/Logo/Logo_Dark.svg" alt="Button Image">
+        </router-link>
     </div>
+    <router-view></router-view>
+    <Footer></Footer>
 </template>
 
 <script>
@@ -30,10 +28,6 @@ export default {
 
 .content img {
     width: 24px;
-}
-
-.page {
-    background-color: #142429;
 }
 
 @media only screen and (min-width: 750px) {
