@@ -144,7 +144,7 @@ export default {
 
 .subtitle {
     color: #fff;
-    font-size: 8px;
+    font-size: 10px;
     font-family: 'Montserrat';
     font-weight: 400;
 }
@@ -153,6 +153,7 @@ export default {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    padding-right: 16px;
 }
 
 .category {
@@ -162,7 +163,7 @@ export default {
     padding: 2px 4px;
     margin-right: 4px;
     margin-bottom: 4px;
-    font-size: 8px;
+    font-size: 10px;
 }
 
 .arrow {

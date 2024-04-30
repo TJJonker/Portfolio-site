@@ -55,7 +55,11 @@
 
 .social-media img {
     width: 24px;
-    margin: 12px 12px;
+    margin: 12px 16px;
+}
+
+.social-media img:hover {
+    transform: scale(1.3); 
 }
 
 .logo {
