@@ -1,2 +1,2 @@
-# Void - Game Engine
+# Client/Server Chat Program
 
