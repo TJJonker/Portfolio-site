@@ -1,18 +1,14 @@
 <template>
     <div class="hero">
-        <div class="row m-0">
-            <div class="col-xl-8">
-                <div class="hero-text-container">
-                    <div>
-                        <h1 class="name primary-color">Tom Jonker</h1>
-                        <h3 class="description primary-text-color">Engine- and graphics <span class="secondary-text-color" style="display: block;">programmer</span></h3>
-                        <social-media-icons></social-media-icons>
-                    </div>
-                </div>
+        <div class="left">
+            <div class="hero-text-container">
+                <h1 class="name primary-color">Tom Jonker</h1>
+                <h3 class="description primary-text-color">Engine- and graphics <span class="secondary-text-color" style="display: block;">programmer</span></h3>
+                <social-media-icons></social-media-icons>
             </div>
-            <div class="col-xl-4 bg-project-primary">
-                <img src="Images/Misc/Hero-picture.png" alt="">
-            </div>
+        </div>
+        <div class="right bg-project-primary">
+            <img src="Images/Misc/Hero-picture.png" alt="">
         </div>
     </div>
 </template>
@@ -34,8 +30,12 @@ export default {
     font-weight: 800;
 }
 
-.row {
+.hero {
+    display: flex;
+    flex-direction: row;
     height: calc(100vh - 60px);
+    background-color: #F6F6F6;
+    overflow: hidden;
 }
 
 .description {
@@ -44,33 +44,34 @@ export default {
     font-weight: 400;
 }
 
-.hero {
-    background-color: #F6F6F6;
-    overflow: hidden;
-    padding: 0 40px;
-}
-
 .hero-text-container {
-    height: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    padding: 48px;
 }
 
-.bg-project-primary {
-    background: rgb(196,164,132);
-    background: linear-gradient(180deg, rgba(196,164,132,1) 0%, rgba(140,108,76,1) 100%);
-    position: relative;
+.left {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.right {
+    flex: 1;
     display: none;
 }
 
-.bg-project-primary img {
-    position: absolute; /* Position the image relative to its container */
-    bottom: -12px; /* Position at the bottom */
-    left: calc(-100vw/3/2); /* Position at the left */
-    width: auto; /* Take full width of its container */
-    height: 90%; /* Maintain aspect ratio */
-    max-height: 100%; /* Limit maximum height to prevent overflow */
+.bg-project-primary {
+    background: linear-gradient(180deg, rgba(196,164,132,1) 0%, rgba(140,108,76,1) 100%);
+}
+
+.right img {
+    position: absolute; 
+    bottom: -12px; 
+    left: 50vw; 
+    width: auto; 
+    height: 90%; 
 }
 
 @media only screen and (min-width: 750px) {
@@ -83,15 +84,13 @@ export default {
     }
 }
 
-@media only screen and (min-width: 1200px) {
-    .bg-project-primary {
-        display: block;
+@media only screen and (min-width: 1500px) {
+    .right {
+        display: flex;
     }
 
-    .name {
-        font-size: 140px;
-        font-family: 'Montserrat';
-        font-weight: 800;
+    .hero {
+        height: 100vh;
     }
 }
 </style>
