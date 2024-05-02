@@ -3,11 +3,11 @@
         <div class="con">
             <div class="layout">
                 <div class="social-media">
-                    <a :href=icon.url class="icon-container wiggle" v-for="(icon, index) in icons" :key="index" :style="{ 'animation-delay': 1 + index * 0.2 + 's' }">
+                    <a :href=icon.url target="_blank" class="icon-container wiggle" v-for="(icon, index) in icons" :key="index" :style="{ 'animation-delay': 1 + index * 0.2 + 's' }">
                         <img class="icon" :src="icon.src" :alt="icon.alt">
                     </a>
                 </div>
-                <router-link class="logo" :to="'/Home'">
+                <router-link class="logo" :to="'/home'">
                     <img class="logo" src="/Images/Logo/Logo_Light.svg">
                 </router-link>
             </div>
@@ -22,7 +22,7 @@
                 icons: [
                     { src: '/Images/Icons/Light/LinkedIn.svg', alt: 'LinkedIn', url: "https://linkedin.com/in/tj-jonker"},
                     { src: '/Images/Icons/Light/Github.svg', alt: 'Github', url: "https://github.com/TJJonker" },
-                    { src: '/Images/Icons/Light/Google.svg', alt: 'Google', url: "mailto: tjj.jonker@gmail.com"}
+                    { src: '/Images/Icons/Light/Mail.svg', alt: 'Google', url: "mailto: tjj.jonker@gmail.com"}
                 ]
             }
         }

@@ -1,6 +1,6 @@
 <template>
     <div class="icons-row mt-4">
-        <a v-for="(icon, index) in icons" :href=icon.url class="icon-container" :class="{ 'wiggle': icon.isWiggling }" :key="index" :style="{ 'animation-delay': 1 + index * 0.2 + 's' }">
+        <a v-for="(icon, index) in icons" :href=icon.url target="_blank" class="icon-container" :class="{ 'wiggle': icon.isWiggling }" :key="index" :style="{ 'animation-delay': 1 + index * 0.2 + 's' }">
             <img class="icon" :src="icon.src" :alt="icon.alt">
         </a>
     </div>
@@ -14,7 +14,7 @@ export default {
             icons: [
                 { src: 'Images/Icons/Dark/LinkedIn.svg', alt: 'LinkedIn', url: "https://linkedin.com/in/tj-jonker", isWiggling: true },
                 { src: 'Images/Icons/Dark/Github.svg', alt: 'Github', url: "https://github.com/TJJonker", isWiggling: true },
-                { src: 'Images/Icons/Dark/Google.svg', alt: 'Google', url: "mailto: tjj.jonker@gmail.com", isWiggling: true }
+                { src: 'Images/Icons/Dark/Mail.svg', alt: 'Google', url: "mailto: tjj.jonker@gmail.com", isWiggling: true }
             ]
         };
     },
@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         startWiggleInterval() {
-        this.icons.forEach((icon, index) => {
+        this.icons.forEach((icon, index) => { 
             setInterval(() => {
                 icon.isWiggling = !icon.isWiggling;
             }, 2500); 

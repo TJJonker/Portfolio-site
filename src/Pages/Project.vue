@@ -1,6 +1,6 @@
 <template>
 <div v-if="project != null" class="con bg-white">
-    <router-link style="text-decoration: none;" :to="'/Home'">
+    <router-link style="text-decoration: none;" :to="'/home'">
         <p class="link-text">< Projects</p>
     </router-link>
 
@@ -19,7 +19,7 @@ import ProjectMarkdown from '@/Components/ProjectMarkdown.vue';
 import {inject} from 'vue';
 
 export default {
-    props: ['index'],
+    props: ['slug'],
     components: {
         ProjectMarkdown
     },
@@ -30,7 +30,7 @@ export default {
     }, 
     async created() {
         const projects = inject('$projects');
-        this.project = await projects.GetProject(this.index);
+        this.project = await projects.GetProjectBySlug(this.slug);
     },
     computed: {
         BannerUrl() {

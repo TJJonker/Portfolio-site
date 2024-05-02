@@ -1,6 +1,7 @@
 {
     "Projects": [
         {
+            "slug": "rendering-architecture-and-optimization",
             "Categories": ["Article", "Engine", "Architecture", "Optimization"],
             "ContentFolder": "RenderingArchitectureArticle",
             "Preview": {
@@ -9,6 +10,7 @@
             }
         },
         {
+            "slug": "void-engine",
             "Categories": ["Engine", "ECS", "Rendering", "Physics", "Audio"],
             "ContentFolder": "Void",
             "Preview": {
@@ -17,6 +19,7 @@
             }
         },
         {
+            "slug": "networking-chat-program",
             "Categories": ["Networking", "Database", "Server/Client", "Validation"],
             "ContentFolder": "ChatProgram",
             "Preview": {

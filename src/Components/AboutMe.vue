@@ -52,7 +52,7 @@ export default { }
 
 .images img {
     max-height: 100px;
-    max-width: 300px;
+    max-width: 250px;
     margin-top: 32px;
 }
 
@@ -77,7 +77,6 @@ export default { }
     }
 
     .images img {
-        max-height: 200px;
         margin: 0;
     }
 

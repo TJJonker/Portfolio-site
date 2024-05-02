@@ -1,7 +1,7 @@
 <template>
     <div ref="elementToCheck" class="rectbox">
         <div :class="{'card-mobile-hover': this.isCentered, 'tablet-active':this.active}" class="card">
-            <router-link :to="'Projects/' + index">
+            <router-link :to="'projects/' + this.project.slug">
                 <div class="aspect-ratio-container">
                     <div class="image-container">
                         <img :src="imageURL" alt="Card Image" class="card-image">
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-    props: ['project', 'index', 'active'],
+    props: ['project', 'active'],
     computed: {
         imageURL() {
             if(window.innerWidth > 749) 
@@ -264,6 +264,19 @@ export default {
     }
 }
 
+@media only screen and (min-width: 1200px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .category {
+        font-size: 16px;
+    }
+}
 
 /* @media only screen and (min-width: 1200px) {
     .title {

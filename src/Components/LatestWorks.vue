@@ -9,7 +9,6 @@
           <latest-work-card
             v-for="(project, index) in projects"
             :key="index"
-            :index="index"
             :project="project"
             :active="index == this.tabletActive"
           ></latest-work-card>
