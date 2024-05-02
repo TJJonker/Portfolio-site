@@ -134,10 +134,6 @@ export default {
     box-sizing: border-box;
 }
 
-.card:hover .image-overlay {
-    /* opacity: 1; */
-}
-
 .card-mobile-hover .image-overlay {
     opacity: 1;
 }
