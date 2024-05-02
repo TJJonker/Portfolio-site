@@ -26,6 +26,15 @@
                 "Title": "Client/Server Chat Program",
                 "Subtitle": "A networking project that functions as a Hello World project for C++'s networking library, databases, and client/server programs."
             }
+        },
+        {
+            "slug": "networking-chat-program",
+            "Categories": ["Networking", "Database", "Server/Client", "Validation"],
+            "ContentFolder": "ChatProgram",
+            "Preview": {
+                "Title": "Client/Server Chat Program",
+                "Subtitle": "A networking project that functions as a Hello World project for C++'s networking library, databases, and client/server programs."
+            }
         }
     ]
 }

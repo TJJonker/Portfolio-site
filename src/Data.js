@@ -10,6 +10,10 @@ export default {
 
     async GetProjectBySlug(slug){
       return await projects.Projects.find(project => project.slug === slug);
+    },
+
+    async GetAllProjects(){
+      return await projects.Projects;
     }
 }
  

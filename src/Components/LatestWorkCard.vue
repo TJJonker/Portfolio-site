@@ -1,7 +1,7 @@
 <template>
     <div ref="elementToCheck" class="rectbox">
         <div :class="{'card-mobile-hover': this.isCentered, 'tablet-active':this.active}" class="card">
-            <router-link :to="'projects/' + this.project.slug">
+            <router-link :to="'/projects/' + this.project.slug">
                 <div class="aspect-ratio-container">
                     <div class="image-container">
                         <img :src="imageURL" alt="Card Image" class="card-image">
@@ -20,7 +20,7 @@
             </router-link>
         </div>
         <div class="progress-bar" :class="{'active':this.active}">
-        </div>
+        </div> 
     </div>
 </template>
 
@@ -30,8 +30,8 @@ export default {
     computed: {
         imageURL() {
             if(window.innerWidth > 749) 
-                return 'Projects/' + this.project.ContentFolder + '/Big.png'
-            return 'Projects/' + this.project.ContentFolder + '/Small.png'
+                return '/Projects/' + this.project.ContentFolder + '/Big.png'
+            return '/Projects/' + this.project.ContentFolder + '/Small.png'
         }
     },
     data() {

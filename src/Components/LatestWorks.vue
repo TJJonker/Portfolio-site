@@ -14,7 +14,7 @@
           ></latest-work-card>
         </div>
         <div class="button-flex">
-          <router-link :to="'/Home'" class="btn button" style="z-index: 2;">
+          <router-link :to="'/projects'" class="btn button" style="z-index: 2;">
             See all my work
           </router-link>
         </div>
