@@ -29,6 +29,11 @@ export default {
     mounted() {
         this.GetContent();
     },
+    watch: {
+        async filePath(newPath, oldPath){
+            await this.GetContent();
+        }
+    }
 } 
 </script>
 
@@ -61,6 +66,8 @@ export default {
 .markdown-content p {
     font-size: 16px;
     font-weight: 400;
+    text-align: justify;
+    text-justify: inter-word;    
 }
 
 .markdown-content img {
@@ -70,6 +77,27 @@ export default {
 .markdown-content blockquote p {
     font-size: 12px;
     text-decoration: none;
+    text-align: left;
+    text-justify: auto; 
 }
 
+.contentRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.R {
+    width: 100%;
+}
+
+.markdown-content hr {
+    width: 50%;
+    margin: 12px auto;
+    border: none;
+    height: 3px;
+    background-color: #000; /* Change this to the desired color */
+    border-radius: 1.5px; /* Adjust border-radius for rounded edges */
+}
 </style>

@@ -8,12 +8,21 @@ export default {
         return await projects.Projects[index];
     },
 
-    async GetProjectBySlug(slug){
-      return await projects.Projects.find(project => project.slug === slug);
-    },
-
     async GetAllProjects(){
       return await projects.Projects;
+    },
+
+    async GetIndexBySlug(slug) {
+      const project = await projects.Projects.find(project => project.slug === slug);
+        if (project) {
+            return projects.Projects.indexOf(project);
+        } else {
+            return -1; // Indicates slug not found
+        }
+    },
+
+    async IsIndexValid(index) {
+        return index >= 0 && index < projects.Projects.length;
     }
 }
  

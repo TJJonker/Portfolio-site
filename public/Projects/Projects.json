@@ -14,8 +14,8 @@
             "Categories": ["Engine", "ECS", "Rendering", "Physics", "Audio"],
             "ContentFolder": "Void",
             "Preview": {
-                "Title": "Void - Game Engine",
-                "Subtitle": "A game engine built with OpenGL and C++, complete with a self-made physics solution and an FMOD integration, that was created for my exchange to Canada's Fanshawe College. "
+                "Title": "Void - Rendering Engine",
+                "Subtitle": "A Rendering engine built with OpenGL and C++, complete with a self-made physics solution and an FMOD integration, that was created for my exchange to Canada's Fanshawe College. "
             }
         },
         {
@@ -28,12 +28,12 @@
             }
         },
         {
-            "slug": "networking-chat-program",
-            "Categories": ["Networking", "Database", "Server/Client", "Validation"],
-            "ContentFolder": "ChatProgram",
+            "slug": "fmod-media-player",
+            "Categories": ["FMOD", "Media Player", "Audio"],
+            "ContentFolder": "MediaPlayer",
             "Preview": {
-                "Title": "Client/Server Chat Program",
-                "Subtitle": "A networking project that functions as a Hello World project for C++'s networking library, databases, and client/server programs."
+                "Title": "FMOD Media Player",
+                "Subtitle": "A media player that functions as a Hello World project for the FMOD library."
             }
         }
     ]

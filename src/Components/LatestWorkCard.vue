@@ -207,7 +207,7 @@ export default {
     }
 
     .subtitle {
-        font-size: 10px;
+        font-size: 10px; 
     }
 
     .category {

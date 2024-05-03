@@ -1,4 +1,5 @@
-# Client/Server Chat Program
+# FMOD Media Player
+
 <br><br>
 <hr>
 <div style="text-align:center">
