@@ -1,5 +1,5 @@
 <template>
-<div class="card">
+<router-link style="text-decoration: none;" :to="'/projects/' + this.project.slug" class="card">
     <div class="image">
         <img :src="ImageUrl" alt="">
     </div>
@@ -11,7 +11,7 @@
             <p>{{this.project.Preview.Subtitle}}</p>
         </div>
     </div>
-</div>
+</router-link>
 </template>
 
 <script>
@@ -34,6 +34,7 @@ export default {
     overflow: hidden;
     border: 0;
     box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, .25);
+    transition: transform .2s;
 }
 
 .image img{
@@ -48,9 +49,11 @@ h2 {
     font-family: 'montserrat';
     font-size: 20px;
     font-weight: 700;
+    margin-bottom: 12px;
 }
 
-p {
+.card:hover {
+    transform: scale(1.1);
 }
 
 @media only screen and (min-width: 800px) {

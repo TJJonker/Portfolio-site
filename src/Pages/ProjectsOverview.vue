@@ -43,7 +43,6 @@ export default {
     methods: {
         DetermineDesktopCard() {
             this.desktopCard = window.innerWidth > 749 
-            console.log(this.desktopCard);            
         }
     }
 }

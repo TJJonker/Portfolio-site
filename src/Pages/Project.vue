@@ -1,6 +1,6 @@
 <template>
 <div v-if="project != null" class="con bg-white">
-    <router-link style="text-decoration: none;" :to="'/home'">
+    <router-link style="text-decoration: none;" :to="'/projects'">
         <p class="link-text">< Projects</p>
     </router-link>
 
