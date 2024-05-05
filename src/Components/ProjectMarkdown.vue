@@ -23,6 +23,10 @@ export default {
                 window.Prism = window.Prism || {};
                 window.Prism.manual = true;
                 Prism.highlightAll();
+
+                this.$el.querySelectorAll('a').forEach(link => {
+                    link.setAttribute('target', '_blank');
+                });
             });
         }
     }, 
@@ -100,4 +104,6 @@ export default {
     background-color: #000; /* Change this to the desired color */
     border-radius: 1.5px; /* Adjust border-radius for rounded edges */
 }
+
+
 </style>
