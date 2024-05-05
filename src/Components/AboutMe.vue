@@ -6,7 +6,7 @@
     <div class="content">
         <div class="text justified-text">
             <p>I'm Tom, a final-year Game Development student at the Amsterdam University of Applied Sciences. Since my exchange to Fanshawe College Canada, I have had a passion for engine and graphics programming, and I'm not planning on stopping anytime soon. I am currently invested in creating engaging visual effects, conducting research, and diving into optimization techniques. </p>  
-            <p>I've started writing articles and documenting my research and projects. Curious to find out what I've made? </p>
+            <p>I've started writing articles and documenting my research and projects. Curious to find out what I've made? Check out the my projects down below! </p>
         </div>
         <div class="images">
             <img src="Images/Misc/Fanshawe.png" alt="">
