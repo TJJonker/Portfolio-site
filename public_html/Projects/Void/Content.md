@@ -88,14 +88,21 @@ The course required our engine to be able to simulate physics simulations. Third
 
 The codebase of the engine can be found in the [Void Github Repository](https://github.com/TJJonker/Void). I've learned a lot and loved working on this project, but I will no longer contribute to this codebase. Since the codebase no longer works, I shared several videos showcasing some of the projects I've made in the engine beneath. These are project submissions where I showcase and explain the project and which goals the project must meet.
 
-<div class="contentRow">
-  <iframe width="47.5%" src="https://www.youtube.com/embed/kqsfv58cwn0"></iframe>
-  <iframe width="47.5%" src="https://www.youtube.com/embed/lMWSbyFV3qk"></iframe>
-</div>
-<br>
-<div class="contentRow">
-  <iframe width="47.5%" src="https://www.youtube.com/embed/O63d6VCCajE"></iframe>
+
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/kqsfv58cwn0" frameborder="0" allowfullscreen></iframe>
 </div>
 
+> **Figure 8**: First scene created without the visual editor. Showcasing model importing and a Phong lighting model.
 
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/lMWSbyFV3qk" frameborder="0" allowfullscreen></iframe>
+</div>
 
+> **Figure 9**: First scene created with the visual editor. Showcasing more interesting model placement, blending and texture animations.
+
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/O63d6VCCajE" frameborder="0" allowfullscreen></iframe>
+</div>
+
+> **Figure 10**: Final scene created in a small amount of time, recreating a given scene to see how quick a scene can be build.

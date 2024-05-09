@@ -99,6 +99,21 @@ export default {
     border-radius: 1.5px; /* Adjust border-radius for rounded edges */
 }
 
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
 @media only screen and (min-width: 750px) {
     .contentRow {
         display: flex;

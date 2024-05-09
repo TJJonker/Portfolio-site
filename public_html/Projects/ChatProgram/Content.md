@@ -24,4 +24,6 @@ The code for two projects can be found in the designated repos.
 
 Down below, a video can be found showcasing the project in it's entirety.  
 
-<iframe width="47.5%" src="https://www.youtube.com/embed/Sc85roKNlDI"></iframe>
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/Sc85roKNlDI" frameborder="0" allowfullscreen></iframe>
+</div>
