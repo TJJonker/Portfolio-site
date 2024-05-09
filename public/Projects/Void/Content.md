@@ -27,44 +27,75 @@ Within the Void Engine, various modules can be found, each serving a unique purp
 ### Rendering
 Arguably, the most crucial aspect of games is rendering. The Void Engine uses the OpenGL rendering API since it's the most accessible and well-documented API at the moment, which is perfect for a first engine. I used a low-level abstraction to hide the implementation, created a simple rendering pipeline that uses batching, and used ASSIMP to import models and textures. Initially, I wanted to use abstraction to be able to switch rendering APIs as a cool extra. This was before I knew not all rendering APIs work as OpenGL, making low-level abstraction the wrong approach. 
 
-![Spaceport Render](/Projects/Void/SpaceportRender.png)
-> **Figure 2**: 'Graphics' class exercise around the mid-term. 
+<div class="contentRow">
+  <div>
+
+  ![Spaceport Render](/Projects/Void/SpaceportRender.png)
+  > **Figure 2**: 'Graphics' class exercise around the mid-term.
+
+  </div>
+  <div>
+
+  ![Spaceport Render](/Projects/Void/AudioRender.png)
+  > **Figure 3**: Combined exercise for the 'Graphics' and 'Audio' class around the mid-term.
+
+  </div>
+</div>
 <br><br>
 
 ### JSON parsing
 To create scenes without hardcoding them into the engine, I used external JSON files to read and write scene information. When loading a JSON scene file, the content would be read by the scene manager, who could create entities and assign them the correct values. When writing a JSON scene file, the scene manager would collect all the entities in the scene, collect their data, and write them into a JSON file.
+
+Combining this with our visual editor allowed us to easily create different scenes and switch between them when necessary. Manually changing the JSON files to create a scene was no longer necessary, which sped up the development of scene significantly. An example of adjusting the scene, saving and loading can be found in Figure 4. 
+
+<video controls width="100%">
+  <source src="/Projects/Void/EditorShowcase.mkv" type="video/mp4">
+</video>
+
+> **Figure 4**: Scene changing and saving showcase.
 <br><br>
 
 ### Visual Editor
 <div class="contentRow">
 <div>
-Since creating scenes was the most common exercise, creating a visual editor would significantly improve efficiency compared to editing JSON scene files manually. To create a visual editor, I've used the ImGUI and ImGUIZMO libraries to create a Unity-inspired visual editor, as seen in Figure 4. 
+Since creating scenes was the most common exercise, creating a visual editor would significantly improve efficiency compared to editing JSON scene files manually. To create a visual editor, I've used the ImGUI and ImGUIZMO libraries to create a Unity-inspired visual editor, as seen in Figure 6. 
 <br><br>
-In here, seperate windows can be opened and closed on demand. The three most used windows are showed in Figure 4: The scene hierarchy, the scene view and the inspector window. Different component can be added to entities, each showing up in the inspector and allowing the user to change their corresponding variables.
+In here, seperate windows can be opened and closed on demand. The three most used windows are showed in Figure 6: The scene hierarchy, the scene view and the inspector window. Different component can be added to entities, each showing up in the inspector and allowing the user to change their corresponding variables.
 </div>
 <div class="R">
 
 ![Editor](/Projects/Void/Inspector.png)
-> **Figure 3**: Inspector window.
+> **Figure 5**: Inspector window.
 
 </div>
 </div>
 
 ![Editor](/Projects/Void/Editor.png)
-> **Figure 4**: Void's visual editor. Showing the scene hierarchy on the left, scene view in the middle and the inspector on the right.
+> **Figure 6**: Void's visual editor. Showing the scene hierarchy on the left, scene view in the middle and the inspector on the right.
 <br><br>
 
 ### Physics solution
-The course required our engine to be able to simulate physics simulations. Third-party physics libraries were not allowed, forcing us to create a physics solution ourselves. The physics solution developed for the Void Engine contains collision triggers and handlers for cube, sphere, mesh, and plane colliders. Covering the most common colliders creates the opportunity to create simple but exciting simulations. Opting to skip out on the AABB physics approach, I made more realistic but less optimized simulations, creating the simple simulation as seen in Figure 5.
+The course required our engine to be able to simulate physics simulations. Third-party physics libraries were not allowed, forcing us to create a physics solution ourselves. The physics solution developed for the Void Engine contains collision triggers and handlers for cube, sphere, mesh, and plane colliders. Covering the most common colliders creates the opportunity to create simple but exciting simulations. Opting to skip out on the AABB physics approach, I made more realistic but less optimized simulations, creating the simple simulation as seen in Figure 7.
 
 <video controls width="100%">
   <source src="/Projects/Void/PhysicsShowcase.mp4" type="video/mp4">
 </video>
 
-> **Figure 5**: Simple physics simulation made in the Void Engine.
+> **Figure 7**: Simple physics simulation made in the Void Engine.
 <br><br>
 <hr>
 <br>
 
-The codebase of the engine can be found in the [Void Github Repository](https://github.com/TJJonker/Void). I've learned a lot and loved working on this project, but I will no longer contribute to this codebase. Some experimental code is spread out over different branches, but the main codebase can be found in the main branch.
+The codebase of the engine can be found in the [Void Github Repository](https://github.com/TJJonker/Void). I've learned a lot and loved working on this project, but I will no longer contribute to this codebase. Since the codebase no longer works, I shared several videos showcasing some of the projects I've made in the engine beneath. These are project submissions where I showcase and explain the project and which goals the project must meet.
+
+<div class="contentRow">
+  <iframe width="47.5%" src="https://www.youtube.com/embed/kqsfv58cwn0"></iframe>
+  <iframe width="47.5%" src="https://www.youtube.com/embed/lMWSbyFV3qk"></iframe>
+</div>
+<br>
+<div class="contentRow">
+  <iframe width="47.5%" src="https://www.youtube.com/embed/O63d6VCCajE"></iframe>
+</div>
+
+
 

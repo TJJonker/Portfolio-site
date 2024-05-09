@@ -85,12 +85,6 @@ export default {
     text-justify: auto; 
 }
 
-.contentRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 32px;
-}
 
 .R {
     width: 100%;
@@ -105,5 +99,13 @@ export default {
     border-radius: 1.5px; /* Adjust border-radius for rounded edges */
 }
 
+@media only screen and (min-width: 750px) {
+    .contentRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5%;
+    }
+}
 
 </style>
