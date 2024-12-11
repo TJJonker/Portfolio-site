@@ -1,22 +1,20 @@
 <template>
-    <router-view></router-view>
+    <div id="application">
+        <router-view />
+    </div>
+    <Footer />
 </template>
 
-<style>
-::-webkit-scrollbar {
-    width: 12px;
-}
+<script>
+import Footer from './components/Footer.vue';
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
+export default {
+    components: {
+        Footer
+    },
+};
+</script>
 
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 6px; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-}
+<style lang="scss">
+@import '/src/assets/styles/global.scss'
 </style>

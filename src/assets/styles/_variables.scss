@@ -1,18 +1,21 @@
 // Text Colors
 :root {
-    --text-primary-color: #E9E9E9;
-    --text-secondary-color: #B0B0B0;
-    --text-tertiary-color: #707070;
+  --text-primary-color: #E9E9E9;
+  --text-secondary-color: #B0B0B0;
+  --text-tertiary-color: #707070;
   
   // Background Colors
-    --background-primary-color: #0C0C0D;
-    --background-secondary-color: #141415;
-    --background-tertiary-color: #1D1D1E;
-    --background-footer-color: #0A0A0B;
+  --background-primary-color: #0C0C0D;
+  --background-secondary-color: #141415;
+  --background-tertiary-color: #1D1D1E;
+  --background-footer-color: #0A0A0B;
 
   // Accent Colors
-    --accent-color: #FFFFFF;
+  --accent-color: #FFF;
   
   // Fonts
-    --font-stack: 'Inter', sans-serif;
-  }
+  --font-stack: 'Inter', sans-serif;
+
+  // Spacing
+  --large-page-padding: 261px;  
+}

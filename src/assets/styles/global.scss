@@ -1,0 +1,46 @@
+@import 'variables';
+
+html, body {
+    font-family: var(--font-stack);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-primary-color);
+    color: var(--text-primary-color);
+}
+
+#app {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+/* Ensuring responsive behavior */
+@media (max-width: 768px) {
+    #application {
+      max-width: 100%;
+      padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+  }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
