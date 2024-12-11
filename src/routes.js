@@ -1,8 +1,5 @@
 import {createRouter, createWebHistory } from 'vue-router'
-import Outline from './Components/Outline'
-import Home from './Pages/Home';
-import Project from './Pages/Project.vue'
-import ProjectsOverview from './Pages/ProjectsOverview.vue'
+import Home from './Pages/Home.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -10,11 +7,8 @@ const router = createRouter({
         {  
             path: '', 
             redirect: '/home', 
-            component: Outline,
             children: [
-                { path: '/home', component: Home },
-                { path: '/projects', component: ProjectsOverview },
-                { path: '/projects/:slug', component: Project, props: true }
+                { path: '/home', component: Home }
             ]
         } 
     ]

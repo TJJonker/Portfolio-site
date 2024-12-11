@@ -10,6 +10,7 @@ export default {
 </script>
 
 <style>
+
 .primary-text-color {
     color: black;
 }
