@@ -13,10 +13,14 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+a {
+    margin-right: var(--space-l);
+}
+
 .icon {
   filter: grayscale(100%) brightness(70%);
   transition: filter 0.15s ease;
-  padding-right: var(--space-l);
 }
 
 .icon:hover {
