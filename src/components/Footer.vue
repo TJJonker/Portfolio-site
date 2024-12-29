@@ -1,6 +1,7 @@
 <template>
-  <footer class="grid-container">
-      <FooterColumn class="span-4" title="about">
+  <footer>
+    <div class="grid-container">
+      <FooterColumn class="span-4 start-2 ml" title="about">
         <p>I'm Tom Jonker, a dedicated Graphics Programmer crafting elegant solutions and captivating visuals.</p>
       </FooterColumn>
       <FooterColumn class="span-2" title="quick links">
@@ -24,6 +25,13 @@
       <FooterColumn class="span-2" title="socials">
         <Socials></Socials>
       </FooterColumn>
+    </div>
+    <div class="grid-container">
+      <hr class="start-2 span-10 divider">
+    </div>
+    <div class="grid-container">
+      <p class="secondary start-2 span-10 ml">@ 2024 Tom Jonker. All rights reserved.</p>
+    </div>
   </footer>
 </template>
 
@@ -48,19 +56,14 @@ footer {
   box-sizing: border-box;
 }
 
-.grid-container {
-  display: grid;
-  gap: var(--column-gap);
-  grid-template-columns: repeat(12, 1fr);
-  background-color: var(--background-footer-color);
+.divider {
+  width: 100%;
+  border: 1px solid var(--background-tertiary-color);
+  margin: var(--space-l) 0;
 }
 
-.span-4 {
-  grid-column: 2 / span 4;
-}
-
-.span-2 {
-  grid-column: span 2;
+.ml {
+  margin-left: var(--space-m);
 }
 
 </style>
