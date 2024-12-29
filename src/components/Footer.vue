@@ -42,7 +42,7 @@ export default {
 footer {
   border-top: 1px solid var(--background-tertiary-color);
   background-color: var(--background-footer-color);
-  padding: 0 var(--page-margin);
+  padding: var(--space-xl) var(--page-margin);
   box-sizing: border-box;
 }
 
