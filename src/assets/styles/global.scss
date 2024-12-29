@@ -75,6 +75,7 @@ a {
     font-size: 1rem;
     font-weight: 400; 
     color: var(--text-secondary-color);
+    transition: color 0.15s;
 }
 
 a:hover {

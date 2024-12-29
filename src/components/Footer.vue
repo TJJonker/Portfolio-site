@@ -22,18 +22,20 @@
         </ul>
       </FooterColumn>
       <FooterColumn class="span-2" title="socials">
-        <p>Something cool is abo dawd awdawd awd awut to happen which will shock the whole world.</p>
+        <Socials></Socials>
       </FooterColumn>
   </footer>
 </template>
 
 <script>
 import FooterColumn from "./FooterColumn.vue";
+import Socials from "./Socials.vue"
 
 export default {
   name: "Footer",
   components: {
     FooterColumn,
+    Socials
   },
 };
 </script>
