@@ -1,37 +1,64 @@
 <template>
-  <footer>  
-    <div class="footer-top">
-      <div class="column">
-        <h4 class="title uppercase">
-          about
-        </h4>
-        <h4 class="title uppercase">
-          quick links
-        </h4>
-        <h4 class="title uppercase">
-          recent
-        </h4>
-        <h4 class="title uppercase">
-          socials
-        </h4>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      
-    </div>
+  <footer class="grid-container">
+      <FooterColumn class="span-4" title="about">
+        <p>I'm Tom Jonker, a dedicated Graphics Programmer crafting elegant solutions and captivating visuals.</p>
+      </FooterColumn>
+      <FooterColumn class="span-2" title="quick links">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="/">Articles</a></li>
+          <li><a href="/">About Me</a></li>
+          <li><a href="/">CV</a></li>
+        </ul>
+      </FooterColumn>
+      <FooterColumn class="span-2" title="recent">
+        <ul>
+          <li><a href="/">Rendering Every Pixel</a></li>
+          <li><a href="/">Faith and Programming</a></li>
+          <li><a href="/">Counting in other Bases</a></li>
+          <li><a href="/">Getting Confused</a></li>
+          <li><a href="/">Living with disappointment 101</a></li>
+        </ul>
+      </FooterColumn>
+      <FooterColumn class="span-2" title="socials">
+        <p>Something cool is abo dawd awdawd awd awut to happen which will shock the whole world.</p>
+      </FooterColumn>
   </footer>
 </template>
-  
-  <script>
-  export default {
-    name: "Footer",
-  };
-  </script>
-  
+
+<script>
+import FooterColumn from "./FooterColumn.vue";
+
+export default {
+  name: "Footer",
+  components: {
+    FooterColumn,
+  },
+};
+</script>
+
 <style lang="css" scoped>
 footer {
-  background-color: var(--background-footer-color);
   border-top: 1px solid var(--background-tertiary-color);
+  background-color: var(--background-footer-color);
+  padding: 0 var(--page-margin);
+  box-sizing: border-box;
 }
+
+.grid-container {
+  display: grid;
+  gap: var(--column-gap);
+  grid-template-columns: repeat(12, 1fr);
+  background-color: var(--background-footer-color);
+}
+
+.span-4 {
+  grid-column: 2 / span 4;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
 </style>
