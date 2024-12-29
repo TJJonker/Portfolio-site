@@ -1,4 +1,5 @@
 <template>
+  <ContactMe></ContactMe>  
   <footer>
     <div class="grid-container">
       <FooterColumn class="span-4 start-2 ml" title="about">
@@ -19,7 +20,6 @@
           <li><a href="/">Faith and Programming</a></li>
           <li><a href="/">Counting in other Bases</a></li>
           <li><a href="/">Getting Confused</a></li>
-          <li><a href="/">Living with disappointment 101</a></li>
         </ul>
       </FooterColumn>
       <FooterColumn class="span-2" title="socials">
@@ -38,12 +38,14 @@
 <script>
 import FooterColumn from "./FooterColumn.vue";
 import Socials from "./Socials.vue"
+import ContactMe from "./ContactMe.vue"
 
 export default {
   name: "Footer",
   components: {
     FooterColumn,
-    Socials
+    Socials,
+    ContactMe
   },
 };
 </script>
