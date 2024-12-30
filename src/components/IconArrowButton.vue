@@ -9,8 +9,8 @@
             <p class="sub-text">Interface Design Tool</p>
         </div>
     </div>
-    <div>
-        <p>Hi</p>
+    <div class="arrow">
+        <img src="/Icons/ic_arrow_white.svg" alt="Arrow White">
     </div>
 </div>
 </template>
@@ -29,6 +29,15 @@ export default {
     background-color: var(--background-secondary-color);
     padding: var(--space-s) var(--space-m);
     border-radius: 10px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:hover .arrow {
+    filter: none; 
+    transform: rotate(-45deg); 
 }
 
 .button-left {
@@ -54,5 +63,16 @@ export default {
     display: block; 
 }
 
+.arrow {
+    margin: var(--space-s);
+    align-self: center; 
+    border-radius: 5px;
+    filter: grayscale(100%) brightness(70%);
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.arrow img {
+    display: block; 
+}
 
 </style>
