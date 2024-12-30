@@ -1,14 +1,12 @@
 <template>
-    <div class="container">
-        <div class="grid-container">
-            <div class="start-2 span-10">
-                <div class="image-wrapper">
-                    <img src="/Images/CityRender.png" alt="CityRender" class="cropped-image">
-                    <div class="content">
-                        <h1>Welcome to My Site</h1>
-                        <p>Your description or catchy phrase goes here!</p>
-                        <button class="cta-button">Learn More</button>
-                    </div>
+    <div class="grid-container">
+        <div class="start-2 span-10">
+            <div class="image-wrapper">
+                <img src="/Images/CityRender.png" alt="CityRender" class="cropped-image">
+                <div class="content">
+                    <h1>Welcome to My Site</h1>
+                    <p>Your description or catchy phrase goes here!</p>
+                    <button class="cta-button">Learn More</button>
                 </div>
             </div>
         </div>
@@ -22,9 +20,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.container {
-    margin: 0 var(--page-margin);
-}
 
 .image-wrapper {
     width: 100%; /* Full width */

@@ -1,5 +1,9 @@
 <template>
-<KnowledgeStacks></KnowledgeStacks>
+    <div class="grid-container">
+        <div class="start-2 span-10">
+            <KnowledgeStacks></KnowledgeStacks>
+        </div>
+    </div>
 </template>
 
 <script>

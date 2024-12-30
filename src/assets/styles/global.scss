@@ -24,6 +24,7 @@ html, body {
     display: grid;
     gap: var(--column-gap);
     grid-template-columns: repeat(12, 1fr);
+    padding: 0 var(--page-margin);
   }
 
 // Text Globals
@@ -32,6 +33,8 @@ h1 {
     font-size: 3rem; // 48 px
     font-weight: 800; // Extra Bold
     color: var(--text-primary-color);
+    margin: 0;
+    margin-bottom: var(--space-s);
 }
 
 h2 {
@@ -67,6 +70,10 @@ p.secondary {
 
 p.sub-header {
     font-weight: 500; // Medium
+}
+
+p.sub-text {
+    font-size: .9rem;
 }
 
 ul {
