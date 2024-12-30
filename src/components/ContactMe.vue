@@ -26,6 +26,7 @@ export default {
     height: 500px; /* Set a specific height */
     position: relative; /* For positioning the gradient and content */
     overflow: hidden; /* Hide anything outside the container */
+    margin-top: var(--space-xxl);
 }
 
 .cropped-image {

@@ -1,27 +1,35 @@
 <template>
-<div class="button">
-    <div class="button-left">
-        <div class="icon">
-            <img src="/Icons/ic_figma_colored.svg" alt="Something else">
+    <a :href="link" class="button">
+        <div class="button-left">
+            <div class="icon">
+                <img :src="icon" :alt="title">
+            </div>
+            <div class="text">
+                <h4>{{ title }}</h4>
+                <p v-if="subTitle" class="sub-text">{{ subTitle }}</p>
+            </div>
         </div>
-        <div class="text">
-            <h4>Figma</h4>
-            <p class="sub-text">Interface Design Tool</p>
+        <div class="arrow">
+            <img src="/Icons/ic_arrow_white.svg" alt="Arrow White">
         </div>
-    </div>
-    <div class="arrow">
-        <img src="/Icons/ic_arrow_white.svg" alt="Arrow White">
-    </div>
-</div>
+    </a>
 </template>
 
 <script>
 export default {
-    name: "IconArrowButton"
+    name: "IconArrowButton",
+    props: {
+        title: { type: String, required: true },
+        subTitle: {type: String, required: false },
+        icon: {type: String, required: true },
+        link: {type: String, required: true },
+    }
 }
 </script>
 
 <style lang="css" scoped>
+
+
 .button {
     display: flex;
     flex-direction: row;
@@ -29,10 +37,13 @@ export default {
     background-color: var(--background-secondary-color);
     padding: var(--space-s) var(--space-m);
     border-radius: 10px;
+    width: 100%;
+    transition: background-color .15s ease;
 }
 
 .button:hover {
     cursor: pointer;
+    background-color: var(--background-tertiary-color);
 }
 
 .button:hover .arrow {
