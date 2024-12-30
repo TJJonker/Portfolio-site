@@ -1,7 +1,7 @@
 <template>
     <a :href="link" class="button">
         <div class="button-left">
-            <div class="icon">
+            <div class="icon" :style="iconBackgroundStyle">
                 <img :src="icon" :alt="title">
             </div>
             <div class="text">
@@ -20,9 +20,17 @@ export default {
     name: "IconArrowButton",
     props: {
         title: { type: String, required: true },
-        subTitle: {type: String, required: false },
-        icon: {type: String, required: true },
-        link: {type: String, required: true },
+        subTitle: { type: String, required: false },
+        icon: { type: String, required: true },
+        link: { type: String, required: true },
+        iconBackground: {type: Boolean, required: false, default: true }
+    },
+    computed: {
+        iconBackgroundStyle() {
+            return this.iconBackground
+                ? { backgroundColor: 'var(--background-primary-color)' }
+                : {};
+        }
     }
 }
 </script>
@@ -63,7 +71,6 @@ export default {
 }
 
 .icon {
-    background-color: var(--background-primary-color);
     padding: var(--space-s); 
     margin: var(--space-s);
     align-self: center; 

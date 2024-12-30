@@ -3,10 +3,22 @@
         <div class="start-2 span-10">
             <div class="image-wrapper">
                 <img src="/Images/CityRender.png" alt="CityRender" class="cropped-image">
-                <div class="content">
-                    <h1>Welcome to My Site</h1>
-                    <p>Your description or catchy phrase goes here!</p>
-                    <button class="cta-button">Learn More</button>
+                <div class="centering">
+                    <div class="content">
+                        <h1 class="title">Got an idea or <br> just want to say 'hi'</h1>
+                        <div class="buns">
+                            <IconArrowButton
+                            title="Send me a DM"
+                            icon="/Icons/ic_linkedin_colored.svg"
+                            :iconBackground="false"
+                            />
+                            <IconArrowButton
+                            title="Send me a message"
+                            icon="/Icons/ic_google_colored.svg"
+                            :iconBackground="false"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -14,8 +26,13 @@
 </template>
 
 <script>
+import IconArrowButton from './IconArrowButton.vue';
+
 export default {
-    name: "ContactMe"
+    name: "ContactMe",
+    components: {
+        IconArrowButton
+    }
 }
 </script>
 
@@ -51,39 +68,32 @@ export default {
     pointer-events: none; /* Allow interaction with the image */
 }
 
-/* Ensure content sits above the image and gradient */
-.content {
+.centering {
     position: absolute; /* Position content on top of the image */
-    bottom: 20px; /* Adjust the distance from the bottom */
-    left: 20px; /* Adjust the distance from the left */
-    color: white; /* Text color */
-    padding: 20px; /* Padding for spacing */
-    max-width: 80%; /* Limit width of content */
     z-index: 1; /* Ensure content is above the gradient */
+    width: 100%; /* Full width of the parent */
+    height: 100%; /* Full height of the parent */
+    display: flex; /* Add flexbox */
+    align-items: center; /* Vertically center content */
 }
 
-.content h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.content {
+    width: 100%; /* Stretch to the full width */
+    display: grid;
+    gap: var(--column-gap);
+    grid-template-columns: repeat(10, 1fr); /* Maintain the 10-column grid */
 }
 
-.content p {
-    font-size: 1rem;
-    margin-bottom: 20px;
+.title {
+    grid-column: 4 / span 4; /* Start at column 4 and span 4 columns */
+    grid-row: 1; /* First row */
 }
 
-.cta-button {
-    background-color: #2196F3; /* Button color */
-    color: white; /* Text color */
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #1976D2; /* Button hover color */
+.buns {
+    grid-column: 5 / span 3; /* Start at column 5 and span 3 columns */
+    grid-row: 2; /* Second row */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
 }
 </style>
