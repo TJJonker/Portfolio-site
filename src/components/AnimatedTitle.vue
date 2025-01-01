@@ -40,12 +40,13 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 40%;
+    height: 30%;
     width: 0;
-    background-color: rgba(6, 182, 212, .7); 
+    background-color: var(--accent-color-underline);
     z-index: -1;
     transition: width 0.5s ease-in-out;
 }
+
 
 .title.animate::before {
     width: 100%; 

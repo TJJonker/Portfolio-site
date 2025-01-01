@@ -1,7 +1,7 @@
 <template>
     <AnimatedTitle 
         title="Sharing Insights"
-        subTitle="Explering idea, sharing knowledge, and documenting my journey through code and design."
+        subTitle="Exploring idea, sharing knowledge, and documenting my journey through code and design."
     />
 </template>
 
