@@ -1,18 +1,29 @@
 <template>
     <div class="grid-container">
-        <div class="start-2 span-10">
-            <KnowledgeStacks></KnowledgeStacks>
+        <div class="start-2 span-10 stack">
+            <ArticlesShowcase/>
+            <KnowledgeStacks/>
         </div>
     </div>
 </template>
 
 <script>
 import KnowledgeStacks from "../components/KnowledgeStacks.vue"
+import ArticlesShowcase from "@/components/ArticlesShowcase.vue";
 
 export default {
     name: "Home",
     components: {
-        KnowledgeStacks
+        KnowledgeStacks,
+        ArticlesShowcase
     }
 }
 </script>
+
+<style lang="css" scoped>
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxl);
+}
+</style>

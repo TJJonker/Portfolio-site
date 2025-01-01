@@ -23,7 +23,7 @@ export default {
         subTitle: { type: String, required: false },
         icon: { type: String, required: true },
         link: { type: String, required: true },
-        iconBackground: {type: Boolean, required: false, default: true }
+        iconBackground: { type: Boolean, required: false, default: true }
     },
     computed: {
         iconBackgroundStyle() {
