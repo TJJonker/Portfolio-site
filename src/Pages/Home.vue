@@ -1,6 +1,6 @@
 <template>
     <div class="grid-container">
-        <div class="start-2 span-10 stack">
+        <div class="start-3 span-8 stack">
             <ArticlesShowcase/>
             <KnowledgeStacks/>
         </div>
