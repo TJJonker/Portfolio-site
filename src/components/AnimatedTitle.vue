@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="text">
         <h1 class="title">{{ title }}</h1>
         <p class="subheader">{{ subTitle }}</p>
     </div>
@@ -13,15 +13,22 @@ export default {
         subTitle: {Type: String, required: true }
     },
     mounted() {
-        const title = document.querySelector(".title");
+    const titles = document.querySelectorAll(".title"); 
+    titles.forEach((title) => {
         setTimeout(() => {
             title.classList.add("animate");
-        }, 100);
-    },
+        }, 100); 
+    });
+},
+
 };
 </script>
 
 <style lang="css" scoped>
+.text {
+    margin-bottom: var(--space-l);
+}
+
 .title {
     position: relative;
     display: inline-block;

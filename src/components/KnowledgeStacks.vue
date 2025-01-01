@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="text">
-            <h1>Knowledge Stacks</h1>
-            <p class="subheader">The essential tools used to bring ideas to life and drive productivity.</p>
-        </div>
+        <AnimatedTitle
+            title="Knowledge Stacks"
+            subTitle="The essential tools used to bring ideas to life and drive productivity."
+        />
         <div class="stack">
             <div class="row">
                 <IconArrowButton 
@@ -41,11 +41,13 @@
 
 <script>
 import IconArrowButton from "./IconArrowButton.vue"
+import AnimatedTitle from "./AnimatedTitle.vue";
 
 export default {
     title: "KnowledgeStacks",
     components: {
-        IconArrowButton
+        IconArrowButton,
+        AnimatedTitle
     }
 }
 </script>
