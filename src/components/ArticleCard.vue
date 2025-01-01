@@ -8,8 +8,8 @@
         <div class="row">
             <p class="secondary line-prefix">{{ date }}</p>
             <div class="icons">
-                <a href=""><img class="icon" src="/Icons/ic_share_white.svg" alt="Share icon"></a>
-                <a href=""><img class="icon" src="/Icons/ic_bookmark_white.svg" alt="Bookmark icon"></a>
+                <!-- <a href=""><img class="icon" src="/Icons/ic_share_white.svg" alt="Share icon"></a>
+                <a href=""><img class="icon" src="/Icons/ic_bookmark_white.svg" alt="Bookmark icon"></a> -->
             </div>
         </div>
     </div>
@@ -46,12 +46,16 @@ export default {
     display: flex;
     flex-direction: row;
     gap: var(--space-xl);
-    transition: padding 0.3s ease;
+    transition: padding var(--animation-mode-medium);
 }
 
 .card:hover {
     padding-left: calc(var(--space-l) * 2);
     padding-right: 0;
+}
+
+.card:hover .row {
+    padding-right: calc(var(--space-m) + var(--space-l));
 }
 
 .stack {
@@ -80,6 +84,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     padding-right: var(--space-m);
+    transition: padding-right var(--animation-mode-medium);
 }
 
 .icons {
@@ -90,7 +95,7 @@ export default {
 
 .icon {
     filter: grayscale(100%) brightness(70%);
-    transition: filter 0.15s ease;
+    transition: filter var(--animation-mode-fast);
     height: 20px;
     width: 20px;
 }

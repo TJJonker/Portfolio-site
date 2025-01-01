@@ -1,5 +1,5 @@
 <template>
-    <div class="stack">
+    <div class="articleStack">
         <AnimatedTitle 
         title="Sharing Insights"
         subTitle="Exploring idea, sharing knowledge, and documenting my journey through code and design."
@@ -26,6 +26,11 @@
             image="/Images/MediaPlayer Banner.png"
             last="true"
         />
+        <div class="container">
+            <a href="/" class="button">
+                <h4>See more...</h4>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -43,9 +48,34 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.stack {
+.articleStack {
     display: flex;
     flex-direction: column;
     gap: var(--space-m);    
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    border: 1px solid var(--accent-color);
+    padding: var(--space-m) var(--space-l);
+    border-radius: 10px;
+    transition: background-color var(--animation-mode-fast);
+}
+
+.button:hover {
+    background-color: var(--accent-color);
+}
+
+.button:hover h4 {
+    color: var(--background-primary-color);
+}
+
+h4 {
+    transition: color var(--animation-mode-fast);
+}
+
 </style>

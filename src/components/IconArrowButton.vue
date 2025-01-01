@@ -46,7 +46,7 @@ export default {
     padding: var(--space-s) var(--space-m);
     border-radius: 10px;
     width: 100%;
-    transition: background-color .15s ease;
+    transition: background-color var(--animation-mode-fast);
 }
 
 .button:hover {
@@ -86,7 +86,7 @@ export default {
     align-self: center; 
     border-radius: 5px;
     filter: grayscale(100%) brightness(70%);
-    transition: transform 0.15s ease, filter 0.15s ease;
+    transition: transform var(--animation-mode-fast), filter var(--animation-mode-fast);
 }
 
 .arrow img {

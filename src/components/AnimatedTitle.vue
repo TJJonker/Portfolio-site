@@ -1,27 +1,35 @@
 <template>
     <div class="text">
-        <h1 class="title">{{ title }}</h1>
+        <h1 class="title" :class="{'animate': isVisible}">{{ title }}</h1>
         <p class="subheader">{{ subTitle }}</p>
     </div>
 </template>
 
 <script>
 export default {
-    name: "AnimatedTitle",
-    props: {
-        title: { Type: String, required: true },
-        subTitle: {Type: String, required: true }
-    },
-    mounted() {
-    const titles = document.querySelectorAll(".title"); 
-    titles.forEach((title) => {
-        setTimeout(() => {
-            title.classList.add("animate");
-        }, 100); 
-    });
-},
-
-};
+  name: "AnimatedTitle",
+  props: {
+    title: { type: String, required: true },
+    subTitle: { type: String, required: true },
+  },
+  data() {
+    return {
+      isVisible: false,
+    };
+  },
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll(event) {
+        const rect = this.$el.getBoundingClientRect();
+        this.isVisible = (rect.top < window.innerHeight * getComputedStyle(document.documentElement).getPropertyValue("--animation-scroll-trigger").trim());
+    }
+  }
+}
 </script>
 
 <style lang="css" scoped>
@@ -44,7 +52,7 @@ export default {
     width: 0;
     background-color: var(--accent-color-underline);
     z-index: -1;
-    transition: width 0.5s ease-in-out;
+    transition: width var(--animation-mode-titles);
 }
 
 

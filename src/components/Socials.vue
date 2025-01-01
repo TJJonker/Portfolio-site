@@ -20,7 +20,7 @@ a {
 
 .icon {
   filter: grayscale(100%) brightness(70%);
-  transition: filter 0.15s ease;
+  transition: filter var(--animation-mode-fast);
 }
 
 .icon:hover {
