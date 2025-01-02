@@ -61,6 +61,7 @@ export default {
 
 .button {
     border: 1px solid var(--accent-color);
+    transition: border var(--animation-mode-titles);
     padding: var(--space-m) var(--space-l);
     border-radius: 10px;
     transition: background-color var(--animation-mode-fast);

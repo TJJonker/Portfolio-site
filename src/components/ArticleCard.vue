@@ -77,6 +77,7 @@ export default {
     width: 1px;
     height: 100%; /* Full height of the text */
     background-color: var(--accent-color); /* Set the color of the rectangle */
+    transition: background-color var(--animation-mode-titles);
 }
 
 .row {

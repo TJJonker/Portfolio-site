@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 export default {
   name: "AnimatedTitle",
   props: {
@@ -17,6 +18,9 @@ export default {
       isVisible: false,
     };
   },
+  mounted() {
+    this.handleAnimation();
+  },
   created () {
     window.addEventListener('scroll', this.handleScroll);
   },
@@ -25,8 +29,12 @@ export default {
   },
   methods: {
     handleScroll(event) {
-        const rect = this.$el.getBoundingClientRect();
-        this.isVisible = (rect.top < window.innerHeight * getComputedStyle(document.documentElement).getPropertyValue("--animation-scroll-trigger").trim());
+      this.handleAnimation();
+    },
+
+    handleAnimation() {
+      const rect = this.$el.getBoundingClientRect();
+      this.isVisible = (rect.top < window.innerHeight * getComputedStyle(document.documentElement).getPropertyValue("--animation-scroll-trigger").trim());
     }
   }
 }
@@ -52,7 +60,7 @@ export default {
     width: 0;
     background-color: var(--accent-color-underline);
     z-index: -1;
-    transition: width var(--animation-mode-titles);
+    transition: width var(--animation-mode-titles), background-color var(--animation-mode-titles);
 }
 
 

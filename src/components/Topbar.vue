@@ -3,7 +3,7 @@
     <div class="start-3 span-8 row">
         <div class="left">
             <a href="/"><img src="/Icons/ic_logo_white.svg" alt=""></a>
-            <p>Color</p>
+            <ColorDropdown/>
         </div>
 
         <div class="right">
@@ -12,7 +12,7 @@
                 url="/"
             />
             <TopbarLinks
-                title="About"
+                title="About" 
                 url="/"
             />
             <TopbarLinks
@@ -30,11 +30,13 @@
 
 <script>
 import TopbarLinks from './TopbarLinks.vue';
+import ColorDropdown from './ColorDropdown.vue';
 
 export default {
     name: "Topbar",
     components: {
-        TopbarLinks
+        TopbarLinks,
+        ColorDropdown
     }
 }
 </script>
@@ -58,7 +60,7 @@ export default {
 
 .right {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     gap: var(--space-l);
 }
