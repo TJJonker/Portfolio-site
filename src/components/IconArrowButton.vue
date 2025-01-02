@@ -1,7 +1,7 @@
 <template>
-    <a :href="link" class="button">
+    <a @mouseenter="setActive(true)" @mouseleave="setActive(false)" :href="link" class="button" :class="{active : isActive}">
         <div class="button-left">
-            <div class="icon" :style="iconBackgroundStyle">
+            <div v-if="icon" class="icon" :style="iconBackgroundStyle">
                 <img :src="icon" :alt="title">
             </div>
             <div class="text">
@@ -21,15 +21,29 @@ export default {
     props: {
         title: { type: String, required: true },
         subTitle: { type: String, required: false },
-        icon: { type: String, required: true },
+        icon: { type: String, required: false },
         link: { type: String, required: true },
-        iconBackground: { type: Boolean, required: false, default: true }
+        iconBackground: { type: Boolean, required: false, default: true },
+        active: { type: Boolean, required: false, default: false },
+    },
+    data() {
+        return {
+            localIsActive: false
+        }
     },
     computed: {
         iconBackgroundStyle() {
             return this.iconBackground
                 ? { backgroundColor: 'var(--background-primary-color)' }
                 : {};
+        },
+        isActive(){
+            return this.localIsActive || this.active;
+        }
+    },
+    methods: {
+        setActive(state){
+            this.localIsActive = state;
         }
     }
 }
@@ -43,18 +57,18 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     background-color: var(--background-secondary-color);
-    padding: var(--space-s) var(--space-m);
+    padding: var(--space-s) var(--space-l);
     border-radius: 10px;
     width: 100%;
     transition: background-color var(--animation-mode-fast);
 }
 
-.button:hover {
+.active {
     cursor: pointer;
     background-color: var(--background-tertiary-color);
 }
 
-.button:hover .arrow {
+.active .arrow {
     filter: none; 
     transform: rotate(-45deg); 
 }
@@ -82,7 +96,6 @@ export default {
 }
 
 .arrow {
-    margin: var(--space-s);
     align-self: center; 
     border-radius: 5px;
     filter: grayscale(100%) brightness(70%);

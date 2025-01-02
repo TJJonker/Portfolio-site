@@ -52,7 +52,7 @@ import ColorOption from './ColorOption.vue';
     },
     data() {
       return {
-        isWindowVisible: true
+        isWindowVisible: false
       };
     },
     methods: {

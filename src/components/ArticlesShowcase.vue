@@ -26,10 +26,11 @@
             image="/Images/MediaPlayer Banner.png"
             last="true"
         />
-        <div class="container">
-            <a href="/" class="button">
-                <h4>See more...</h4>
-            </a>
+        <div class="btn">
+            <IconArrowButton
+            title="See more..."
+            link="/hoe"
+            />
         </div>
     </div>
 </template>
@@ -37,12 +38,14 @@
 <script>
 import AnimatedTitle from './AnimatedTitle.vue';
 import ArticleCard from './ArticleCard.vue';
+import IconArrowButton from './IconArrowButton.vue';
 
 export default {
     name: "ArticlesShowcase",
     components: {
         AnimatedTitle,
-        ArticleCard
+        ArticleCard,
+        IconArrowButton
     }
 }
 </script>
@@ -54,29 +57,7 @@ export default {
     gap: var(--space-m);    
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
+.btn {
+    width: 128px;
 }
-
-.button {
-    border: 1px solid var(--accent-color);
-    transition: border var(--animation-mode-titles);
-    padding: var(--space-m) var(--space-l);
-    border-radius: 10px;
-    transition: background-color var(--animation-mode-fast);
-}
-
-.button:hover {
-    background-color: var(--accent-color);
-}
-
-.button:hover h4 {
-    color: var(--background-primary-color);
-}
-
-h4 {
-    transition: color var(--animation-mode-fast);
-}
-
 </style>
