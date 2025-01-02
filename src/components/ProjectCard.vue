@@ -1,19 +1,19 @@
 <template>
-    <a href="/"
+    <a :href="url"
         class="card" 
         @mouseenter="setHover(true)" 
         @mouseleave="setHover(false)"
     >
         <div class="image-container">
-            <img class="project-image" src="/Images/CityRender.png" alt="">
+            <img class="project-image" :src="image" alt="">
         </div>
         <div class="text">
-            <p class="secondary">VOID | Rendering Engine</p>
+            <p class="secondary">{{ subTitle }}</p>
             <div class="row">
                 <div class="left">
                     <div class="content">
-                        <h2>Rendering Every Pixel </h2>
-                        <p>The rendering system is the heart of a game engine's visual output, responsible for translating game data into stunning, real-time visuals on the screen.</p>
+                        <h2>{{ title }}</h2>
+                        <p>{{ content }}</p>
                     </div>
                     <IconArrowButton
                         class="btn"
@@ -25,20 +25,18 @@
                     <div class="properties-stack">
                         <div class="properties-row">
                             <TitleList title="The Goal">
-                                <p>Educational</p>
+                                <p>{{ goal }}</p>
                             </TitleList>
                             <TitleList title="Year">
-                                <p>2023</p>
+                                <p>{{ year }}</p>
                             </TitleList>
                         </div>
                         <div class="properties-row">
                             <TitleList title="My Role">
-                                <p>Researcher</p>
-                                <p>Developer</p>
+                                <p v-for="(role, index) in roles" :key="index">{{ role }}</p>
                             </TitleList>
                             <TitleList title="technologies">
-                                <p>OpenGL</p>
-                                <p>C/C++</p>
+                                <p v-for="(tech, index) in technologies" :key="index">{{ tech }}</p>
                             </TitleList>
                         </div>
                     </div>
@@ -58,6 +56,17 @@ export default {
     components: {
         TitleList,
         IconArrowButton
+    },
+    props: {
+        title: { type:String, require:true },
+        subTitle: { type:String, require:true },
+        content: { type:String, require:true },
+        image: { type:String, require:true },
+        url: { type:String, require:true },
+        goal: { type:String, require:true },
+        year: { type:String, require:true },
+        roles: { type:[String], require:true },
+        technologies: { type:[String], require:true },
     },
     data() {
         return {
