@@ -76,7 +76,7 @@ export default {
 .button-left {
     display: flex;
     flex-direction: row;
-    gap: var(--space-s);
+    gap: var(--space-m);
 }
 
 .text {
@@ -86,7 +86,6 @@ export default {
 
 .icon {
     padding: var(--space-s); 
-    margin: var(--space-s);
     align-self: center; 
     border-radius: 5px;
 }

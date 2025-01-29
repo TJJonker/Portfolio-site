@@ -90,7 +90,7 @@ export default {
 }
 
 .buns {
-    grid-column: 5 / span 3; /* Start at column 5 and span 3 columns */
+    grid-column: 5 / span 2; /* Start at column 5 and span 3 columns */
     grid-row: 2; /* Second row */
     display: flex;
     flex-direction: column;
