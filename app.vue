@@ -1,10 +1,11 @@
 <template>
-  <Topbar/>
-  <NuxtPage />
-  <Footer />
+  <div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
 
-
-<style lang="scss">
-@import '@/assets/styles/global.scss';
-</style>
+<script>
+import '~/assets/styles/global.scss'
+</script>

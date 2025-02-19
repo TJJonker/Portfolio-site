@@ -18,11 +18,9 @@ export default {
       isVisible: false,
     };
   },
-  mounted() {
-    this.handleAnimation();
-  },
-  created () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll);
+    this.handleAnimation();
   },
   unmounted () {
     window.removeEventListener('scroll', this.handleScroll);

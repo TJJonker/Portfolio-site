@@ -36,6 +36,11 @@ h1 {
     margin-bottom: var(--space-s);
 }
 
+h1.hero {
+    font-size: 5.5rem; // 88 px
+    font-weight: 900; // Black
+}
+
 h2 {
     font-size: 2.25rem; // 36 px
     font-weight: 700; // Bold
@@ -114,12 +119,20 @@ a:hover {
     grid-column-start: 3;
 }
 
+.start-4 {
+    grid-column-start: 4;
+}
+
 .span-2 {
     grid-column-end: span 2;
 }
 
 .span-4 {
     grid-column-end: span 4;
+}
+
+.span-6 {
+    grid-column-end: span 6;
 }
 
 .span-8 {

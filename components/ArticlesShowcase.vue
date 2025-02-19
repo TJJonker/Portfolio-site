@@ -35,21 +35,6 @@
     </div>
 </template>
 
-<script>
-import AnimatedTitle from './AnimatedTitle.vue';
-import ArticleCard from './ArticleCard.vue';
-import IconArrowButton from './IconArrowButton.vue';
-
-export default {
-    name: "ArticlesShowcase",
-    components: {
-        AnimatedTitle,
-        ArticleCard,
-        IconArrowButton
-    }
-}
-</script>
-
 <style lang="css" scoped>
 .articleStack {
     display: flex;
