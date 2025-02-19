@@ -48,7 +48,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-l);
 }
 
 .left {
