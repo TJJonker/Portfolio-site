@@ -10,7 +10,13 @@
                 <Socials/>
             </div>
             <div class="right">
-                <p class="uppercase">Say Hello</p>
+                <div class="header">
+                    <img class="icon" src="/Icons/ic_location_white.svg" alt="Location Icon">
+                    <p class="uppercase secondary sub-header">purmerend, nl</p>
+                </div>
+                <div class="text">
+                    <p>Hey, I'm Tom - I perform difficult calculations to determine the eprfect color for every pixel on your screen!</p>
+                </div>
             </div>
         </div>
     </div>
@@ -44,6 +50,22 @@
 }
 
 .right {
-    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-s);
+}
+
+.icon {
+  filter: grayscale(100%) brightness(70%);
+}
+
+.text {
+    width: 400px;
 }
 </style>
