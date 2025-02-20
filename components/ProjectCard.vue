@@ -18,7 +18,8 @@
                     <IconArrowButton
                         class="btn"
                         title="View work"
-                        :active="this.isHovered"
+                        :active="isHovered"
+                        :link="url"
                     />
                 </div>
                 <div class="right">
@@ -47,38 +48,28 @@
     </template>
     
 
-<script>
-import TitleList from './TitleList.vue';
-import IconArrowButton from './IconArrowButton.vue';
-
-export default {
-    name: "ProjectCard",
-    components: {
-        TitleList,
-        IconArrowButton
-    },
-    props: {
-        title: { type:String, require:true },
-        subTitle: { type:String, require:true },
-        content: { type:String, require:true },
-        image: { type:String, require:true },
-        url: { type:String, require:true },
-        goal: { type:String, require:true },
-        year: { type:String, require:true },
-        roles: { type:[String], require:true },
-        technologies: { type:[String], require:true },
-    },
-    data() {
-        return {
-            isHovered: false // Tracks hover state
-        };
-    },
-    methods: {
-        setHover(state) {
-            this.isHovered = state;
-        }
-    }
-}
+<script setup>
+    import { ref } from 'vue';
+    
+    // Props
+    defineProps({
+        title: String,
+        subTitle: String,
+        content: String,
+        image: String,
+        url: String,
+        goal: String,
+        year: String,
+        roles: Array,
+        technologies: Array,
+    });
+    
+    // Reactive hover state
+    const isHovered = ref(false);
+    
+    const setHover = (state) => {
+        isHovered.value = state;
+    };
 </script>
 
 <style lang="css" scoped>

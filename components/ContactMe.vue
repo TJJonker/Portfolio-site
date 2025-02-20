@@ -11,11 +11,13 @@
                             title="Send me a DM"
                             icon="/Icons/ic_linkedin_colored.svg"
                             :iconBackground="false"
+                            link="/"
                             />
                             <IconArrowButton
                             title="Send me a message"
                             icon="/Icons/ic_google_colored.svg"
                             :iconBackground="false"
+                            link="/"
                             />
                         </div>
                     </div>
