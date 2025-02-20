@@ -87,7 +87,7 @@ onMounted(() => {
         .from(".at-3", { x: -50, opacity: 0, duration: .5, ease: "power3.out" })
         .from(".at-4", { x: 50, opacity: 0, duration: .5, ease: "power3.out" })
         .to(".underline-title", { "--underline-width": "100%", duration: .5, ease: "power3.out" })
-        .to(".fill-mask", { "--gradient-perc": "100%", duration: .5, ease: "power3.out" })
+        .to(".fill-mask", { color: "var(--accent-color)", duration: .5, ease: "power3.out" })
         .to(".socials-overlay", { width: "0%", duration: .5, ease: "power3.out" })
         .to(".container .i1", { scale: 1.3, yoyo: true, repeat: 1, duration: .125 })
         .to(".container .i2", { scale: 1.3, yoyo: true, repeat: 1, duration: .125 }, "-=0.1")
@@ -101,7 +101,6 @@ onMounted(() => {
             ],
             ease: "none"
         });
-    BlinkCursor(introAnimation, 1);
 
     const texts = ["Wow, you found me, you're good!", "I get ego boosts when things work and an existensial crisis when they don't!", "I perform difficult calculations to determine the perfect color for every pixel on your screen!"];
     let currentIndex = 0;
@@ -138,7 +137,7 @@ onMounted(() => {
         for (let i = 0; i < text.length; i++) {
             tl.to(typeTarget, { textContent: defaultText + text.substring(0, i + 1), duration: 0.04 });
         }
-        BlinkCursor(tl, 4);
+        BlinkCursor(tl, 2);
     }
 
     // Erase function
@@ -148,7 +147,7 @@ onMounted(() => {
         for (let i = text.length; i >= defaultText.length; i--) {
             tl.to(typeTarget, { textContent: text.substring(0, i), duration: 0.02 });
         }
-        BlinkCursor(tl, 2);
+        BlinkCursor(tl, 1);
     }
 
     // Typewriter loop function
@@ -248,9 +247,7 @@ onMounted(() => {
     position: relative;
     display: inline-block;
     color: white;
-    background: linear-gradient(to top, var(--accent-color) calc(var(--gradient-perc) - 1%), white var(--gradient-perc));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    transition: color var(--animation-mode-titles);
 }
 
 .icon {
@@ -291,5 +288,6 @@ onMounted(() => {
     width: var(--underline-width);
     background-color: var(--accent-color-underline);
     z-index: -1;
+    transition: background-color var(--animation-mode-titles);
 }
 </style>
