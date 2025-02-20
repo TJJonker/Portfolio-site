@@ -97,7 +97,7 @@ onMounted(() => {
         .to(".typewriter-cursor", {
             keyframes: [
                 { opacity: 1, duration: 0.1 },
-                { opacity: 1, duration: 0.3 },
+                { opacity: 1, duration: 0.4 },
             ],
             ease: "none"
         });
@@ -113,10 +113,10 @@ onMounted(() => {
     function BlinkCursor(timeline, number) {
         timeline.to(".typewriter-cursor", {
             keyframes: [
-                { opacity: 0, duration: 0.1 },
-                { opacity: 0, duration: 0.3 },
-                { opacity: 1, duration: 0.1 },
-                { opacity: 1, duration: 0.3 }
+                { opacity: 0, duration: 0.05 },
+                { opacity: 0, duration: 0.55 },
+                { opacity: 1, duration: 0.05 },
+                { opacity: 1, duration: 0.55 }
             ],
             repeat: number,
             ease: "none"
