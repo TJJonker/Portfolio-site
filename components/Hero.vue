@@ -69,7 +69,7 @@ onMounted(() => {
         ease: "power2.in"
     }, 0); // Same timing for both
 
-    // const text = "Hey, I'm Tom - I perform difficult calculations to determine the perfect color for every pixel on your screen!"; // Your text
+    // const text = "Hey, I'm Tom - "; // Your text
     // const charsPerSecond = 80; // Adjust for desired speed
     // const duration = text.length / charsPerSecond; // Ensures constant speed
 
@@ -93,81 +93,73 @@ onMounted(() => {
         .to(".container .i2", { scale: 1.3, yoyo: true, repeat: 1, duration: .125 }, "-=0.1")
         .to(".container .i3", { scale: 1.3, yoyo: true, repeat: 1, duration: .125 }, "-=0.1")
         .from(".icon-container .icon", { y: -50, opacity: 0, duration: .5 })
-        .to(".text-container-text", { x: 0, duration: .5 }); // Overlaps with icon animation
-    // .to(".typewriter-cursor", {
-    //     keyframes: [
-    //         { opacity: 1, duration: 0.1 },
-    //         { opacity: 1, duration: 0.3 },
-    //     ],
-    //     ease: "none"
-    // })
-    // .to(".typewriter-cursor", {
-    //     keyframes: [
-    //         { opacity: 0, duration: 0.1 },
-    //         { opacity: 0, duration: 0.3 },
-    //         { opacity: 1, duration: 0.1 },
-    //         { opacity: 1, duration: 0.3 }
-    //     ],
-    //     repeat: 2,
-    //     ease: "none"
-    // })
-    // .to(".typewriter-text", { text, duration, ease: "none" }) // Typewriter effect
-    // .to(".typewriter-cursor", {
-    //     keyframes: [
-    //         { opacity: 0, duration: 0.1 },
-    //         { opacity: 0, duration: 0.3 },
-    //         { opacity: 1, duration: 0.1 },
-    //         { opacity: 1, duration: 0.3 }
-    //     ],
-    //     repeat: -1,
-    //     ease: "none"
-    // });
-    
-    const texts = ["Hello World!", "Welcome to my site!", "Let's build something cool ckjahbdjhbd ajkh awkjhd awkjhd akwjhd awh dkjahw dkjhaw kjxhaw dkjhaw !"];
+        .to(".text-container-text", { x: 0, duration: .5 }) // Overlaps with icon animation
+        .to(".typewriter-cursor", {
+            keyframes: [
+                { opacity: 1, duration: 0.1 },
+                { opacity: 1, duration: 0.3 },
+            ],
+            ease: "none"
+        });
+    BlinkCursor(introAnimation, 1);
+
+    const texts = ["Wow, you found me, you're good!", "I get ego boosts when things work and an existensial crisis when they don't!", "I perform difficult calculations to determine the perfect color for every pixel on your screen!"];
     let currentIndex = 0;
     const typeTarget = document.querySelector(".typewriter-text");
-const defaultText = "Hi, I'm Tom - ";  // Default text
+    const defaultText = "Hi, I'm Tom - ";  // Default text
 
-// Set the default text initially
+    // Set the default text initially
 
-
-// Function to type out the default text
-function typeDefaultText(onComplete) {
-    let tl = gsap.timeline({ onComplete });
-    for (let i = 0; i < defaultText.length; i++) {
-        tl.to(typeTarget, { textContent: defaultText.substring(0, i + 1), duration: 0.04 });
+    function BlinkCursor(timeline, number) {
+        timeline.to(".typewriter-cursor", {
+            keyframes: [
+                { opacity: 0, duration: 0.1 },
+                { opacity: 0, duration: 0.3 },
+                { opacity: 1, duration: 0.1 },
+                { opacity: 1, duration: 0.3 }
+            ],
+            repeat: number,
+            ease: "none"
+        });
     }
-}
 
-
-// Typewriter function
-function typeText(text, onComplete) {
-    let tl = gsap.timeline({ onComplete });
-    for (let i = 0; i < text.length; i++) {
-        tl.to(typeTarget, { textContent: defaultText + text.substring(0, i + 1), duration: 0.04 });
+    // Function to type out the default text
+    function typeDefaultText(onComplete) {
+        let tl = gsap.timeline({ onComplete });
+        for (let i = 0; i < defaultText.length; i++) {
+            tl.to(typeTarget, { textContent: defaultText.substring(0, i + 1), duration: 0.04 });
+        }
     }
-}
 
-// Erase function
-function eraseText(onComplete) {
-    let text = typeTarget.textContent;
-    let tl = gsap.timeline({ onComplete: () => {setTimeout(() => {onComplete()}, 1000)} });
-    for (let i = text.length; i >= defaultText.length; i--) {
-        tl.to(typeTarget, { textContent: text.substring(0, i), duration: 0.02 });
+
+    // Typewriter function
+    function typeText(text, onComplete) {
+        let tl = gsap.timeline({ onComplete });
+        for (let i = 0; i < text.length; i++) {
+            tl.to(typeTarget, { textContent: defaultText + text.substring(0, i + 1), duration: 0.04 });
+        }
+        BlinkCursor(tl, 4);
     }
-}
 
-// Typewriter loop function
-function loopTypewriter() {
-    typeText(texts[currentIndex], () => {
-        setTimeout(() => {
+    // Erase function
+    function eraseText(onComplete) {
+        let text = typeTarget.textContent;
+        let tl = gsap.timeline({ onComplete });
+        for (let i = text.length; i >= defaultText.length; i--) {
+            tl.to(typeTarget, { textContent: text.substring(0, i), duration: 0.02 });
+        }
+        BlinkCursor(tl, 2);
+    }
+
+    // Typewriter loop function
+    function loopTypewriter() {
+        typeText(texts[currentIndex], () => {
             eraseText(() => {
                 currentIndex = (currentIndex + 1) % texts.length;
                 loopTypewriter();
             });
-        }, 2000); // Wait before erasing
-    });
-}
+        });
+    }
 });
 </script>
 
