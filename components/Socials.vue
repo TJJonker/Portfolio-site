@@ -1,8 +1,8 @@
 <template>
 <div class="container">
-    <a href="https://github.com/tjjonker"><img src="/Icons/ic_github_white.svg" alt="GitHub Icon" class="icon"></a>
-    <a href="https://www.linkedin.com/in/tj-jonker/"><img src="/Icons/ic_linkedin_white.svg" alt="GitHub Icon" class="icon"></a>
-    <a href="mailto:tjj.jonker@gmail.com"><img src="/Icons/ic_google_white.svg" alt="GitHub Icon" class="icon"></a>
+    <a href="https://github.com/tjjonker"><img src="/Icons/ic_github_white.svg" alt="GitHub Icon" class="icon i1"></a>
+    <a href="https://www.linkedin.com/in/tj-jonker/"><img src="/Icons/ic_linkedin_white.svg" alt="GitHub Icon" class="icon i2"></a>
+    <a href="mailto:tjj.jonker@gmail.com"><img src="/Icons/ic_google_white.svg" alt="GitHub Icon" class="icon i3"></a>
 </div>
 </template>
 

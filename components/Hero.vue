@@ -1,9 +1,10 @@
 <template>
     <div class="hero-container">
         <div class="hero-title">
-            <h1 class="hero left-box"><span class="underline-title">Graphics</span> &</h1>
+            <h1 class="hero left-box"><span class="underline-title at-1">Graphics</span> <span class="at-2">&</span>
+            </h1>
             <h1 class="hero right-box">
-                Engine <span class="fill-mask accent">Developer</span>
+                <span class="at-3">Engine</span> <span class="fill-mask accent at-4">Developer</span>
             </h1>
         </div>
         <div class="sub-hero">
@@ -16,8 +17,12 @@
             </div>
             <div class="right">
                 <div class="header">
-                    <img class="icon" src="/Icons/ic_location_white.svg" alt="Location Icon">
-                    <p class="uppercase secondary sub-header">purmerend, nl</p>
+                    <div class="icon-container">
+                        <img class="icon" src="/Icons/ic_location_white.svg" alt="Location Icon">
+                    </div>
+                    <div class="text-container">
+                        <p class="uppercase secondary sub-header text-container-text">purmerend, nl</p>
+                    </div>
                 </div>
                 <div class="typewriter-text-container">
                     <p class="typewriter"><span class="typewriter-text"></span><span class="typewriter-cursor"> |</span>
@@ -72,38 +77,48 @@ onMounted(() => {
         { defaults: { duration: 2, ease: "power2.out" } }
     );
 
-    introAnimation
-        .to(".underline-title", { "--underline-width": "100%", duration: 1, ease: "power2.out", })
-        .to(".fill-mask", { "--gradient-perc": "100%", duration: 1.5, })
-        .to(".socials-overlay", { x: "100%" }) // Cover reveal
-        .to(".typewriter-cursor", { 
-            keyframes: [
-                { opacity: 1, duration: 0.1 }, 
-                { opacity: 1, duration: 0.3 },
-            ],
-            ease: "none"
-        })
-        .to(".typewriter-cursor", { 
-            keyframes: [
-                { opacity: 0, duration: 0.1 }, 
-                { opacity: 0, duration: 0.3 }, 
-                { opacity: 1, duration: 0.1 }, 
-                { opacity: 1, duration: 0.3 }
-            ],
-            repeat: 2,
-            ease: "none"
-        })
-        .to(".typewriter-text", { text, duration, ease: "none" }) // Typewriter effect
-        .to(".typewriter-cursor", { 
-            keyframes: [
-                { opacity: 0, duration: 0.1 }, 
-                { opacity: 0, duration: 0.3 }, 
-                { opacity: 1, duration: 0.1 }, 
-                { opacity: 1, duration: 0.3 }
-            ],
-            repeat: -1,
-            ease: "none"
-        })
+    // Animate the titles
+introAnimation
+    .from(".at-1", { y: -50, opacity: 0, duration: .5, ease: "power3.out" })
+    .from(".at-2", { y: -50, opacity: 0, duration: .5, ease: "power3.out" })
+    .from(".at-3", { x: -50, opacity: 0, duration: .5, ease: "power3.out" })
+    .from(".at-4", { x: 50, opacity: 0, duration: .5, ease: "power3.out" })
+    .to(".underline-title", { "--underline-width": "100%", duration: .5, ease: "power3.out" })
+    .to(".fill-mask", { "--gradient-perc": "100%", duration: 1, ease: "power3.out" })
+    .to(".socials-overlay", { width: "0%", duration: 1, ease: "power3.out" })
+    .to(".container .i1", { scale: 1.3, yoyo: true, repeat: 1, duration: .125 }, "-=0.1")
+    .to(".container .i2", { scale: 1.3, yoyo: true, repeat: 1, duration: .125 }, "-=0.1")
+    .to(".container .i3", { scale: 1.3, yoyo: true, repeat: 1, duration: .125 }, "-=0.1")
+    .from(".icon-container .icon", { y: -50, opacity: 0, duration: .5 })
+    .to(".text-container-text", { x: 0, duration: .5 }) // Overlaps with icon animation
+    .to(".typewriter-cursor", {
+        keyframes: [
+            { opacity: 1, duration: 0.1 },
+            { opacity: 1, duration: 0.3 },
+        ],
+        ease: "none"
+    })
+    .to(".typewriter-cursor", {
+        keyframes: [
+            { opacity: 0, duration: 0.1 },
+            { opacity: 0, duration: 0.3 },
+            { opacity: 1, duration: 0.1 },
+            { opacity: 1, duration: 0.3 }
+        ],
+        repeat: 2,
+        ease: "none"
+    })
+    .to(".typewriter-text", { text, duration, ease: "none" }) // Typewriter effect
+    .to(".typewriter-cursor", {
+        keyframes: [
+            { opacity: 0, duration: 0.1 },
+            { opacity: 0, duration: 0.3 },
+            { opacity: 1, duration: 0.1 },
+            { opacity: 1, duration: 0.3 }
+        ],
+        repeat: -1,
+        ease: "none"
+    });
 });
 </script>
 
@@ -137,18 +152,26 @@ onMounted(() => {
     background: var(--background-primary-color);
     z-index: 2;
     /* Ensure it covers Socials initially */
+    transform-origin: right center; /* Shrinks from the right side */
 }
 
 .left {
     position: relative;
     display: inline-block;
-    overflow: hidden;
 }
 
 .socials-wrapper {
     display: flex;
     flex-direction: row;
     gap: var(--space-l);
+}
+
+.at-2,
+.at-3 {
+    display: inline-block;
+    /* Or block/flex */
+    will-change: transform;
+    /* Optimizes animation */
 }
 
 .right {
@@ -161,6 +184,21 @@ onMounted(() => {
     display: flex;
     flex-direction: row;
     gap: var(--space-s);
+}
+
+.icon-container {
+    position: relative;
+    overflow: hidden;
+    /* Ensures the text starts behind */
+}
+
+.text-container {
+    overflow: hidden;
+    /* Starts behind the icon */
+}
+
+.text-container-text {
+    transform: translateX(-100%);
 }
 
 .fill-mask {
@@ -179,7 +217,8 @@ onMounted(() => {
 
 .typewriter-text-container {
     width: 400px;
-    line-height: 1.5em; /* Adjust as needed */
+    line-height: 1.5em;
+    /* Adjust as needed */
     height: calc(1.5em * 4);
 }
 
