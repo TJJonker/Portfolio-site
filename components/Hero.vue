@@ -3,7 +3,7 @@
         <div class="hero-title">
             <h1 class="hero left-box">Graphics &</h1>
             <h1 class="hero right-box">
-                <span class="fill-text">Engine <span style="color: var(--accent-color);">Developer</span></span>
+                Engine <span class="fill-mask accent">Developer</span>
             </h1>
         </div>
         <div class="sub-hero">
@@ -50,29 +50,21 @@ onMounted(() => {
         opacity: 0,
         duration: 1.5,
         ease: "power2.in"
-    }, 0) // "0" ensures both start at the same time
+    }, 0); // "0" ensures both start at the same time
 
-        .to(".right-box", {
-            x: 100, // Moves right
-            opacity: 0,
-            duration: 1.5,
-            ease: "power2.in"
-        }, 0); // Same timing for both
+    tl.to(".right-box", {
+        x: 100, // Moves right
+        opacity: 0,
+        duration: 1.5,
+        ease: "power2.in"
+    }, 0); // Same timing for both
 
-    gsap.fromTo(".hero-fill",
-        { clipPath: "inset(100% 0 0 0)" },  // Starts fully hidden (bottom)
-        {
-            clipPath: "inset(0% 0 0 0)",  // Expands upwards
-            duration: 1.5,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".hero",
-                start: "top 80%", // Starts when near the viewport
-                end: "top 30%",
-                scrub: true,
-            }
-        }
-    );
+    gsap.to(".fill-mask", {
+        backgroundSize: "100% 100%", // Expand gradient upwards
+        duration: 2,
+        ease: "power2.out",
+  });
+
 });
 </script>
 
@@ -113,6 +105,18 @@ onMounted(() => {
     display: flex;
     flex-direction: row;
     gap: var(--space-s);
+}
+
+.fill-mask {
+  position: relative;
+  display: inline-block;
+  color: white;
+  background: linear-gradient(to top, var(--accent-color) 100%, white 100%);
+  background-size: 100% 0%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .icon {
