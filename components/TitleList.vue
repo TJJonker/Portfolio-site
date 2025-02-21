@@ -1,6 +1,7 @@
 <template>
     <div class="list">
-        <p class="uppercase secondary">{{ title }}</p>
+        <p v-if="!bold" class="uppercase secondary">{{ title }}</p>
+        <h4 v-if="bold" class="uppercase">{{ title }}</h4>
         <slot/>
     </div>
 </template>
@@ -9,7 +10,8 @@
 export default {
     name: "TitleList",
     props: {
-        title: { type:String, require: true }
+        title: { type:String, require: true },
+        bold: {type: Boolean, default: false}
     }
 }
 </script>
