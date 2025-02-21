@@ -27,17 +27,13 @@
             <img class="content-image" src="/Images/AudioRender.png" alt="">
         </Grid>
         <Grid start="4" span="6">
-            <AnimatedTitle title="The Visual Experience"
-                sub-title="Translating complex rendering into an accessible visual interface." big="false" />
-        </Grid>
-        <Grid start="4" span="6">
-            <WorkAlinea />
-        </Grid>
-        <Grid start="4" span="6">
-            <WorkAlinea />
-        </Grid>
-        <Grid start="4" span="6">
-            <WorkAlinea />
+            <ProjectSection title="The Visual Experience"
+                sub-title="Translating complex rendering into an accessible visual interface." ,
+                background-text="Summary">
+                <WorkAlinea />
+                <WorkAlinea />
+                <WorkAlinea />
+            </ProjectSection>
         </Grid>
         <Grid start="3" span="8">
             <img class="content-image" src="/Images/SpaceportRender.png" alt="">

@@ -27,16 +27,17 @@ onMounted(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.fromTo(bgText.value,
-        { x: "30vw", opacity: 0, rotate: 15 },  // Starts off-screen, rotated, and invisible
+        { x: "30vw", opacity: 0, rotate: 15, filter: "blur(20px)",  },  // Starts off-screen, rotated, and invisible
         {
-            x: "-30vw",  // Moves all the way left after passing center
+            x: "-25vw",  // Moves all the way left after passing center
             opacity: 1,  // Fades in as it enters
             rotate: -10, // Slight rotation for style
             ease: "power2.out",
+            filter: "blur(0px)", 
             scrollTrigger: {
                 trigger: alinea.value,
                 start: "top 100%",    // Start when the section enters viewport
-                end: "bottom top",   // Continue moving after passing center
+                end: "bottom 60%",   // Continue moving after passing center
                 scrub: true,         // Smooth movement
             }
         }
