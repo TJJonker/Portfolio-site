@@ -32,12 +32,12 @@ onMounted(() => {
             x: "-25vw",  // Moves all the way left after passing center
             opacity: 1,  // Fades in as it enters
             rotate: -10, // Slight rotation for style
-            ease: "power2.out",
+            ease: "ease.out",
             filter: "blur(0px)", 
             scrollTrigger: {
                 trigger: alinea.value,
-                start: "top 100%",    // Start when the section enters viewport
-                end: "bottom 60%",   // Continue moving after passing center
+                start: "top 50%",    // Start when the section enters viewport
+                end: "bottom 80%",   // Continue moving after passing center
                 scrub: true,         // Smooth movement
             }
         }

@@ -56,25 +56,23 @@
             </ProjectSection>
         </Grid>
         <Grid start="4" span="6">
-            <AnimatedTitle title="The Project in Numbers"
-                sub-title="Time, code, and complexity — a snapshot of what went into creating the rendering engine."
-                big="false" />
-        </Grid>
-        <Grid start="4" span="6">
-            <div class="numbers-container">
-                <div class="row">
-                    <ProjectNumber class="proj-num" title="Months" number="3"
-                        description="The physics engine brings realism to games by simulating physical laws " />
-                    <ProjectNumber class="proj-num" title="Months" number="3"
-                        description="The physics engine brings realism to games by simulating physical laws " />
+            <ProjectSection title="The Project in Numbers"
+                sub-title="Time, code, and complexity — a snapshot of what went into creating the rendering engine.">
+                <div class="numbers-container">
+                    <div class="row">
+                        <ProjectNumber class="proj-num" title="Months" number="3"
+                            description="The physics engine brings realism to games by simulating physical laws " />
+                        <ProjectNumber class="proj-num" title="Months" number="3"
+                            description="The physics engine brings realism to games by simulating physical laws " />
+                    </div>
+                    <div class="row">
+                        <ProjectNumber class="proj-num" title="Months" number="3"
+                            description="The physics engine brings realism to games by simulating physical laws " />
+                        <ProjectNumber class="proj-num" title="Months" number="3"
+                            description="The physics engine brings realism to games by simulating physical laws, enabling interactions like collisions, " />
+                    </div>
                 </div>
-                <div class="row">
-                    <ProjectNumber class="proj-num" title="Months" number="3"
-                        description="The physics engine brings realism to games by simulating physical laws " />
-                    <ProjectNumber class="proj-num" title="Months" number="3"
-                        description="The physics engine brings realism to games by simulating physical laws, enabling interactions like collisions, " />
-                </div>
-            </div>
+            </ProjectSection>
         </Grid>
     </div>
 </template>
