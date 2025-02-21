@@ -1,6 +1,7 @@
 <template>
   <div class="text" ref="animatedtxt">
-    <h1 class="title">{{ title }}</h1>
+    <h1 v-if="big" class="title">{{ title }}</h1>
+    <h2 v-if="!big" class="title">{{ title }}</h2>
     <p class="subheader">{{ subTitle }}</p>
   </div>
 </template>
@@ -19,6 +20,10 @@ const props = defineProps({
   subTitle: {
     type: String,
     required: true
+  },
+  big: {
+    type: Boolean,
+    default: true
   }
 });
 
