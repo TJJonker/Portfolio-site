@@ -1,13 +1,12 @@
 <template>
   <div class="text" ref="animatedtxt">
-    <h1 class="title" :class="{ 'animate': isVisible }">{{ title }}</h1>
+    <h1 class="title">{{ title }}</h1>
     <p class="subheader">{{ subTitle }}</p>
   </div>
 </template>
 
 <script setup>
 
-import { defineProps } from 'vue';
 import { onMounted, ref } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -33,7 +32,7 @@ onMounted(() => {
   const titleText = gsap.timeline({
     scrollTrigger: {
       trigger: animatedtxt.value,
-      start: "top 70%", // Triggers when the section is halfway in view
+      start: "top 80%", // Triggers when the section is halfway in view
       end: "top 30%",
       scrub: true,
     }
@@ -42,7 +41,7 @@ onMounted(() => {
   titleText.to(animatedtxt.value.querySelector(".title"), {
     "--title-bar-width": "100%",
     duration: 15,
-    ease: "power2.out"
+    ease: "ease.out"
   }, 0);
 });
 </script>

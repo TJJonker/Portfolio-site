@@ -1,12 +1,12 @@
 <template>
     <div class="grid-container">
         <div class="start-4 span-6">
-            <Hero/>
+            <Hero />
         </div>
         <div class="start-3 span-8 stack">
-            <ProjectShowcase/>
-            <ArticlesShowcase/>
-            <KnowledgeStacks/>
+            <ProjectShowcase />
+            <ArticlesShowcase />
+            <KnowledgeStacks />
         </div>
     </div>
 </template>
@@ -20,7 +20,7 @@ const loading = useState("loading", () => ref(true));
 const route = useRoute();
 
 onMounted(() => {
-    if(route.query.skipAnimation === "true") {
+    if (route.query.skipAnimation === "true") {
         loading.value = false;
         return;
     }

@@ -49,24 +49,24 @@ onMounted(() => {
     const titleText = gsap.timeline({
         scrollTrigger: {
             trigger: ".hero-title",
-            start: "top 40%", // Triggers when the section is halfway in view
-            end: "top 0%",
+            start: "top 30%", // Triggers when the section is halfway in view
+            end: "top -20%",
             scrub: true,
         }
     });
 
     titleText.to(".left-box", {
-        x: -100, // Moves left
+        x: -50, // Moves left
         opacity: 0,
         duration: 1.5,
-        ease: "power2.in"
+        ease: "ease.inOut"
     }, 0); // "0" ensures both start at the same time
 
     titleText.to(".right-box", {
-        x: 100, // Moves right
+        x: 50, // Moves right
         opacity: 0,
         duration: 1.5,
-        ease: "power2.in"
+        ease: "ease.inOut"
     }, 0); // Same timing for both
 
     // const text = "Hey, I'm Tom - "; // Your text
