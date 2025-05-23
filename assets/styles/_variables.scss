@@ -1,36 +1,78 @@
+$breakpoint-desktop-xl: 1920px;
+$breakpoint-desktop: 1600px;
+$breakpoint-laptop: 1280px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
 // Text Colors
-:root {
-    --text-primary-color: #E9E9E9;
-    --text-secondary-color: #B0B0B0;
-    --text-tertiary-color: #707070;
-    
-    // Background Colors
-    --background-primary-color: #0C0C0D;
-    --background-secondary-color: #141415;
-    --background-tertiary-color: #1D1D1E;
-    --background-footer-color: #0A0A0B;
+:root {  
+  --text-primary-color: #E9E9E9;
+  --text-secondary-color: #B0B0B0;
+  --text-tertiary-color: #707070;
   
-    // Accent Colors
-    --accent-color: #14B8A6;
-    --accent-color-underline: #14B8A6B2;
-    
-    // Fonts
-    --font-stack: 'Inter', sans-serif;
+  // Background Colors
+  --background-primary-color: #0C0C0D;
+  --background-secondary-color: #141415;
+  --background-tertiary-color: #1D1D1E;
+  --background-footer-color: #0A0A0B;
+
+  // Accent Colors
+  --accent-color: #14B8A6;
+  --accent-color-underline: #14B8A6B2;
   
-    // Spacing
-    --page-margin: 6.25%;  
-    --column-gap: 0.8333%;
-  
-    --space-xs: 4px;
-    --space-s: 8px;
-    --space-m: 12px;
-    --space-l: 24px;
-    --space-xl: 96px;
-    --space-xxl: 192px;
-  
-    // Animations
-    --animation-mode-fast: .15s ease;
-    --animation-mode-medium: .3s ease;
-    --animation-mode-titles: .5s ease-in-out;
-    --animation-scroll-trigger: .7;
+  // Fonts
+  --font-stack: 'Inter', sans-serif;
+
+  // Spacing
+  --page-margin: 6.25%;  
+  --column-gap: 0.8333%;
+  --grid-columns: 12;
+
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 12px;
+  --space-l: 24px;
+  --space-xl: 96px;
+  --space-xxl: 192px;
+
+  // Animations
+  --animation-mode-fast: .15s ease;
+  --animation-mode-medium: .3s ease;
+  --animation-mode-titles: .5s ease-in-out;
+  --animation-scroll-trigger: .7;
+}
+
+@media (max-width: $breakpoint-desktop) {
+  :root {
+    --page-margin: 4%;
+    --column-gap: 1.2%;
+    --grid-columns: 10;
   }
+}
+
+@media (max-width: $breakpoint-laptop) {
+  :root {
+    --page-margin: 3%;
+    --column-gap: 2%;
+    --grid-columns: 8;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  :root {
+    --page-margin: 5%;
+    --column-gap: 4%;
+    --grid-columns: 6;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  :root {
+    --page-margin: 7.5%;
+    --column-gap: 4%;
+    --grid-columns: 4;
+  }
+}
+
+
+

@@ -1,8 +1,8 @@
 <template>
 <div class="grid-container">
-    <div class="start-3 span-8 row">
+    <div class="position row">
         <div class="left">
-            <a href="/"><img src="@/public/Icons/ic_logo_white.svg" alt=""></a>
+            <a href="/home"><img src="@/public/Icons/ic_logo_white.svg" alt=""></a>
             <ColorDropdown/>
         </div>
 
@@ -41,7 +41,28 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+
+.position {
+    grid-column: 3 / span 8;
+
+    @media (max-width: $breakpoint-desktop){
+        grid-column: 2 / span 8;
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+       grid-column: 2 / span 6; 
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        grid-column: 1 / span 6;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        grid-column: 1 / span 4;
+    }
+}
+
 .row {
     padding: var(--space-m);
     display: flex;
@@ -56,6 +77,11 @@ export default {
     flex-direction: row;
     gap: var(--space-xl);
     align-items: center;
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile) {
+        justify-content: space-between;
+    }
 }
 
 .right {
@@ -63,5 +89,9 @@ export default {
     flex-direction: row-reverse;
     align-items: center;
     gap: var(--space-l);
+
+    @media (max-width: 480px) {
+        display: none;
+    }
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <ContactMe></ContactMe>  
   <footer>
-    <div class="grid-container">
-      <FooterColumn class="span-4 start-2 ml" title="about">
+    <div class="grid-container spacing">
+      <FooterColumn class="position about ml" title="about">
         <p>I'm Tom Jonker, a dedicated Graphics Programmer crafting elegant solutions and captivating visuals.</p>
       </FooterColumn>
-      <FooterColumn class="span-2" title="quick links">
+      <FooterColumn class="column-start columnWidth" title="quick links">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/">Projects</a></li>
@@ -14,7 +14,7 @@
           <li><a href="/">CV</a></li>
         </ul>
       </FooterColumn>
-      <FooterColumn class="span-2" title="recent">
+      <FooterColumn class="columnWidth" title="recent">
         <ul>
           <li><a href="/">Rendering Every Pixel</a></li>
           <li><a href="/">Faith and Programming</a></li>
@@ -22,15 +22,15 @@
           <li><a href="/">Getting Confused</a></li>
         </ul>
       </FooterColumn>
-      <FooterColumn class="span-2" title="socials">
+      <FooterColumn class="columnWidth" title="socials">
         <Socials></Socials>
       </FooterColumn>
     </div>
     <div class="grid-container">
-      <hr class="start-2 span-10 divider">
+      <hr class="divider">
     </div>
     <div class="grid-container">
-      <p class="secondary start-2 span-10 ml">© 2025 Tom Jonker. All rights reserved.</p>
+      <p class="secondary copyright ml">© 2025 Tom Jonker. All rights reserved.</p>
     </div>
   </footer>
 </template>
@@ -50,7 +50,57 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+.position {
+  grid-column: 2 / span 4;
+
+  @media (max-width: $breakpoint-desktop){
+    grid-column: 2 / span 3;
+  }
+}
+
+.about {
+  @media (max-width: $breakpoint-laptop){
+    display: none;
+  }
+}
+
+.column-start {
+    @media (max-width: $breakpoint-laptop){
+      grid-column-start: 2;
+    }
+
+    @media (max-width: $breakpoint-tablet){
+      grid-column-start: 1;
+    }
+
+    @media (max-width: $breakpoint-tablet){
+      grid-column-start: 1;
+    }
+
+    @media (max-width: $breakpoint-mobile){
+      grid-column-start: 1;
+    }
+}
+
+.columnWidth {
+  grid-column-end: span 2;
+
+  @media (max-width: $breakpoint-desktop){
+    grid-column-end: span 2;
+  }
+  
+  @media (max-width: $breakpoint-mobile){
+    grid-column-end: span 4;
+  }
+}
+
+.spacing {
+  @media (max-width: $breakpoint-mobile){
+    row-gap: var(--space-l);
+  }
+}
+
 footer {
   border-top: 1px solid var(--background-tertiary-color);
   background-color: var(--background-footer-color);
@@ -62,6 +112,31 @@ footer {
   width: 100%;
   border: 1px solid var(--background-tertiary-color);
   margin: var(--space-l) 0;
+  grid-column: 2 / span 10;
+
+  @media (max-width: $breakpoint-desktop){
+    grid-column: 2 / span 8;
+  }
+
+  @media (max-width: $breakpoint-laptop){
+    grid-column: 2 / span 6;
+  }
+
+    @media (max-width: $breakpoint-tablet){
+    grid-column: 1 / span 6;
+  }
+}
+
+.copyright {
+    grid-column: 2 / span 10;
+
+  @media (max-width: $breakpoint-desktop){
+    grid-column: 2 / span 8;
+  }
+
+  @media (max-width: $breakpoint-tablet){
+    grid-column: 1 / span 6;
+  }
 }
 
 .ml {

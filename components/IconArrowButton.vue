@@ -53,6 +53,7 @@ export default {
 
 
 .button {
+      box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
