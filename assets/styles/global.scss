@@ -39,6 +39,10 @@ h1 {
 h1.hero {
     font-size: 5.5rem; // 88 px
     font-weight: 900; // Black
+
+    @media (max-width: $breakpoint-desktop){
+        font-size: 4.5rem;
+    }
 }
 
 h2 {

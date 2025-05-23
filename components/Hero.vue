@@ -1,10 +1,10 @@
 <template>
     <div class="hero-container">
         <div class="hero-title">
-            <h1 class="hero left-box"><span class="underline-title at-1">Graphics</span> <span class="at-2">&</span>
+            <h1 class="hero left-box"><span class="underline-title at-1">Performance</span>
             </h1>
             <h1 class="hero right-box">
-                <span class="at-3">Engine</span> <span class="fill-mask accent at-4">Developer</span>
+                <span class="at-3">Software</span> <span class="fill-mask accent at-4">Architect</span>
             </h1>
         </div>
         <div class="sub-hero">
@@ -55,23 +55,19 @@ onMounted(() => {
         }
     });
 
-    titleText.to(".left-box", {
-        x: -50, // Moves left
-        opacity: 0,
-        duration: 1.5,
-        ease: "ease.inOut"
-    }, 0); // "0" ensures both start at the same time
+    // titleText.to(".left-box", {
+    //     x: -50, // Moves left
+    //     opacity: 0,
+    //     duration: 1.5,
+    //     ease: "ease.inOut"
+    // }, 0); // "0" ensures both start at the same time
 
-    titleText.to(".right-box", {
-        x: 50, // Moves right
-        opacity: 0,
-        duration: 1.5,
-        ease: "ease.inOut"
-    }, 0); // Same timing for both
-
-    // const text = "Hey, I'm Tom - "; // Your text
-    // const charsPerSecond = 80; // Adjust for desired speed
-    // const duration = text.length / charsPerSecond; // Ensures constant speed
+    // titleText.to(".right-box", {
+    //     x: 50, // Moves right
+    //     opacity: 0,
+    //     duration: 1.5,
+    //     ease: "ease.inOut"
+    // }, 0); // Same timing for both
 
     const introAnimation = gsap.timeline(
         {
@@ -83,7 +79,7 @@ onMounted(() => {
     // Animate the titles
     introAnimation
         .from(".at-1", { y: -50, opacity: 0, duration: .5, ease: "power3.out" })
-        .from(".at-2", { y: -50, opacity: 0, duration: .5, ease: "power3.out" })
+        // .from(".at-2", { y: -50, opacity: 0, duration: .5, ease: "power3.out" })
         .from(".at-3", { x: -50, opacity: 0, duration: .5, ease: "power3.out" })
         .from(".at-4", { x: 50, opacity: 0, duration: .5, ease: "power3.out" })
         .to(".underline-title", { "--underline-width": "100%", duration: .5, ease: "power3.out" })
@@ -102,7 +98,7 @@ onMounted(() => {
             ease: "none"
         });
 
-    const texts = ["Wow, you found me, you're good!", "I get ego boosts when things work and an existensial crisis when they don't!", "I perform difficult calculations to determine the perfect color for every pixel on your screen!"];
+    const texts = ["I make software faster than your thoughts", "I get ego boosts when things work and an existensial crisis when they don't!", "Milliseconds...? More like Nanoseconds...!"];
     let currentIndex = 0;
     const typeTarget = document.querySelector(".typewriter-text");
     const defaultText = "Hi, I'm Tom - ";  // Default text

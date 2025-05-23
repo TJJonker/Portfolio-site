@@ -1,9 +1,9 @@
 <template>
     <div class="grid-container">
-        <div class="start-4 span-6">
+        <div class="position">
             <Hero />
         </div>
-        <div class="start-3 span-8 stack">
+        <div class="outlining stack">
             <ProjectShowcase />
             <ArticlesShowcase />
             <KnowledgeStacks />
@@ -31,10 +31,22 @@ onMounted(() => {
 });
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .stack {
     display: flex;
     flex-direction: column;
     gap: var(--space-xxl);
+}
+
+.position {
+    grid-column: 3 / span 6;
+}
+
+.outlining {
+    grid-column: 3 / span 8;
+
+    @media (max-width: $breakpoint-desktop){
+        grid-column: 2 / span 8;
+    }
 }
 </style>

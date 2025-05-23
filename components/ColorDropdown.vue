@@ -47,9 +47,7 @@ export default {
       this.isWindowVisible = !this.isWindowVisible;
     },
     onMouseEnter() {
-      console.log("Works");
       if (!this.isTouchDevice()) {
-        console.log("Works too");
         this.isWindowVisible = true;
       }
     },
