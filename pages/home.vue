@@ -3,8 +3,8 @@
     <div class="grid-container">
         <div class="outlining stack">
             <ProjectShowcase />
-            <ArticlesShowcase />
-            <KnowledgeStacks />
+            <!-- <ArticlesShowcase /> -->
+            <!-- <KnowledgeStacks /> -->
         </div>
     </div>
 </template>
@@ -36,19 +36,19 @@ onMounted(() => {
     gap: var(--space-xxl);
 }
 
-.position {
-    grid-column: 3 / span 6;
-
-    @media (max-width: $breakpoint-laptop){
-        grid-column: 2 / span 6;
-    }
-}
-
 .outlining {
     grid-column: 3 / span 8;
 
     @media (max-width: $breakpoint-desktop){
         grid-column: 2 / span 8;
+    }
+
+    @media (max-width: $breakpoint-laptop){
+        grid-column: 2 / span 6;
+    }
+
+    @media (max-width: $breakpoint-tablet){
+        grid-column: 1 / span 6;
     }
 }
 </style>

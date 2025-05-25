@@ -34,7 +34,7 @@ $breakpoint-mobile: 480px;
   --space-m: 12px;
   --space-l: 24px;
   --space-xl: 96px;
-  --space-xxl: 192px;
+  --space-xxl: 200px;
 
   // Animations
   --animation-mode-fast: .15s ease;
@@ -48,7 +48,7 @@ $breakpoint-mobile: 480px;
     --page-margin: 4%;
     --column-gap: 1.2%;
     --grid-columns: 10;
-    --space-xxl: 120px;
+    --space-xxl: 192px;
   }
 }
 
@@ -57,7 +57,7 @@ $breakpoint-mobile: 480px;
     --page-margin: 3%;
     --column-gap: 2%;
     --grid-columns: 8;
-    --space-xxl: 80px;
+    --space-xxl: 120px;
   }
 }
 
@@ -75,7 +75,7 @@ $breakpoint-mobile: 480px;
     --column-gap: 0%;
     --grid-columns: 4;
     --space-xl: 48px;
-    --space-xxl: 62px;
+    --space-xxl: 80px;
     --row-gap: var(--space-xl);
   }
 }

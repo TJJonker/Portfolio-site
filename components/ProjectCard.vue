@@ -94,7 +94,7 @@ const setHover = (state) => {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .card {
     display: flex;
     flex-direction: column;
@@ -113,7 +113,7 @@ const setHover = (state) => {
 .image-container {
     width: 100%;
     /* Full width */
-    height: 500px;
+    max-height: 500px;
     /* Fixed height */
     overflow: hidden;
     /* Hide any overflow */
@@ -135,6 +135,10 @@ const setHover = (state) => {
 
 .container-right {
     grid-column: 5 / span 4;
+
+    @media (max-width: $breakpoint-mobile) {
+        display: none;
+    }
 }
 
 .project-image {
@@ -159,6 +163,10 @@ const setHover = (state) => {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     column-gap: var(--column-gap);
+
+    @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .fill {
