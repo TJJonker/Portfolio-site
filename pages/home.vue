@@ -1,12 +1,12 @@
 <template>
     <Hero />
-    <!-- <div class="grid-container">
+    <div class="grid-container">
         <div class="outlining stack">
             <ProjectShowcase />
             <ArticlesShowcase />
             <KnowledgeStacks />
         </div>
-    </div> -->
+    </div>
 </template>
 
 <script setup>

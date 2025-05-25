@@ -1,15 +1,37 @@
 <template>
-    <a :href="url"
-        class="card" 
-        @mouseenter="setHover(true)" 
-        @mouseleave="setHover(false)"
-    >
+    <a :href="url" class="card" @mouseenter="setHover(true)" @mouseleave="setHover(false)">
         <div class="image-container">
             <img class="project-image" :src="image" alt="">
         </div>
-        <div class="text">
-            <p class="secondary">{{ subTitle }}</p>
-            <div class="row">
+        <div class="text-container">
+            <p class="project-name secondary">{{ subTitle }}</p>
+            <div class="container-left">
+                <h2 class="fill">{{ title }}</h2>
+                <p class="fill">{{ content }}</p>
+                <IconArrowButton class="btn" title="View work" :active="isHovered" :link="url" />
+            </div>
+            <div class="container-right">
+                <div class="properties-stack">
+                    <div class="properties-row">
+                        <TitleList title="The Goal">
+                            <p>{{ goal }}</p>
+                        </TitleList>
+                        <TitleList title="Year">
+                            <p>{{ year }}</p>
+                        </TitleList>
+                    </div>
+                    <div class="properties-row">
+                        <TitleList title="My Role">
+                            <p v-for="(role, index) in roles" :key="index">{{ role }}</p>
+                        </TitleList>
+                        <TitleList title="technologies">
+                            <p v-for="(tech, index) in technologies" :key="index">{{ tech }}</p>
+                        </TitleList>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row">
                 <div class="left">
                     <div class="content">
                         <h2>{{ title }}</h2>
@@ -40,36 +62,36 @@
                                 <p v-for="(tech, index) in technologies" :key="index">{{ tech }}</p>
                             </TitleList>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </div>  -->
+            <!-- </div> -->
+            <!-- </div> -->
         </div>
     </a>
-    </template>
-    
+</template>
+
 
 <script setup>
-    import { ref } from 'vue';
-    
-    // Props
-    defineProps({
-        title: String,
-        subTitle: String,
-        content: String,
-        image: String,
-        url: String,
-        goal: String,
-        year: String,
-        roles: Array,
-        technologies: Array,
-    });
-    
-    // Reactive hover state
-    const isHovered = ref(false);
-    
-    const setHover = (state) => {
-        isHovered.value = state;
-    };
+import { ref } from 'vue';
+
+// Props
+defineProps({
+    title: String,
+    subTitle: String,
+    content: String,
+    image: String,
+    url: String,
+    goal: String,
+    year: String,
+    roles: Array,
+    technologies: Array,
+});
+
+// Reactive hover state
+const isHovered = ref(false);
+
+const setHover = (state) => {
+    isHovered.value = state;
+};
 </script>
 
 <style lang="css" scoped>
@@ -89,56 +111,62 @@
 }
 
 .image-container {
-    width: 100%; /* Full width */
-    height: 500px; /* Fixed height */
-    overflow: hidden; /* Hide any overflow */
+    width: 100%;
+    /* Full width */
+    height: 500px;
+    /* Fixed height */
+    overflow: hidden;
+    /* Hide any overflow */
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
     border-radius: 10px;
 }
 
+.container-left {
+    grid-column: 1 / span 4;
+    display: grid;
+    row-gap: var(--space-l);
+    column-gap: var(--column-gap);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.container-right {
+    grid-column: 5 / span 4;
+}
+
 .project-image {
-    width: 100%; /* Take up the full width */
-    height: auto; /* Maintain aspect ratio */
-    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+    width: 100%;
+    /* Take up the full width */
+    height: auto;
+    /* Maintain aspect ratio */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth zoom effect */
+}
+
+.project-name {
+    grid-column: 1 / span 8;
 }
 
 .card:hover .project-image {
-    transform: scale(1.025); /* Zoom in on hover */
+    transform: scale(1.025);
+    /* Zoom in on hover */
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
+.text-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: var(--column-gap);
 }
 
-.text {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
+.fill {
+    grid-column: 1 / span 4;
 }
 
-.left {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-l)
-}
-
-.left p {
-    width: 600px;
-    overflow: hidden; /* Hide the overflow text */
-    display: -webkit-box; /* Flexbox alternative for webkit browsers */
-    -webkit-box-orient: vertical; /* Set the orientation to vertical */
-    -webkit-line-clamp: 3; /* Limit the number of lines to 3 */
-    line-clamp: 3; /* Standard line clamp (future-proof) */
-    text-overflow: ellipsis; /* Add "..." when the text overflows */
-}
-
-.moving {
-    padding-left: var(--space-s);
-    transition: padding-left var(--animation-mode-medium);
+.btn {
+    grid-column: 1 / span 2;
 }
 
 .properties-stack {
@@ -150,17 +178,7 @@
 .properties-row {
     display: flex;
     flex-direction: row;
+    justify-content: end;
     gap: var(--space-l);
 }
-
-.row {
-    display: flex;
-    flex: row;
-    justify-content: space-between;
-}
-
-.btn {
-    width: 128px;
-}
 </style>
-
