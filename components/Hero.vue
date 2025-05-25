@@ -1,13 +1,14 @@
 <template>
     <div class="hero-container">
-        <div class="hero-title">
-            <h1 class="hero left-box"><span class="underline-title at-1">Performance</span>
-            </h1>
-            <h1 class="hero right-box">
-                <span class="at-3">Software</span> <span class="fill-mask accent at-4">Architect</span>
-            </h1>
-        </div>
-        <div class="sub-hero">
+        <div class="grid-container">
+            <div class="hero-title">
+                <h1 class="hero left-box">
+                    <span class="underline-title at-1">Performance</span>
+                </h1>
+                <h1 class="hero right-box">
+                    <span class="at-3">Software</span> <span class="fill-mask accent at-4">Architect</span>
+                </h1>
+            </div>
             <div class="left">
                 <div class="socials-wrapper">
                     <p class="uppercase secondary sub-header ">Say Hello</p>
@@ -31,6 +32,8 @@
             </div>
         </div>
     </div>
+
+
 </template>
 
 <script setup>
@@ -158,7 +161,7 @@ onMounted(() => {
 });
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .hero-container {
     padding: var(--space-xxl) 0;
     display: flex;
@@ -167,16 +170,32 @@ onMounted(() => {
 }
 
 .hero-title {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
+    white-space: nowrap;
+    grid-column: 4 / span 6;
+
+    @media (max-width: $breakpoint-desktop){
+        grid-column: 3 / span 6;
+    }
+    
+    @media (max-width: $breakpoint-laptop){
+        grid-column: 2 / span 6;
+    }
+
+    @media (max-width: $breakpoint-tablet){
+        grid-column: 1 / span 6;
+    }
+
+    @media (max-width: $breakpoint-mobile){
+        white-space: unset;
+        grid-column: 1 / span 4;
+
+    }
 }
 
 .sub-hero {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
 
 .socials-overlay {
@@ -195,12 +214,34 @@ onMounted(() => {
 .left {
     position: relative;
     display: inline-block;
+    grid-column: 4 / span 3;
+
+    @media (max-width: $breakpoint-desktop){
+        grid-column: 3 / span 3;
+    }
+
+    @media (max-width: $breakpoint-laptop){
+        grid-column: 2 / span 3;
+    }
+
+    @media (max-width: $breakpoint-tablet){
+        grid-column: 1 / span 3;
+    }
+
+    @media (max-width: $breakpoint-mobile){
+        grid-column: 1 / span 4;
+    }
 }
 
 .socials-wrapper {
     display: flex;
     flex-direction: row;
-    gap: var(--space-l);
+    column-gap: var(--space-l);
+    row-gap: var(--space-m);
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+    }
 }
 
 .at-2,
@@ -215,6 +256,23 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     gap: var(--space-m);
+    grid-column: 7 / span 3;
+
+    @media (max-width: $breakpoint-desktop){
+        grid-column: 6 / span 3;
+    }
+
+    @media (max-width: $breakpoint-laptop){
+        grid-column: 5 / span 3;
+    }
+
+    @media (max-width: $breakpoint-tablet){
+        grid-column: 4 / span 3;
+    }
+
+    @media (max-width: $breakpoint-mobile){
+        grid-column: 1 / span 4;
+    }
 }
 
 .header {
@@ -251,7 +309,7 @@ onMounted(() => {
 }
 
 .typewriter-text-container {
-    width: 400px;
+    width: 100%;
     line-height: 1.5em;
     /* Adjust as needed */
     height: calc(1.5em * 4);

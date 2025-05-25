@@ -1,14 +1,12 @@
 <template>
-    <div class="grid-container">
-        <div class="position">
-            <Hero />
-        </div>
+    <Hero />
+    <!-- <div class="grid-container">
         <div class="outlining stack">
             <ProjectShowcase />
             <ArticlesShowcase />
             <KnowledgeStacks />
         </div>
-    </div>
+    </div> -->
 </template>
 
 <script setup>
@@ -40,6 +38,10 @@ onMounted(() => {
 
 .position {
     grid-column: 3 / span 6;
+
+    @media (max-width: $breakpoint-laptop){
+        grid-column: 2 / span 6;
+    }
 }
 
 .outlining {

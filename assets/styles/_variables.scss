@@ -26,6 +26,7 @@ $breakpoint-mobile: 480px;
   // Spacing
   --page-margin: 6.25%;  
   --column-gap: 0.8333%;
+  --row-gap: var(--space-m);
   --grid-columns: 12;
 
   --space-xs: 4px;
@@ -56,6 +57,7 @@ $breakpoint-mobile: 480px;
     --page-margin: 3%;
     --column-gap: 2%;
     --grid-columns: 8;
+    --space-xxl: 80px;
   }
 }
 
@@ -70,8 +72,11 @@ $breakpoint-mobile: 480px;
 @media (max-width: $breakpoint-mobile) {
   :root {
     --page-margin: 7.5%;
-    --column-gap: 4%;
+    --column-gap: 0%;
     --grid-columns: 4;
+    --space-xl: 48px;
+    --space-xxl: 62px;
+    --row-gap: var(--space-xl);
   }
 }
 
