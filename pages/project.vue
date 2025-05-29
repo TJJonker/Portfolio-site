@@ -1,21 +1,15 @@
 <template>
     <WorkTitle class="header" sub-title="Void | Rendering Engine" title="Rendering Every Pixel" min-to-read="3"
-    date="Nov 18, 2024" img="/Images/CityRender.png" />
+        date="Nov 18, 2024" img="/Images/CityRender.png" />
     <div class="project-content">
-        <div class="properties-row narrow">
-            <TitleList bold="true" title="Roles">
-                <p v-for="(role, index) in roles" :key="index">{{ role }}</p>
-            </TitleList>
-            <TitleList bold="true" title="Technologies">
-                <p v-for="(tech, index) in technologies" :key="index">{{ tech }}</p>
-            </TitleList>
-            <TitleList bold="true" title="Goal">
-                <p>{{ goal }}</p>
-            </TitleList>
-            <TitleList bold="true" title="Year">
-                <p>{{ year }}</p>
-            </TitleList>
-        </div>
+        <client-only>
+            <div class="narrow" :class="{ 'properties-row': width > 425, 'properties-column': width < 425 }">
+                <TitleList bold="true" title="Roles" title-short="Roles" :items="roles" :vertical="width > 425" />
+                <TitleList bold="true" title="Technologies" title-short="Techs" :items="technologies" :vertical="width > 425" />
+                <TitleList bold="true" title="Goal" title-short="Goal" :items="goal" :vertical="width > 425" />
+                <TitleList bold="true" title="Year" title-short="Year" :items="year" :vertical="width > 425" />
+            </div>
+        </client-only>
         <WorkAlinea class="narrow" />
         <img class="content-image wide" src="/Images/AudioRender.png" alt="">
         <ProjectSection class="narrow" title="The Visual Experience"
@@ -67,8 +61,8 @@ watchEffect(() => {
     useTopBar.value = width.value > 425
 })
 
-const goal = "Educational";
-const year = "2023";
+const goal = ["Educational"];
+const year = ["2023"];
 const roles = ["Researcher", "Developer"];
 const technologies = ["OpenGL", "C/C++", "PreMake"];
 </script>
@@ -124,6 +118,12 @@ const technologies = ["OpenGL", "C/C++", "PreMake"];
     justify-content: space-between;
 }
 
+.properties-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+}
+
 .content-image {
     width: 100%;
     height: 500px;
@@ -133,11 +133,11 @@ const technologies = ["OpenGL", "C/C++", "PreMake"];
     @media (max-width: $breakpoint-desktop) {
         height: 400px;
     }
-    
+
     @media (max-width: $breakpoint-laptop) {
         height: 300px;
     }
-    
+
     @media (max-width: $breakpoint-tablet) {
         height: 300px;
     }
@@ -153,11 +153,11 @@ const technologies = ["OpenGL", "C/C++", "PreMake"];
     @media (max-width: $breakpoint-desktop) {
         grid-column: 2 / span 8;
     }
-    
+
     @media (max-width: $breakpoint-laptop) {
         grid-column: 2 / span 6;
     }
-    
+
     @media (max-width: $breakpoint-tablet) {
         grid-column: 1 / span 6;
     }
@@ -170,7 +170,7 @@ const technologies = ["OpenGL", "C/C++", "PreMake"];
     @media (max-width: $breakpoint-desktop) {
         grid-column: 3 / span 6;
     }
-    
+
     @media (max-width: $breakpoint-laptop) {
         grid-column: 2 / span 6;
     }
