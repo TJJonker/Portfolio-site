@@ -10,7 +10,7 @@
             class="full"
             v-else
             title="Insights"
-            subTitle="Ideas, code, design."
+            subTitle="Ideas, code, design, and insights."
         />
         <ArticleCard
             class="full"    

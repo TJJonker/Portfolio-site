@@ -44,6 +44,9 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useWindowSize } from '@vueuse/core'
+
+const { width } = useWindowSize();
 
 // Props
 defineProps({
@@ -64,6 +67,8 @@ const isHovered = ref(false);
 const setHover = (state) => {
     isHovered.value = state;
 };
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -99,7 +104,7 @@ const setHover = (state) => {
 }
 
 .container-left {
-    --grid-span: 6;
+    --grid-span: 5;
 
     grid-column: 1 / span var(--grid-span);
     display: grid;
@@ -153,7 +158,8 @@ const setHover = (state) => {
 }
 
 .fill {
-    --grid-span: 6;
+
+    --grid-span: 5;
 
     grid-column: 1 / span var(--grid-span);
 

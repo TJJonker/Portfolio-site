@@ -4,7 +4,7 @@
         <div class="outlining stack">
             <ProjectShowcase />
             <ArticlesShowcase />
-            <!-- <KnowledgeStacks /> -->
+            <KnowledgeStacks />
         </div>
     </div>
 </template>

@@ -172,6 +172,7 @@ onMounted(() => {
 .hero-title {
     white-space: nowrap;
     grid-column: 4 / span 6;
+    padding-bottom: var(--space-l);
 
     @media (max-width: $breakpoint-desktop){
         grid-column: 3 / span 6;
@@ -188,7 +189,6 @@ onMounted(() => {
     @media (max-width: $breakpoint-mobile){
         white-space: unset;
         grid-column: 1 / span 4;
-
     }
 }
 
