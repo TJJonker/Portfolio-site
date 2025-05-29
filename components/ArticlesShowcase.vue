@@ -1,9 +1,16 @@
 <template>
     <div class="articleStack">
-        <AnimatedTitle 
-        class="full"
-        title="Sharing Insights"
-        subTitle="Exploring idea, sharing knowledge, and documenting my journey through code and design."
+        <AnimatedTitle
+            class="full"
+            v-if="width > 425"
+            title="Sharing Insights"
+            subTitle="Exploring idea, sharing knowledge, and documenting my journey through code and design."
+        />
+        <AnimatedTitle
+            class="full"
+            v-else
+            title="Insights"
+            subTitle="Ideas, code, design."
         />
         <ArticleCard
             class="full"    
@@ -38,6 +45,12 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { useWindowSize } from '@vueuse/core'
+
+const { width } = useWindowSize()
+</script>
 
 <style lang="scss" scoped>
 .articleStack {

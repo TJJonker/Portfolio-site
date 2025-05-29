@@ -1,7 +1,13 @@
 <template>
     <div>
         <AnimatedTitle
+            v-if="width > 425"
             title="The Crafts"
+            subTitle="What I've been working on lately"
+        />
+        <AnimatedTitle
+            v-else
+            title="Crafts"
             subTitle="What I've been working on lately"
         />
         <div class="project-stack">
@@ -31,16 +37,10 @@
     </div>
 </template>
 
-<script>
-import AnimatedTitle from './AnimatedTitle.vue';
-import ProjectCard from './ProjectCard.vue';
+<script setup>
+import { useWindowSize } from '@vueuse/core'
 
-export default {
-    components: {
-        AnimatedTitle,
-        ProjectCard
-    }
-}
+const { width } = useWindowSize()
 </script>
 
 <style lang="css" scoped>
