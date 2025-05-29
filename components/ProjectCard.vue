@@ -24,47 +24,12 @@
                         <TitleList title="My Role">
                             <p v-for="(role, index) in roles" :key="index">{{ role }}</p>
                         </TitleList>
-                        <TitleList title="technologies">
+                        <TitleList title="Techs">
                             <p v-for="(tech, index) in technologies" :key="index">{{ tech }}</p>
                         </TitleList>
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="row">
-                <div class="left">
-                    <div class="content">
-                        <h2>{{ title }}</h2>
-                        <p>{{ content }}</p>
-                    </div>
-                    <IconArrowButton
-                        class="btn"
-                        title="View work"
-                        :active="isHovered"
-                        :link="url"
-                    />
-                </div>
-                <div class="right">
-                    <div class="properties-stack">
-                        <div class="properties-row">
-                            <TitleList title="The Goal">
-                                <p>{{ goal }}</p>
-                            </TitleList>
-                            <TitleList title="Year">
-                                <p>{{ year }}</p>
-                            </TitleList>
-                        </div>
-                        <div class="properties-row">
-                            <TitleList title="My Role">
-                                <p v-for="(role, index) in roles" :key="index">{{ role }}</p>
-                            </TitleList>
-                            <TitleList title="technologies">
-                                <p v-for="(tech, index) in technologies" :key="index">{{ tech }}</p>
-                            </TitleList>
-                        </div>
-                    </div>  -->
-            <!-- </div> -->
-            <!-- </div> -->
         </div>
     </a>
 </template>
@@ -95,6 +60,7 @@ const setHover = (state) => {
 </script>
 
 <style lang="scss" scoped>
+
 .card {
     display: flex;
     flex-direction: column;
@@ -126,15 +92,29 @@ const setHover = (state) => {
 }
 
 .container-left {
-    grid-column: 1 / span 4;
+    --grid-span: 6;
+
+    grid-column: 1 / span var(--grid-span);
     display: grid;
     row-gap: var(--space-l);
     column-gap: var(--column-gap);
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(var(--grid-span), 1fr);
+
+    @media (max-width: $breakpoint-laptop) {
+        --grid-span: 4
+    }
 }
 
 .container-right {
-    grid-column: 5 / span 4;
+    grid-column: 7 / span 4;
+
+    @media (max-width: $breakpoint-desktop) {
+        grid-column: 7 / span 2;
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+        grid-column: 5 / span 2;
+    }
 
     @media (max-width: $breakpoint-mobile) {
         display: none;
@@ -151,7 +131,7 @@ const setHover = (state) => {
 }
 
 .project-name {
-    grid-column: 1 / span 8;
+    grid-column: 1 / span var(--grid-columns-mt);
 }
 
 .card:hover .project-image {
@@ -161,16 +141,18 @@ const setHover = (state) => {
 
 .text-container {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(var(--grid-columns-mt), 1fr);
     column-gap: var(--column-gap);
-
-    @media (max-width: $breakpoint-mobile) {
-        grid-template-columns: repeat(4, 1fr);
-    }
 }
 
 .fill {
-    grid-column: 1 / span 4;
+    --grid-span: 6;
+
+    grid-column: 1 / span var(--grid-span);
+
+    @media (max-width: $breakpoint-laptop) {
+        --grid-span: 4
+    }
 }
 
 .btn {

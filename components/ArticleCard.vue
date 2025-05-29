@@ -1,22 +1,22 @@
 <template>
-<a :href="url" class="card" :style="enableUnderline">
-    <div class="stack">
-        <div class="title">
-            <h3>{{ title }}</h3>
-            <p>{{ subTitle }}</p>
-        </div>
-        <div class="row">
-            <p class="secondary line-prefix">{{ date }}</p>
-            <div class="icons">
-                <!-- <a href=""><img class="icon" src="/Icons/ic_share_white.svg" alt="Share icon"></a>
+    <a :href="url" class="article-card" :style="enableUnderline">
+        <div class="stack">
+            <div class="title">
+                <h3>{{ title }}</h3>
+                <p>{{ subTitle }}</p>
+            </div>
+            <div class="row">
+                <p class="secondary line-prefix">{{ date }}</p>
+                <div class="icons">
+                    <!-- <a href=""><img class="icon" src="/Icons/ic_share_white.svg" alt="Share icon"></a>
                 <a href=""><img class="icon" src="/Icons/ic_bookmark_white.svg" alt="Bookmark icon"></a> -->
+                </div>
             </div>
         </div>
-    </div>
-    <div class="image">
-        <img :src="image" alt="">
-    </div>
-</a>
+        <div class="image">
+            <img :src="image" alt="">
+        </div>
+    </a>
 </template>
 
 <script>
@@ -31,19 +31,19 @@ export default {
         last: { Type: Boolean, require: false, default: false }
     },
     computed: {
-    enableUnderline() {
-        return !this.last
-            ? { 'border-bottom': '2px solid var(--background-tertiary-color)' } // Removed the semicolon
-            : {};
+        enableUnderline() {
+            return !this.last
+                ? { 'border-bottom': '2px solid var(--background-tertiary-color)' } // Removed the semicolon
+                : {};
         }
     }
 }
 </script>
 
-<style lang="css" scoped>
-.card {
+<style lang="scss" scoped>
+.article-card {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(var(--grid-columns-mt), 1fr);
     column-gap: var(--column-gap);
     padding: var(--space-l);
     transition: padding var(--animation-mode-medium);
@@ -59,22 +59,38 @@ export default {
 }
 
 .stack {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 7;
     display: flex;
     flex-direction: column;
     gap: var(--space-l);
+
+    @media (max-width: $breakpoint-desktop) {
+        grid-column: 1 / span 6;
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+        grid-column: 1 / span 4;
+    }
 }
 
 .image {
-    grid-column: 7 / span 2;
+    grid-column: 8 / span 3;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: $breakpoint-desktop) {
+        grid-column: 7 / span 2
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+        grid-column: 5 / span 2
+    }
 }
 
 .line-prefix {
     position: relative;
-    padding-left: var(--space-m); 
+    padding-left: var(--space-m);
 }
 
 .line-prefix::before {
@@ -83,8 +99,10 @@ export default {
     left: 0;
     top: 0;
     width: 1px;
-    height: 100%; /* Full height of the text */
-    background-color: var(--accent-color); /* Set the color of the rectangle */
+    height: 100%;
+    /* Full height of the text */
+    background-color: var(--accent-color);
+    /* Set the color of the rectangle */
     transition: background-color var(--animation-mode-titles);
 }
 
@@ -110,7 +128,7 @@ export default {
 }
 
 .icon:hover {
-  filter: none;
+    filter: none;
 }
 
 .image img {

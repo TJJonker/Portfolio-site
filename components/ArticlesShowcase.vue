@@ -44,7 +44,7 @@
     display: grid;
     column-gap: var(--column-gap);
     row-gap: var(--row-gap);
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(var(--grid-columns-mt), 1fr);
 }
 
 .btn {
@@ -52,6 +52,6 @@
 }
 
 .full {
-    grid-column: 1 / span 10;
+    grid-column: 1 / span var(--grid-columns-mt);
 }
 </style>
