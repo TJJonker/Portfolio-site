@@ -11,7 +11,8 @@ export default {
     name: "TitleList",
     props: {
         title: { type:String, require: true },
-        bold: {type: Boolean, default: false}
+        bold: {type: Boolean, default: false},
+        vertical: {type: Boolean, default: true}
     }
 }
 </script>
@@ -22,5 +23,6 @@ export default {
     display: flex;
     flex-direction: column;
     gap: var(--space-s);
+    align-items: center;
 }
 </style>

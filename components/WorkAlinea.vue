@@ -8,11 +8,12 @@
             screen space and applying lighting effects, shadows, and materials.
             <br/><br/>
             real-time visuals on the screen. At its core, the rendering system takes 3D models, textures, and lighting
-            information and processes them through shaders and.</p>
+            information and processes them through shaders and.
+            <br/><br/></p>
     </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 p {
     width: 500px;
 }
@@ -21,5 +22,9 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+    }
 }
 </style>

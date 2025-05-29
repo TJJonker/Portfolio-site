@@ -46,6 +46,7 @@ onMounted(() => {
 </script>
 
 <style lang="css" scoped>
+
 .background-text {
     position: absolute;
     top: 50%;
