@@ -42,10 +42,10 @@ export default {
 
 <style lang="css" scoped>
 .card {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: var(--column-gap);
     padding: var(--space-l);
-    display: flex;
-    flex-direction: row;
-    gap: var(--space-xl);
     transition: padding var(--animation-mode-medium);
 }
 
@@ -59,9 +59,17 @@ export default {
 }
 
 .stack {
+    grid-column: 1 / span 6;
     display: flex;
     flex-direction: column;
     gap: var(--space-l);
+}
+
+.image {
+    grid-column: 7 / span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .line-prefix {
@@ -107,5 +115,6 @@ export default {
 
 .image img {
     border-radius: 5px;
+    max-width: 200px;
 }
 </style>

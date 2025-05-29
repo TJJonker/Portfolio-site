@@ -3,7 +3,7 @@
     <div class="grid-container">
         <div class="outlining stack">
             <ProjectShowcase />
-            <!-- <ArticlesShowcase /> -->
+            <ArticlesShowcase />
             <!-- <KnowledgeStacks /> -->
         </div>
     </div>
@@ -13,6 +13,10 @@
 import { ref, onMounted } from "vue";
 import { useState } from "nuxt/app";
 import { useRoute } from "vue-router";
+
+useHead({
+  title: 'Home'
+})
 
 const loading = useState("loading", () => ref(true));
 const route = useRoute();
