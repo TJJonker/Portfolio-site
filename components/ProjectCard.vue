@@ -8,7 +8,14 @@
             <div class="container-left">
                 <h2 class="fill">{{ title }}</h2>
                 <p class="fill">{{ content }}</p>
-                <IconArrowButton class="btn" title="View work" :active="isHovered" :link="url" />
+                <IconArrowButton 
+                    v-if="width > 425"
+                    class="btn" 
+                    title="View work" 
+                    :active="isHovered" 
+                    :link="url" 
+                />
+
             </div>
             <div class="container-right">
                 <div class="properties-stack">

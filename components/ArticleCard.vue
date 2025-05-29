@@ -1,5 +1,5 @@
 <template>
-    <a :href="url" class="article-card" :style="enableUnderline">
+    <a :href="url" class="card" :style="enableUnderline">
         <div class="stack">
             <div class="title">
                 <h3>{{ title }}</h3>
@@ -7,10 +7,6 @@
             </div>
             <div class="row">
                 <p class="secondary line-prefix">{{ date }}</p>
-                <div class="icons">
-                    <!-- <a href=""><img class="icon" src="/Icons/ic_share_white.svg" alt="Share icon"></a>
-                <a href=""><img class="icon" src="/Icons/ic_bookmark_white.svg" alt="Bookmark icon"></a> -->
-                </div>
             </div>
         </div>
         <div class="image">
@@ -41,21 +37,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.article-card {
+.card {
     display: grid;
     grid-template-columns: repeat(var(--grid-columns-mt), 1fr);
     column-gap: var(--column-gap);
     padding: var(--space-l);
     transition: padding var(--animation-mode-medium);
-}
 
-.card:hover {
+    @media (max-width: $breakpoint-mobile) {
+        row-gap: var(--space-l);
+        padding: var(--space-l) 0;
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
     padding-left: calc(var(--space-l) * 2);
     padding-right: 0;
-}
+  }
 
-.card:hover .row {
+  .card:hover .row {
     padding-right: calc(var(--space-m) + var(--space-l));
+  }
 }
 
 .stack {
@@ -80,11 +82,16 @@ export default {
     align-items: center;
 
     @media (max-width: $breakpoint-desktop) {
-        grid-column: 7 / span 2
+        grid-column: 7 / span 2;
     }
 
     @media (max-width: $breakpoint-laptop) {
-        grid-column: 5 / span 2
+        grid-column: 5 / span 2;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        grid-column: 1 / span 4;
+        grid-row: 1;
     }
 }
 
@@ -134,5 +141,9 @@ export default {
 .image img {
     border-radius: 5px;
     max-width: 200px;
+
+    @media (max-width: $breakpoint-mobile) {
+        max-width: none;
+    }
 }
 </style>

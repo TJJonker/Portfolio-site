@@ -39,8 +39,15 @@
         />
         <div class="btn">
             <IconArrowButton
-            title="See more..."
-            link="/home"
+                v-if="width > 425"
+                title="See more..."
+                link="/home"
+            />
+
+            <IconArrowButton
+                v-else
+                title="More..."
+                link="/home"
             />
         </div>
     </div>
@@ -58,6 +65,10 @@ const { width } = useWindowSize()
     column-gap: var(--column-gap);
     row-gap: var(--row-gap);
     grid-template-columns: repeat(var(--grid-columns-mt), 1fr);
+
+    @media (max-width: $breakpoint-mobile) {
+        row-gap: 0;
+    }
 }
 
 .btn {
