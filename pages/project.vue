@@ -12,7 +12,7 @@
         </client-only>
         <WorkAlinea class="narrow" />
         <img class="content-image wide" src="/Images/AudioRender.png" alt="">
-        <ProjectSection class="narrow" title="The Visual Experience"
+        <ProjectSection class="narrow" title="The Visual Experience" title-short="Visual"
             sub-title="Translating complex rendering into an accessible visual interface." , background-text="Summary">
             <WorkAlinea />
             <WorkAlinea />
@@ -25,12 +25,12 @@
             <WorkAlinea />
         </ProjectSection>
         <img class="content-image wide" src="/Images/Editor.png" alt="">
-        <ProjectSection class="narrow" title="The Visual experience"
+        <ProjectSection class="narrow" title="The Visual experience" title-short="Visual"
             sub-title="Translating complex rendering into an accessible visual interface." background-text="Visual">
             <WorkAlinea />
             <WorkAlinea />
         </ProjectSection>
-        <ProjectSection class="narrow" title="The Project in Numbers"
+        <ProjectSection class="narrow" title="The Project in Numbers" title-short="Numbers"
             sub-title="Time, code, and complexity — a snapshot of what went into creating the rendering engine.">
             <div class="numbers-container">
                 <div class="row">

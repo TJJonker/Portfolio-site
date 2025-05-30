@@ -14,17 +14,27 @@
 </template>
 
 <style lang="scss" scoped>
-p {
-    width: 500px;
-}
 
 .alinea-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat( 6, 1fr);
+    column-gap: var(--column-gap);
+    row-gap: var(--space-l);
+}
+
+.alinea-container h4 {
+    grid-column: 1 / span 2;
 
     @media (max-width: $breakpoint-mobile) {
-        flex-direction: column;
+        grid-column: 1 / span 6;
+    }
+}
+
+.alinea-container p {
+    grid-column: 3 / span 4;
+    
+    @media (max-width: $breakpoint-mobile) {
+        grid-column: 1 / span 6;
     }
 }
 </style>

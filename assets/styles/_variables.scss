@@ -24,8 +24,8 @@ $breakpoint-mobile: 480px;
   --font-stack: 'Inter', sans-serif;
 
   // Spacing
-  --page-margin: 6.25%;  
-  --column-gap: 0.8333%;
+  --page-margin: calc(100vw * 0.0625);   /* = 6.25% of full page width */
+  --column-gap: calc(100vw * 0.008333);  /* = 0.8333% of full page width */
   --row-gap: var(--space-m);
   --grid-columns: 12;
   --grid-columns-mt: calc(var(--grid-columns) - 2);
