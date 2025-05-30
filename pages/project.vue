@@ -5,7 +5,8 @@
         <client-only>
             <div class="narrow" :class="{ 'properties-row': width > 425, 'properties-column': width < 425 }">
                 <TitleList bold="true" title="Roles" title-short="Roles" :items="roles" :vertical="width > 425" />
-                <TitleList bold="true" title="Technologies" title-short="Techs" :items="technologies" :vertical="width > 425" />
+                <TitleList bold="true" title="Technologies" title-short="Techs" :items="technologies"
+                    :vertical="width > 425" />
                 <TitleList bold="true" title="Goal" title-short="Goal" :items="goal" :vertical="width > 425" />
                 <TitleList bold="true" title="Year" title-short="Year" :items="year" :vertical="width > 425" />
             </div>
@@ -33,18 +34,14 @@
         <ProjectSection class="narrow" title="The Project in Numbers" title-short="Numbers"
             sub-title="Time, code, and complexity — a snapshot of what went into creating the rendering engine.">
             <div class="numbers-container">
-                <div class="row">
-                    <ProjectNumber class="proj-num" title="Months" number="3"
-                        description="The physics engine brings realism to games by simulating physical laws " />
-                    <ProjectNumber class="proj-num" title="Months" number="3"
-                        description="The physics engine brings realism to games by simulating physical laws " />
-                </div>
-                <div class="row">
-                    <ProjectNumber class="proj-num" title="Months" number="3"
-                        description="The physics engine brings realism to games by simulating physical laws " />
-                    <ProjectNumber class="proj-num" title="Months" number="3"
-                        description="The physics engine brings realism to games by simulating physical laws, enabling interactions like collisions, " />
-                </div>
+                <ProjectNumber class="proj-num" title="Months" number="3"
+                    description="The physics engine brings realism to games by simulating physical laws " />
+                <ProjectNumber class="proj-num" title="Months" number="3"
+                    description="The physics engine brings realism to games by simulating physical laws " />
+                <ProjectNumber class="proj-num" title="Months" number="3"
+                    description="The physics engine brings realism to games by simulating physical laws " />
+                <ProjectNumber class="proj-num" title="Months" number="3"
+                    description="The physics engine brings realism to games by simulating physical laws, enabling interactions like collisions, " />
             </div>
         </ProjectSection>
     </div>
@@ -78,16 +75,15 @@ const technologies = ["OpenGL", "C/C++", "PreMake"];
 
 .numbers-container {
     border-radius: 20px;
-    width: 100%;
     background-color: var(--background-secondary-color);
+    box-sizing: border-box;
     padding: var(--space-l);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-l);
-}
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-.proj-num {
-    width: 380px;
+    @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .alinea {

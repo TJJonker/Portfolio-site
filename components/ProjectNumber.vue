@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     padding: var(--space-m);
+    box-sizing: border-box;
 }
 </style>
 
