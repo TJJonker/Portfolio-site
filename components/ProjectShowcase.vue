@@ -11,27 +11,16 @@
             subTitle="What I've been working on lately"
         />
         <div class="project-stack">
-            <ProjectCard
-                title="Rendering Every Pixel"
-                subTitle="Void | Rendering Engine"
-                content="The rendering system is the heart of a game engine's visual output, responsible for translating game data into stunning, real-time visuals on the screen."
-                image="/Images/CityRender.png"
+            <ProjectCard v-for="project in projects.slice(0, 3)"
+                :title="project.title"
+                :subTitle="project.subtitle"
+                :content="project.content"
+                :image="useProjectThumbnail(project.slug)"
                 url="/"
-                :goals="['Educational']"
-                :years="['2023']"
-                :roles="['Researcher', 'Developer']"
-                :technologies="['OpenGL', 'C/C++']"
-            />
-            <ProjectCard
-                title="Rendering Every Pixel"
-                subTitle="Void | Rendering Engine"
-                content="The rendering system is the heart of a game engine's visual output, responsible for translating game data into stunning, real-time visuals on the screen."
-                image="/Images/CityRender.png"
-                url="/"
-                :goals="['Educational']"
-                :years="['2023']"
-                :roles="['Researcher', 'Developer']"
-                :technologies="['OpenGL', 'C/C++']"
+                :goals="project.goals"
+                :years="project.years"
+                :roles="project.roles"
+                :technologies="project.technologies"
             />
         </div>
     </div>
@@ -39,8 +28,12 @@
 
 <script setup>
 import { useWindowSize } from '@vueuse/core'
+import { useProjectList } from '~/js/UseProjectList';
+import { useProjectThumbnail } from '~/js/UseProjectThumbnail';
 
 const { width } = useWindowSize()
+
+const { data: projects } = await useProjectList()
 </script>
 
 <style lang="css" scoped>
