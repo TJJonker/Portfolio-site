@@ -17,11 +17,11 @@
             />
             <TopbarLinks
                 title="Articles"
-                url="/"
+                url="/articles"
             />
             <TopbarLinks
                 title="Projects"
-                url="/"
+                url="/projects"
             />
         </div>
     </div>
