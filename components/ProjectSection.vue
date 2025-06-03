@@ -1,10 +1,10 @@
 <template>
     <div class="alinea" ref="alinea">
         <span class="background-text uppercase" ref="bgText">{{ backgroundText }}</span>
-        <client-only>
+        <!-- <client-only> -->
             <AnimatedTitle v-if="width > 425" :title="title" :sub-title="subTitle" big="false" />
             <AnimatedTitle v-else :title="titleShort" :sub-title="subTitle" big="false" />
-        </client-only>
+        <!-- </client-only> -->
         <div class="content-row">
             <slot />
         </div>
@@ -30,7 +30,8 @@ defineProps({
 const alinea = ref(null);
 const bgText = ref(null);
 
-onMounted(() => {
+onMounted(async () => {
+    await nextTick();
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.fromTo(bgText.value,
