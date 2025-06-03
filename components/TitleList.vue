@@ -26,7 +26,7 @@ export default {
     name: "TitleList",
     props: {
         title: { type: String, required: true },
-        titleShort: { type: String, required: true },
+        titleShort: { type: String },
         items: { type: Array, required: true },
         bold: { type: Boolean, default: false },
         vertical: { type: Boolean, default: true }

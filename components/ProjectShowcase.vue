@@ -17,7 +17,7 @@
                 :subTitle="project.subtitle"
                 :content="project.content"
                 :image="useProjectThumbnail(project.slug)"
-                url="/"
+                :url="`/projects/${project.slug}`"
                 :goals="project.goals"
                 :years="project.years"
                 :roles="project.roles"

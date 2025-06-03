@@ -2,8 +2,8 @@
     <div class="alinea" ref="alinea">
         <span class="background-text uppercase" ref="bgText">{{ backgroundText }}</span>
         <!-- <client-only> -->
-            <AnimatedTitle v-if="width > 425" :title="title" :sub-title="subTitle" big="false" />
-            <AnimatedTitle v-else :title="titleShort" :sub-title="subTitle" big="false" />
+            <AnimatedTitle v-if="width > 425" :title="title" :subTitle="subTitle" :big="false" />
+            <AnimatedTitle v-else :title="titleShort" :subTitle="subTitle" :big="false" />
         <!-- </client-only> -->
         <div class="content-row">
             <slot />
@@ -21,9 +21,9 @@ const { width } = useWindowSize();
 
 defineProps({
     showTitle: { type: Boolean, default: true },
-    title: { type: String },
+    title: { type: String, default: "" },
     titleShort: { type: String },
-    subTitle: { type: String },
+    subTitle: { type: String, default: "" },
     backgroundText: { type: String }
 })
 

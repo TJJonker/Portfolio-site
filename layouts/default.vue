@@ -7,7 +7,7 @@
 <template>
     <div>
       <Topbar v-if="useTopBar" />      
-      <slot />
+      <NuxtPage />
       <Footer />
     </div>
 </template>

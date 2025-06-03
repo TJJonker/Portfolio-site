@@ -1,5 +1,5 @@
 <template>
-    <a :href="url" class="card" @mouseenter="setHover(true)" @mouseleave="setHover(false)">
+    <NuxtLink :to="url" class="card" @mouseenter="setHover(true)" @mouseleave="setHover(false)">
         <div class="image-container">
             <img class="project-image" :src="image" alt="">
         </div>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-    </a>
+    </NuxtLink>
 </template>
 
 

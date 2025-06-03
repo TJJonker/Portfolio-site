@@ -1,14 +1,14 @@
 <template>
-    <WorkTitle class="header" sub-title="Void | Rendering Engine" title="Rendering Every Pixel" min-to-read="3"
+    <!-- <WorkTitle class="header" sub-title="Void | Rendering Engine" title="Rendering Every Pixel" min-to-read="3"
         date="Nov 18, 2024" img="/Images/CityRender.png" />
     <div class="project-content">
         <client-only>
             <div class="narrow" :class="{ 'properties-row': width > 425, 'properties-column': width < 425 }">
-                <TitleList bold="true" title="Roles" title-short="Roles" :items="roles" :vertical="width > 425" />
-                <TitleList bold="true" title="Technologies" title-short="Techs" :items="technologies"
+                <TitleList :bold="true" title="Roles" title-short="Roles" :items="roles" :vertical="width > 425" />
+                <TitleList :bold="true" title="Technologies" title-short="Techs" :items="technologies"
                     :vertical="width > 425" />
-                <TitleList bold="true" title="Goal" title-short="Goal" :items="goal" :vertical="width > 425" />
-                <TitleList bold="true" title="Year" title-short="Year" :items="year" :vertical="width > 425" />
+                <TitleList :bold="true" title="Goal" title-short="Goal" :items="goal" :vertical="width > 425" />
+                <TitleList :bold="true" title="Year" title-short="Year" :items="year" :vertical="width > 425" />
             </div>
         </client-only>
         <WorkAlinea class="narrow" />
@@ -20,7 +20,7 @@
             <WorkAlinea />
         </ProjectSection>
         <img class="content-image wide" src="/Images/SpaceportRender.png" alt="">
-        <ProjectSection class="narrow" show-title="false" background-text="Project">
+        <ProjectSection class="narrow" :show-title="false" background-text="Project">
             <WorkAlinea />
             <WorkAlinea />
             <WorkAlinea />
@@ -44,7 +44,7 @@
                     description="The physics engine brings realism to games by simulating physical laws, enabling interactions like collisions, " />
             </div>
         </ProjectSection>
-    </div>
+    </div> -->
 </template>
 
 <script setup>
