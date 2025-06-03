@@ -1,4 +1,4 @@
 export default defineNuxtRouteMiddleware(() => {
-    return '/project'
+    return '/articles'
   })
   
