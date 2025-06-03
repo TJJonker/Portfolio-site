@@ -11,7 +11,8 @@
             subTitle="What I've been working on lately"
         />
         <div class="project-stack">
-            <ProjectCard v-for="project in projects.slice(0, 3)"
+            <client-only>
+                <ProjectCard v-for="project in projects.slice(0, 3)"
                 :title="project.title"
                 :subTitle="project.subtitle"
                 :content="project.content"
@@ -21,7 +22,8 @@
                 :years="project.years"
                 :roles="project.roles"
                 :technologies="project.technologies"
-            />
+                />
+            </client-only>
         </div>
     </div>
 </template>

@@ -23,11 +23,8 @@
 </template>
 
 <script setup>
-import { useWindowSize } from '@vueuse/core'
 import { useProjectList } from '~/js/UseProjectList';
 import { useProjectThumbnail } from '~/js/UseProjectThumbnail';
-
-const { width } = useWindowSize()
 
 const { data: projects } = await useProjectList();
 </script>
