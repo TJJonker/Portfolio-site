@@ -17,8 +17,8 @@
                 content="The rendering system is the heart of a game engine's visual output, responsible for translating game data into stunning, real-time visuals on the screen."
                 image="/Images/CityRender.png"
                 url="/"
-                goal="Educational"
-                year="2023"
+                :goals="['Educational']"
+                :years="['2023']"
                 :roles="['Researcher', 'Developer']"
                 :technologies="['OpenGL', 'C/C++']"
             />
@@ -28,8 +28,8 @@
                 content="The rendering system is the heart of a game engine's visual output, responsible for translating game data into stunning, real-time visuals on the screen."
                 image="/Images/CityRender.png"
                 url="/"
-                goal="Educational"
-                year="2023"
+                :goals="['Educational']"
+                :years="['2023']"
                 :roles="['Researcher', 'Developer']"
                 :technologies="['OpenGL', 'C/C++']"
             />

@@ -20,20 +20,12 @@
             <div class="container-right">
                 <div class="properties-stack">
                     <div class="properties-row">
-                        <TitleList title="The Goal">
-                            <p>{{ goal }}</p>
-                        </TitleList>
-                        <TitleList title="Year">
-                            <p>{{ year }}</p>
-                        </TitleList>
+                        <TitleList title="The Goal" :items="goals"/>
+                        <TitleList title="Year" :items="years"/>
                     </div>
                     <div class="properties-row">
-                        <TitleList title="My Role">
-                            <p v-for="(role, index) in roles" :key="index">{{ role }}</p>
-                        </TitleList>
-                        <TitleList title="Techs">
-                            <p v-for="(tech, index) in technologies" :key="index">{{ tech }}</p>
-                        </TitleList>
+                        <TitleList title="My Role" :items="roles"/>
+                        <TitleList title="Techs" :items="technologies"/>
                     </div>
                 </div>
             </div>
@@ -55,8 +47,8 @@ defineProps({
     content: String,
     image: String,
     url: String,
-    goal: String,
-    year: String,
+    goals: Array,
+    years: Array,
     roles: Array,
     technologies: Array,
 });
