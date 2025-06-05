@@ -1,5 +1,5 @@
 <template>
-    <!-- <WorkTitle class="header" sub-title="Void | Rendering Engine" title="Rendering Every Pixel" min-to-read="3"
+    <WorkTitle class="header" sub-title="Void | Rendering Engine" title="Rendering Every Pixel" min-to-read="3"
         date="Nov 18, 2024" img="/Images/CityRender.png" />
     <div class="project-content">
         <client-only>
@@ -44,7 +44,7 @@
                     description="The physics engine brings realism to games by simulating physical laws, enabling interactions like collisions, " />
             </div>
         </ProjectSection>
-    </div> -->
+    </div>
 </template>
 
 <script setup>

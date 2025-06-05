@@ -6,7 +6,7 @@
 </template>
   
 <script>
-import { setAccentColor } from '@/js/colorManager.js';
+import { setAccentColor } from '~/js/colorManager.js';
 
   export default {
     name: "ColorOption",
