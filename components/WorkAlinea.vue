@@ -1,21 +1,34 @@
 <template>
-    <div class="alinea-container">
-        <h4 class="uppercase">project summary</h4>
-        <p>The rendering system is the heart of a game engine's visual output, responsible for translating game data
-            into stunning, real-time visuals on the screen. At its core, the rendering system takes 3D models, textures,
-            and lighting information and processes them through shaders and GPU computations to generate images.
-            Shaders—small programs running on the GPU—handle critical tasks like transforming 3D coordinates to 2D
-            screen space and applying lighting effects, shadows, and materials.
-            <br/><br/>
-            real-time visuals on the screen. At its core, the rendering system takes 3D models, textures, and lighting
-            information and processes them through shaders and.
-            <br/><br/></p>
-    </div>
+  <div v-if="isClient" class="alinea-container narrow">
+    <h4 class="uppercase">{{ title }}</h4>
+    <p v-html="htmlContent"></p> 
+  </div>
 </template>
+
+<script setup>
+import { marked } from 'marked';
+import { computed, ref, onMounted } from 'vue';
+
+const props = defineProps(['title', 'content'])
+
+const isClient = ref(false)
+onMounted(() => {
+  isClient.value = true
+})
+
+const htmlContent = computed(() => {
+  if (isClient.value && props.content) {
+    return marked.parse(props.content.replace(/\n/g, '  \n'))
+  }
+  return ''
+})
+</script>
+
+
 
 <style lang="scss" scoped>
 
-.alinea-container {
+.alinea-container { 
     display: grid;
     grid-template-columns: repeat( 6, 1fr);
     column-gap: var(--column-gap);
@@ -34,6 +47,22 @@
     grid-column: 3 / span 4;
     
     @media (max-width: $breakpoint-mobile) {
+        grid-column: 1 / span 6;
+    }
+}
+
+.narrow {
+    grid-column: 4 / span 6;
+
+    @media (max-width: $breakpoint-desktop) {
+        grid-column: 3 / span 6;
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+        grid-column: 2 / span 6;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
         grid-column: 1 / span 6;
     }
 }
