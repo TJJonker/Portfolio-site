@@ -25,23 +25,6 @@ watchEffect(() => {
     useTopBar.value = width.value > 425
 })
 
-// Component registry
-import Properties from '~/components/temp/Properties.vue'
-import WorkTitle from '~/components/temp/WorkTitle.vue';
-import WorkAlinea from '~/components/WorkAlinea.vue';
-import Content from '~/components/temp/Content.vue';
-
-const componentMap = {
-    Properties,
-    WorkTitle,
-    WorkAlinea,
-    Content
-} as const
-
-function resolveComponent(name: string) {
-    return (componentMap as Record<string, any>)[name] || null
-}
-
 const route = useRoute()
 const slug = computed(() =>
     Array.isArray(route.params.slug) ? route.params.slug[0] : route.params.slug
@@ -64,7 +47,6 @@ type ProjectData = {
 
 
 const { data, error } = await useFetch<ProjectData>(() => `/api/projects/${slug.value}`)
-
 
 const blocks = computed(() => data.value?.frontmatter?.components || [])
 </script>
